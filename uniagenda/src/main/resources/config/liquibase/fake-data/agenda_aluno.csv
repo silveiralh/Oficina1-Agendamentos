@@ -1,0 +1,11 @@
+id;status;horario
+1;Atendido;H14
+2;Remarcado;H14
+3;Livre;H21
+4;Faltou;H14
+5;Livre;H12
+6;Ocupado;H20
+7;Ocupado;H18H
+8;Remarcado;H13
+9;Atendido;H18H
+10;Faltou;H12

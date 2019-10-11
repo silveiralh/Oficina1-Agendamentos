@@ -1,13 +1,14 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { DatePipe, registerLocaleData } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Title } from '@angular/platform-browser';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { CookieModule } from 'ngx-cookie';
+import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
 import { NgxWebstorageModule } from 'ngx-webstorage';
-import { NgJhipsterModule } from 'ng-jhipster';
-import locale from '@angular/common/locales/en';
+import { NgJhipsterModule, translatePartialLoader, missingTranslationHandler, JhiConfigService } from 'ng-jhipster';
+import locale from '@angular/common/locales/pt';
 
 import * as moment from 'moment';
 import { NgbDateAdapter, NgbDatepickerConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -23,20 +24,34 @@ import { fontAwesomeIcons } from './icons/font-awesome-icons';
     NgJhipsterModule.forRoot({
       // set below to true to make alerts look like toast
       alertAsToast: false,
-      alertTimeout: 5000
+      alertTimeout: 5000,
+      i18nEnabled: true,
+      defaultI18nLang: 'pt-br'
+    }),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: translatePartialLoader,
+        deps: [HttpClient]
+      },
+      missingTranslationHandler: {
+        provide: MissingTranslationHandler,
+        useFactory: missingTranslationHandler,
+        deps: [JhiConfigService]
+      }
     })
   ],
   providers: [
     Title,
     {
       provide: LOCALE_ID,
-      useValue: 'en'
+      useValue: 'pt'
     },
     { provide: NgbDateAdapter, useClass: NgbDateMomentAdapter },
     DatePipe
   ]
 })
-export class UniagendaCoreModule {
+export class UniAgendaCoreModule {
   constructor(iconLibrary: FaIconLibrary, private dpConfig: NgbDatepickerConfig) {
     registerLocaleData(locale);
     iconLibrary.addIconPacks(fas);

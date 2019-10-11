@@ -15,10 +15,10 @@
 
 spring:
   application:
-    name: uniagenda
+    name: UniAgenda
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:uniagenda;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MULTI_THREADED=FALSE
+    url: jdbc:h2:mem:UniAgenda;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MULTI_THREADED=FALSE
     name:
     username:
     password:
@@ -42,6 +42,11 @@ spring:
       hibernate.generate_statistics: false
       hibernate.hbm2ddl.auto: validate
       hibernate.jdbc.time_zone: UTC
+  data:
+    elasticsearch:
+      properties:
+        path:
+          home: target/elasticsearch
   liquibase:
     contexts: test
   mail:
@@ -55,13 +60,13 @@ spring:
       enabled: false
   task:
     execution:
-      thread-name-prefix: uniagenda-task-
+      thread-name-prefix: uni-agenda-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: uniagenda-scheduling-
+      thread-name-prefix: uni-agenda-scheduling-
       pool:
         size: 1
   thymeleaf:
@@ -79,7 +84,7 @@ server:
 
 jhipster:
   clientApp:
-    name: 'uniagendaApp'
+    name: 'uniAgendaApp'
   logging:
     # To test json console appender
     use-json-format: true # By default, logs are in Json format
@@ -94,7 +99,7 @@ jhipster:
   security:
     remember-me:
       # security key (this key should be unique for your application, and kept secret)
-      key: 113634acd30cc08c8c4cc7d7d81e295d2da8f61a3294b5294b65eddbf0e6e29c11fb9ad45fcb98b041e08e2329ecaa013862
+      key: 82ca06520fb417a419881249e85993f59df95bf8f8c37ac326bd2ae76bfbe45ec6f414cbbf7232dd569d175591033979ec71
   metrics:
     logs: # Reports metrics in the logs
       enabled: true

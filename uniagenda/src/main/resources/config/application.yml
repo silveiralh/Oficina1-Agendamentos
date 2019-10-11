@@ -56,8 +56,10 @@ management:
         auto-time-requests: true
 
 spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchAutoConfiguration,org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchDataAutoConfiguration
   application:
-    name: uniagenda
+    name: UniAgenda
   profiles:
     # The commented value for `active` can be replaced with valid Spring profiles to load.
     # Otherwise, it will be filled in by maven when building the JAR file
@@ -87,13 +89,13 @@ spring:
       enabled: false
   task:
     execution:
-      thread-name-prefix: uniagenda-task-
+      thread-name-prefix: uni-agenda-task-
       pool:
         core-size: 2
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: uniagenda-scheduling-
+      thread-name-prefix: uni-agenda-scheduling-
       pool:
         size: 2
   thymeleaf:
@@ -121,7 +123,7 @@ info:
 
 jhipster:
   clientApp:
-    name: 'uniagendaApp'
+    name: 'uniAgendaApp'
   # By default CORS is disabled. Uncomment to enable.
   # cors:
   #     allowed-origins: "*"
@@ -131,11 +133,11 @@ jhipster:
   #     allow-credentials: true
   #     max-age: 1800
   mail:
-    from: uniagenda@localhost
+    from: UniAgenda@localhost
   swagger:
     default-include-pattern: /api/.*
-    title: uniagenda API
-    description: uniagenda API documentation
+    title: UniAgenda API
+    description: UniAgenda API documentation
     version: 0.0.1
     terms-of-service-url:
     contact-name:

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { UniagendaSharedModule } from 'app/shared/shared.module';
+import { UniAgendaSharedModule } from 'app/shared/shared.module';
 /* jhipster-needle-add-admin-module-import - JHipster will add admin modules imports here */
 
 import { adminState } from './admin.route';
@@ -15,7 +15,7 @@ import { JhiTrackerComponent } from './tracker/tracker.component';
 
 @NgModule({
   imports: [
-    UniagendaSharedModule,
+    UniAgendaSharedModule,
     /* jhipster-needle-add-admin-module - JHipster will add admin modules here */
     RouterModule.forChild(adminState)
   ],
@@ -31,4 +31,4 @@ import { JhiTrackerComponent } from './tracker/tracker.component';
   ],
   entryComponents: [JhiHealthModalComponent]
 })
-export class UniagendaAdminModule {}
+export class UniAgendaAdminModule {}

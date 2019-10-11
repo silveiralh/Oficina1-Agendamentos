@@ -1,0 +1,25 @@
+{
+  "uniAgendaApp": {
+    "sala": {
+      "home": {
+        "title": "Salas",
+        "createLabel": "Criar novo Sala",
+        "createOrEditLabel": "Criar ou editar Sala",
+        "search": "Pesquisar por Sala",
+        "notFound": "Nenhum Sala encontrado"
+      },
+      "created": "Um novo Sala foi criado com o identificador {{ param }}",
+      "updated": "Um Sala foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Sala foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Sala {{ id }}?"
+      },
+      "detail": {
+        "title": "Sala"
+      },
+      "nomeSala": "Nome Sala",
+      "codigoSala": "Codigo Sala",
+      "agendaSala": "Agenda Sala"
+    }
+  }
+}

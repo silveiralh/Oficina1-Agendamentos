@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { JhiLanguageHelper } from 'app/core/language/language.helper';
 import { User } from 'app/core/user/user.model';
 import { UserService } from 'app/core/user/user.service';
 
@@ -26,7 +27,13 @@ export class UserMgmtUpdateComponent implements OnInit {
     authorities: []
   });
 
-  constructor(private userService: UserService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder) {}
+  constructor(
+    private languageHelper: JhiLanguageHelper,
+    private userService: UserService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit() {
     this.isSaving = false;
@@ -37,6 +44,9 @@ export class UserMgmtUpdateComponent implements OnInit {
     this.authorities = [];
     this.userService.authorities().subscribe(authorities => {
       this.authorities = authorities;
+    });
+    this.languageHelper.getAll().then(languages => {
+      this.languages = languages;
     });
   }
 
@@ -63,7 +73,6 @@ export class UserMgmtUpdateComponent implements OnInit {
     if (this.user.id !== null) {
       this.userService.update(this.user).subscribe(response => this.onSaveSuccess(response), () => this.onSaveError());
     } else {
-      this.user.langKey = 'en';
       this.userService.create(this.user).subscribe(response => this.onSaveSuccess(response), () => this.onSaveError());
     }
   }
