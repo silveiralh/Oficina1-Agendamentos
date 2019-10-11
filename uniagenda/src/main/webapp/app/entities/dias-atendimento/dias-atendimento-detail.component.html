@@ -1,0 +1,93 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="diasAtendimento">
+            <h2><span jhiTranslate="uniAgendaApp.diasAtendimento.detail.title">Dias Atendimento</span> {{diasAtendimento.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="uniAgendaApp.diasAtendimento.mes">Mes</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'uniAgendaApp.Mes.' + diasAtendimento.mes}}">{{diasAtendimento.mes}}</span>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.diasAtendimento.diaMes">Dia Mes</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'uniAgendaApp.DiaMes.' + diasAtendimento.diaMes}}">{{diasAtendimento.diaMes}}</span>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.diasAtendimento.diaSemana">Dia Semana</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'uniAgendaApp.DiaSemana.' + diasAtendimento.diaSemana}}">{{diasAtendimento.diaSemana}}</span>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.diasAtendimento.statusDia">Status Dia</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'uniAgendaApp.StatusDia.' + diasAtendimento.statusDia}}">{{diasAtendimento.statusDia}}</span>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.diasAtendimento.agendaServidor">Agenda Servidor</span></dt>
+                <dd>
+                    <div *ngIf="diasAtendimento.agendaServidor">
+                        <a [routerLink]="['/agenda-servidor', diasAtendimento.agendaServidor?.id, 'view']">{{diasAtendimento.agendaServidor?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.diasAtendimento.agendaServidor">Agenda Servidor</span></dt>
+                <dd>
+                    <div *ngIf="diasAtendimento.agendaServidor">
+                        <a [routerLink]="['/agenda-servidor', diasAtendimento.agendaServidor?.id, 'view']">{{diasAtendimento.agendaServidor?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.diasAtendimento.agendaServidor">Agenda Servidor</span></dt>
+                <dd>
+                    <div *ngIf="diasAtendimento.agendaServidor">
+                        <a [routerLink]="['/agenda-servidor', diasAtendimento.agendaServidor?.id, 'view']">{{diasAtendimento.agendaServidor?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.diasAtendimento.agendaAluno">Agenda Aluno</span></dt>
+                <dd>
+                    <div *ngIf="diasAtendimento.agendaAluno">
+                        <a [routerLink]="['/agenda-aluno', diasAtendimento.agendaAluno?.id, 'view']">{{diasAtendimento.agendaAluno?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.diasAtendimento.agendaAluno">Agenda Aluno</span></dt>
+                <dd>
+                    <div *ngIf="diasAtendimento.agendaAluno">
+                        <a [routerLink]="['/agenda-aluno', diasAtendimento.agendaAluno?.id, 'view']">{{diasAtendimento.agendaAluno?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.diasAtendimento.agendaAluno">Agenda Aluno</span></dt>
+                <dd>
+                    <div *ngIf="diasAtendimento.agendaAluno">
+                        <a [routerLink]="['/agenda-aluno', diasAtendimento.agendaAluno?.id, 'view']">{{diasAtendimento.agendaAluno?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.diasAtendimento.agendaSala">Agenda Sala</span></dt>
+                <dd>
+                    <div *ngIf="diasAtendimento.agendaSala">
+                        <a [routerLink]="['/agenda-sala', diasAtendimento.agendaSala?.id, 'view']">{{diasAtendimento.agendaSala?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.diasAtendimento.agendaSala">Agenda Sala</span></dt>
+                <dd>
+                    <div *ngIf="diasAtendimento.agendaSala">
+                        <a [routerLink]="['/agenda-sala', diasAtendimento.agendaSala?.id, 'view']">{{diasAtendimento.agendaSala?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.diasAtendimento.agendaSala">Agenda Sala</span></dt>
+                <dd>
+                    <div *ngIf="diasAtendimento.agendaSala">
+                        <a [routerLink]="['/agenda-sala', diasAtendimento.agendaSala?.id, 'view']">{{diasAtendimento.agendaSala?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/dias-atendimento', diasAtendimento.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "uniAgendaApp": {
+    "agendaAtendimentoServidor": {
+      "home": {
+        "title": "Agenda Atendimento Servidors",
+        "createLabel": "Criar novo Agenda Atendimento Servidor",
+        "createOrEditLabel": "Criar ou editar Agenda Atendimento Servidor",
+        "search": "Pesquisar por Agenda Atendimento Servidor",
+        "notFound": "Nenhum Agenda Atendimento Servidor encontrado"
+      },
+      "created": "Um novo Agenda Atendimento Servidor foi criado com o identificador {{ param }}",
+      "updated": "Um Agenda Atendimento Servidor foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Agenda Atendimento Servidor foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Agenda Atendimento Servidor {{ id }}?"
+      },
+      "detail": {
+        "title": "Agenda Atendimento Servidor"
+      },
+      "status": "Status",
+      "codSiape": "Cod Siape",
+      "horario": "Horario",
+      "mes": "Mes",
+      "diaMes": "Dia Mes",
+      "status": "Status",
+      "raAluno": "Ra Aluno"
+    }
+  }
+}

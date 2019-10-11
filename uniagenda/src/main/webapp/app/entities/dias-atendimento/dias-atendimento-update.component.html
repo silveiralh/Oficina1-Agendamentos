@@ -1,0 +1,157 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-dias-atendimento-heading" jhiTranslate="uniAgendaApp.diasAtendimento.home.createOrEditLabel">Create or edit a Dias Atendimento</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uniAgendaApp.diasAtendimento.mes" for="field_mes">Mes</label>
+                    <select class="form-control" name="mes" formControlName="mes" id="field_mes">
+                        <option value="Janeiro">{{'uniAgendaApp.Mes.Janeiro' | translate}}</option>
+                        <option value="Fevereiro">{{'uniAgendaApp.Mes.Fevereiro' | translate}}</option>
+                        <option value="Marco">{{'uniAgendaApp.Mes.Marco' | translate}}</option>
+                        <option value="Abril">{{'uniAgendaApp.Mes.Abril' | translate}}</option>
+                        <option value="Maio">{{'uniAgendaApp.Mes.Maio' | translate}}</option>
+                        <option value="Junho">{{'uniAgendaApp.Mes.Junho' | translate}}</option>
+                        <option value="Julho">{{'uniAgendaApp.Mes.Julho' | translate}}</option>
+                        <option value="Agosto">{{'uniAgendaApp.Mes.Agosto' | translate}}</option>
+                        <option value="Setembro">{{'uniAgendaApp.Mes.Setembro' | translate}}</option>
+                        <option value="Outubro">{{'uniAgendaApp.Mes.Outubro' | translate}}</option>
+                        <option value="Novembro">{{'uniAgendaApp.Mes.Novembro' | translate}}</option>
+                        <option value="Dezembro">{{'uniAgendaApp.Mes.Dezembro' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uniAgendaApp.diasAtendimento.diaMes" for="field_diaMes">Dia Mes</label>
+                    <select class="form-control" name="diaMes" formControlName="diaMes" id="field_diaMes">
+                        <option value="D1">{{'uniAgendaApp.DiaMes.D1' | translate}}</option>
+                        <option value="D2">{{'uniAgendaApp.DiaMes.D2' | translate}}</option>
+                        <option value="D3">{{'uniAgendaApp.DiaMes.D3' | translate}}</option>
+                        <option value="D4">{{'uniAgendaApp.DiaMes.D4' | translate}}</option>
+                        <option value="D5">{{'uniAgendaApp.DiaMes.D5' | translate}}</option>
+                        <option value="D6">{{'uniAgendaApp.DiaMes.D6' | translate}}</option>
+                        <option value="D7">{{'uniAgendaApp.DiaMes.D7' | translate}}</option>
+                        <option value="D8">{{'uniAgendaApp.DiaMes.D8' | translate}}</option>
+                        <option value="D9">{{'uniAgendaApp.DiaMes.D9' | translate}}</option>
+                        <option value="D10">{{'uniAgendaApp.DiaMes.D10' | translate}}</option>
+                        <option value="D11">{{'uniAgendaApp.DiaMes.D11' | translate}}</option>
+                        <option value="D12">{{'uniAgendaApp.DiaMes.D12' | translate}}</option>
+                        <option value="D13">{{'uniAgendaApp.DiaMes.D13' | translate}}</option>
+                        <option value="D14">{{'uniAgendaApp.DiaMes.D14' | translate}}</option>
+                        <option value="D15">{{'uniAgendaApp.DiaMes.D15' | translate}}</option>
+                        <option value="D16">{{'uniAgendaApp.DiaMes.D16' | translate}}</option>
+                        <option value="D17">{{'uniAgendaApp.DiaMes.D17' | translate}}</option>
+                        <option value="D18">{{'uniAgendaApp.DiaMes.D18' | translate}}</option>
+                        <option value="D19">{{'uniAgendaApp.DiaMes.D19' | translate}}</option>
+                        <option value="D20">{{'uniAgendaApp.DiaMes.D20' | translate}}</option>
+                        <option value="D21">{{'uniAgendaApp.DiaMes.D21' | translate}}</option>
+                        <option value="D22">{{'uniAgendaApp.DiaMes.D22' | translate}}</option>
+                        <option value="D23">{{'uniAgendaApp.DiaMes.D23' | translate}}</option>
+                        <option value="D24">{{'uniAgendaApp.DiaMes.D24' | translate}}</option>
+                        <option value="D25">{{'uniAgendaApp.DiaMes.D25' | translate}}</option>
+                        <option value="D26">{{'uniAgendaApp.DiaMes.D26' | translate}}</option>
+                        <option value="D27">{{'uniAgendaApp.DiaMes.D27' | translate}}</option>
+                        <option value="D28">{{'uniAgendaApp.DiaMes.D28' | translate}}</option>
+                        <option value="D29">{{'uniAgendaApp.DiaMes.D29' | translate}}</option>
+                        <option value="D30">{{'uniAgendaApp.DiaMes.D30' | translate}}</option>
+                        <option value="D31">{{'uniAgendaApp.DiaMes.D31' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uniAgendaApp.diasAtendimento.diaSemana" for="field_diaSemana">Dia Semana</label>
+                    <select class="form-control" name="diaSemana" formControlName="diaSemana" id="field_diaSemana">
+                        <option value="Segunda_feira">{{'uniAgendaApp.DiaSemana.Segunda_feira' | translate}}</option>
+                        <option value="Terca_feira">{{'uniAgendaApp.DiaSemana.Terca_feira' | translate}}</option>
+                        <option value="Quarta_feira">{{'uniAgendaApp.DiaSemana.Quarta_feira' | translate}}</option>
+                        <option value="Quinta_feira">{{'uniAgendaApp.DiaSemana.Quinta_feira' | translate}}</option>
+                        <option value="Sexta_feira">{{'uniAgendaApp.DiaSemana.Sexta_feira' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uniAgendaApp.diasAtendimento.statusDia" for="field_statusDia">Status Dia</label>
+                    <select class="form-control" name="statusDia" formControlName="statusDia" id="field_statusDia">
+                        <option value="Disponivel">{{'uniAgendaApp.StatusDia.Disponivel' | translate}}</option>
+                        <option value="Indisponivel">{{'uniAgendaApp.StatusDia.Indisponivel' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uniAgendaApp.diasAtendimento.agendaServidor" for="field_agendaServidor">Agenda Servidor</label>
+                    <select class="form-control" id="field_agendaServidor" name="agendaServidor" formControlName="agendaServidor">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="agendaServidorOption.id === editForm.get('agendaServidor').value?.id ? editForm.get('agendaServidor').value : agendaServidorOption" *ngFor="let agendaServidorOption of agendaservidors; trackBy: trackAgendaServidorById">{{agendaServidorOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uniAgendaApp.diasAtendimento.agendaServidor" for="field_agendaServidor">Agenda Servidor</label>
+                    <select class="form-control" id="field_agendaServidor" name="agendaServidor" formControlName="agendaServidor">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="agendaServidorOption.id === editForm.get('agendaServidor').value?.id ? editForm.get('agendaServidor').value : agendaServidorOption" *ngFor="let agendaServidorOption of agendaservidors; trackBy: trackAgendaServidorById">{{agendaServidorOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uniAgendaApp.diasAtendimento.agendaServidor" for="field_agendaServidor">Agenda Servidor</label>
+                    <select class="form-control" id="field_agendaServidor" name="agendaServidor" formControlName="agendaServidor">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="agendaServidorOption.id === editForm.get('agendaServidor').value?.id ? editForm.get('agendaServidor').value : agendaServidorOption" *ngFor="let agendaServidorOption of agendaservidors; trackBy: trackAgendaServidorById">{{agendaServidorOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uniAgendaApp.diasAtendimento.agendaAluno" for="field_agendaAluno">Agenda Aluno</label>
+                    <select class="form-control" id="field_agendaAluno" name="agendaAluno" formControlName="agendaAluno">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="agendaAlunoOption.id === editForm.get('agendaAluno').value?.id ? editForm.get('agendaAluno').value : agendaAlunoOption" *ngFor="let agendaAlunoOption of agendaalunos; trackBy: trackAgendaAlunoById">{{agendaAlunoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uniAgendaApp.diasAtendimento.agendaAluno" for="field_agendaAluno">Agenda Aluno</label>
+                    <select class="form-control" id="field_agendaAluno" name="agendaAluno" formControlName="agendaAluno">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="agendaAlunoOption.id === editForm.get('agendaAluno').value?.id ? editForm.get('agendaAluno').value : agendaAlunoOption" *ngFor="let agendaAlunoOption of agendaalunos; trackBy: trackAgendaAlunoById">{{agendaAlunoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uniAgendaApp.diasAtendimento.agendaAluno" for="field_agendaAluno">Agenda Aluno</label>
+                    <select class="form-control" id="field_agendaAluno" name="agendaAluno" formControlName="agendaAluno">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="agendaAlunoOption.id === editForm.get('agendaAluno').value?.id ? editForm.get('agendaAluno').value : agendaAlunoOption" *ngFor="let agendaAlunoOption of agendaalunos; trackBy: trackAgendaAlunoById">{{agendaAlunoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uniAgendaApp.diasAtendimento.agendaSala" for="field_agendaSala">Agenda Sala</label>
+                    <select class="form-control" id="field_agendaSala" name="agendaSala" formControlName="agendaSala">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="agendaSalaOption.id === editForm.get('agendaSala').value?.id ? editForm.get('agendaSala').value : agendaSalaOption" *ngFor="let agendaSalaOption of agendasalas; trackBy: trackAgendaSalaById">{{agendaSalaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uniAgendaApp.diasAtendimento.agendaSala" for="field_agendaSala">Agenda Sala</label>
+                    <select class="form-control" id="field_agendaSala" name="agendaSala" formControlName="agendaSala">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="agendaSalaOption.id === editForm.get('agendaSala').value?.id ? editForm.get('agendaSala').value : agendaSalaOption" *ngFor="let agendaSalaOption of agendasalas; trackBy: trackAgendaSalaById">{{agendaSalaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uniAgendaApp.diasAtendimento.agendaSala" for="field_agendaSala">Agenda Sala</label>
+                    <select class="form-control" id="field_agendaSala" name="agendaSala" formControlName="agendaSala">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="agendaSalaOption.id === editForm.get('agendaSala').value?.id ? editForm.get('agendaSala').value : agendaSalaOption" *ngFor="let agendaSalaOption of agendasalas; trackBy: trackAgendaSalaById">{{agendaSalaOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
