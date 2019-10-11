@@ -37,11 +37,39 @@ public class AgendaServidor implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("agendaServidors")
-    private AgendaAtendimentoServidor agendaAtendimentoServidor;
+    private Servidor servidor;
 
     @OneToMany(mappedBy = "agendaServidor")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Servidor> codSiapes = new HashSet<>();
+    private Set<AgendaAtendimentoServidor> codSiapes = new HashSet<>();
+
+    @OneToMany(mappedBy = "agendaServidor")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<AgendaAtendimentoServidor> horarios = new HashSet<>();
+
+    @OneToMany(mappedBy = "agendaServidor")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<AgendaAtendimentoServidor> mes = new HashSet<>();
+
+    @OneToMany(mappedBy = "agendaServidor")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<AgendaAtendimentoServidor> diaMes = new HashSet<>();
+
+    @OneToMany(mappedBy = "agendaServidor")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<AgendaAtendimentoServidor> statuses = new HashSet<>();
+
+    @ManyToOne
+    @JsonIgnoreProperties("agendaServidors")
+    private DiasAtendimento diasAtendimento;
+
+    @ManyToOne
+    @JsonIgnoreProperties("agendaServidors")
+    private DiasAtendimento diasAtendimento;
+
+    @ManyToOne
+    @JsonIgnoreProperties("agendaServidors")
+    private DiasAtendimento diasAtendimento;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -78,42 +106,181 @@ public class AgendaServidor implements Serializable {
         this.horario = horario;
     }
 
-    public AgendaAtendimentoServidor getAgendaAtendimentoServidor() {
-        return agendaAtendimentoServidor;
+    public Servidor getServidor() {
+        return servidor;
     }
 
-    public AgendaServidor agendaAtendimentoServidor(AgendaAtendimentoServidor agendaAtendimentoServidor) {
-        this.agendaAtendimentoServidor = agendaAtendimentoServidor;
+    public AgendaServidor servidor(Servidor servidor) {
+        this.servidor = servidor;
         return this;
     }
 
-    public void setAgendaAtendimentoServidor(AgendaAtendimentoServidor agendaAtendimentoServidor) {
-        this.agendaAtendimentoServidor = agendaAtendimentoServidor;
+    public void setServidor(Servidor servidor) {
+        this.servidor = servidor;
     }
 
-    public Set<Servidor> getCodSiapes() {
+    public Set<AgendaAtendimentoServidor> getCodSiapes() {
         return codSiapes;
     }
 
-    public AgendaServidor codSiapes(Set<Servidor> servidors) {
-        this.codSiapes = servidors;
+    public AgendaServidor codSiapes(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
+        this.codSiapes = agendaAtendimentoServidors;
         return this;
     }
 
-    public AgendaServidor addCodSiape(Servidor servidor) {
-        this.codSiapes.add(servidor);
-        servidor.setAgendaServidor(this);
+    public AgendaServidor addCodSiape(AgendaAtendimentoServidor agendaAtendimentoServidor) {
+        this.codSiapes.add(agendaAtendimentoServidor);
+        agendaAtendimentoServidor.setAgendaServidor(this);
         return this;
     }
 
-    public AgendaServidor removeCodSiape(Servidor servidor) {
-        this.codSiapes.remove(servidor);
-        servidor.setAgendaServidor(null);
+    public AgendaServidor removeCodSiape(AgendaAtendimentoServidor agendaAtendimentoServidor) {
+        this.codSiapes.remove(agendaAtendimentoServidor);
+        agendaAtendimentoServidor.setAgendaServidor(null);
         return this;
     }
 
-    public void setCodSiapes(Set<Servidor> servidors) {
-        this.codSiapes = servidors;
+    public void setCodSiapes(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
+        this.codSiapes = agendaAtendimentoServidors;
+    }
+
+    public Set<AgendaAtendimentoServidor> getHorarios() {
+        return horarios;
+    }
+
+    public AgendaServidor horarios(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
+        this.horarios = agendaAtendimentoServidors;
+        return this;
+    }
+
+    public AgendaServidor addHorario(AgendaAtendimentoServidor agendaAtendimentoServidor) {
+        this.horarios.add(agendaAtendimentoServidor);
+        agendaAtendimentoServidor.setAgendaServidor(this);
+        return this;
+    }
+
+    public AgendaServidor removeHorario(AgendaAtendimentoServidor agendaAtendimentoServidor) {
+        this.horarios.remove(agendaAtendimentoServidor);
+        agendaAtendimentoServidor.setAgendaServidor(null);
+        return this;
+    }
+
+    public void setHorarios(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
+        this.horarios = agendaAtendimentoServidors;
+    }
+
+    public Set<AgendaAtendimentoServidor> getMes() {
+        return mes;
+    }
+
+    public AgendaServidor mes(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
+        this.mes = agendaAtendimentoServidors;
+        return this;
+    }
+
+    public AgendaServidor addMes(AgendaAtendimentoServidor agendaAtendimentoServidor) {
+        this.mes.add(agendaAtendimentoServidor);
+        agendaAtendimentoServidor.setAgendaServidor(this);
+        return this;
+    }
+
+    public AgendaServidor removeMes(AgendaAtendimentoServidor agendaAtendimentoServidor) {
+        this.mes.remove(agendaAtendimentoServidor);
+        agendaAtendimentoServidor.setAgendaServidor(null);
+        return this;
+    }
+
+    public void setMes(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
+        this.mes = agendaAtendimentoServidors;
+    }
+
+    public Set<AgendaAtendimentoServidor> getDiaMes() {
+        return diaMes;
+    }
+
+    public AgendaServidor diaMes(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
+        this.diaMes = agendaAtendimentoServidors;
+        return this;
+    }
+
+    public AgendaServidor addDiaMes(AgendaAtendimentoServidor agendaAtendimentoServidor) {
+        this.diaMes.add(agendaAtendimentoServidor);
+        agendaAtendimentoServidor.setAgendaServidor(this);
+        return this;
+    }
+
+    public AgendaServidor removeDiaMes(AgendaAtendimentoServidor agendaAtendimentoServidor) {
+        this.diaMes.remove(agendaAtendimentoServidor);
+        agendaAtendimentoServidor.setAgendaServidor(null);
+        return this;
+    }
+
+    public void setDiaMes(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
+        this.diaMes = agendaAtendimentoServidors;
+    }
+
+    public Set<AgendaAtendimentoServidor> getStatuses() {
+        return statuses;
+    }
+
+    public AgendaServidor statuses(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
+        this.statuses = agendaAtendimentoServidors;
+        return this;
+    }
+
+    public AgendaServidor addStatus(AgendaAtendimentoServidor agendaAtendimentoServidor) {
+        this.statuses.add(agendaAtendimentoServidor);
+        agendaAtendimentoServidor.setAgendaServidor(this);
+        return this;
+    }
+
+    public AgendaServidor removeStatus(AgendaAtendimentoServidor agendaAtendimentoServidor) {
+        this.statuses.remove(agendaAtendimentoServidor);
+        agendaAtendimentoServidor.setAgendaServidor(null);
+        return this;
+    }
+
+    public void setStatuses(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
+        this.statuses = agendaAtendimentoServidors;
+    }
+
+    public DiasAtendimento getDiasAtendimento() {
+        return diasAtendimento;
+    }
+
+    public AgendaServidor diasAtendimento(DiasAtendimento diasAtendimento) {
+        this.diasAtendimento = diasAtendimento;
+        return this;
+    }
+
+    public void setDiasAtendimento(DiasAtendimento diasAtendimento) {
+        this.diasAtendimento = diasAtendimento;
+    }
+
+    public DiasAtendimento getDiasAtendimento() {
+        return diasAtendimento;
+    }
+
+    public AgendaServidor diasAtendimento(DiasAtendimento diasAtendimento) {
+        this.diasAtendimento = diasAtendimento;
+        return this;
+    }
+
+    public void setDiasAtendimento(DiasAtendimento diasAtendimento) {
+        this.diasAtendimento = diasAtendimento;
+    }
+
+    public DiasAtendimento getDiasAtendimento() {
+        return diasAtendimento;
+    }
+
+    public AgendaServidor diasAtendimento(DiasAtendimento diasAtendimento) {
+        this.diasAtendimento = diasAtendimento;
+        return this;
+    }
+
+    public void setDiasAtendimento(DiasAtendimento diasAtendimento) {
+        this.diasAtendimento = diasAtendimento;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

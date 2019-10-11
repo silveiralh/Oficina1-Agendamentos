@@ -41,10 +41,31 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" for="field_agendaAtendimentoServidor">Agenda Atendimento Servidor</label>
-                    <select class="form-control" id="field_agendaAtendimentoServidor" name="agendaAtendimentoServidor" formControlName="agendaAtendimentoServidor">
+                    <label class="form-control-label" for="field_servidor">Servidor</label>
+                    <select class="form-control" id="field_servidor" name="servidor" formControlName="servidor">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="agendaAtendimentoServidorOption.id === editForm.get('agendaAtendimentoServidor').value?.id ? editForm.get('agendaAtendimentoServidor').value : agendaAtendimentoServidorOption" *ngFor="let agendaAtendimentoServidorOption of agendaatendimentoservidors; trackBy: trackAgendaAtendimentoServidorById">{{agendaAtendimentoServidorOption.id}}</option>
+                        <option [ngValue]="servidorOption.id === editForm.get('servidor').value?.id ? editForm.get('servidor').value : servidorOption" *ngFor="let servidorOption of servidors; trackBy: trackServidorById">{{servidorOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_diasAtendimento">Dias Atendimento</label>
+                    <select class="form-control" id="field_diasAtendimento" name="diasAtendimento" formControlName="diasAtendimento">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="diasAtendimentoOption.id === editForm.get('diasAtendimento').value?.id ? editForm.get('diasAtendimento').value : diasAtendimentoOption" *ngFor="let diasAtendimentoOption of diasatendimentos; trackBy: trackDiasAtendimentoById">{{diasAtendimentoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_diasAtendimento">Dias Atendimento</label>
+                    <select class="form-control" id="field_diasAtendimento" name="diasAtendimento" formControlName="diasAtendimento">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="diasAtendimentoOption.id === editForm.get('diasAtendimento').value?.id ? editForm.get('diasAtendimento').value : diasAtendimentoOption" *ngFor="let diasAtendimentoOption of diasatendimentos; trackBy: trackDiasAtendimentoById">{{diasAtendimentoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_diasAtendimento">Dias Atendimento</label>
+                    <select class="form-control" id="field_diasAtendimento" name="diasAtendimento" formControlName="diasAtendimento">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="diasAtendimentoOption.id === editForm.get('diasAtendimento').value?.id ? editForm.get('diasAtendimento').value : diasAtendimentoOption" *ngFor="let diasAtendimentoOption of diasatendimentos; trackBy: trackDiasAtendimentoById">{{diasAtendimentoOption.id}}</option>
                     </select>
                 </div>
             </div>

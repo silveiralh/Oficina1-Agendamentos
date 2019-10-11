@@ -14,16 +14,58 @@
     ],
     "relationships": [
         {
-            "relationshipName": "agendaAtendimentoServidor",
-            "otherEntityName": "agendaAtendimentoServidor",
+            "relationshipName": "servidor",
+            "otherEntityName": "servidor",
             "relationshipType": "many-to-one",
             "otherEntityField": "id"
         },
         {
             "relationshipType": "one-to-many",
-            "otherEntityName": "servidor",
+            "otherEntityName": "agendaAtendimentoServidor",
             "otherEntityRelationshipName": "agendaServidor",
             "relationshipName": "codSiape"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agendaAtendimentoServidor",
+            "otherEntityRelationshipName": "agendaServidor",
+            "relationshipName": "horario"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agendaAtendimentoServidor",
+            "otherEntityRelationshipName": "agendaServidor",
+            "relationshipName": "mes"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agendaAtendimentoServidor",
+            "otherEntityRelationshipName": "agendaServidor",
+            "relationshipName": "diaMes"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agendaAtendimentoServidor",
+            "otherEntityRelationshipName": "agendaServidor",
+            "relationshipName": "status"
+        },
+        {
+            "relationshipName": "diasAtendimento",
+            "otherEntityName": "diasAtendimento",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "diasAtendimento",
+            "otherEntityName": "diasAtendimento",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "diasAtendimento",
+            "otherEntityName": "diasAtendimento",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "changelogDate": "20191011213406",

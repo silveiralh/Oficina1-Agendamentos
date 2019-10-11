@@ -5,12 +5,8 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
-import { JhiAlertService } from 'ng-jhipster';
 import { ICargo, Cargo } from 'app/shared/model/cargo.model';
 import { CargoService } from './cargo.service';
-import { IServidor } from 'app/shared/model/servidor.model';
-import { ServidorService } from 'app/entities/servidor/servidor.service';
 
 @Component({
   selector: 'jhi-cargo-update',
@@ -19,41 +15,24 @@ import { ServidorService } from 'app/entities/servidor/servidor.service';
 export class CargoUpdateComponent implements OnInit {
   isSaving: boolean;
 
-  servidors: IServidor[];
-
   editForm = this.fb.group({
     id: [],
-    nomeCargo: [],
-    servidor: []
+    nomeCargo: []
   });
 
-  constructor(
-    protected jhiAlertService: JhiAlertService,
-    protected cargoService: CargoService,
-    protected servidorService: ServidorService,
-    protected activatedRoute: ActivatedRoute,
-    private fb: FormBuilder
-  ) {}
+  constructor(protected cargoService: CargoService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
 
   ngOnInit() {
     this.isSaving = false;
     this.activatedRoute.data.subscribe(({ cargo }) => {
       this.updateForm(cargo);
     });
-    this.servidorService
-      .query()
-      .pipe(
-        filter((mayBeOk: HttpResponse<IServidor[]>) => mayBeOk.ok),
-        map((response: HttpResponse<IServidor[]>) => response.body)
-      )
-      .subscribe((res: IServidor[]) => (this.servidors = res), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(cargo: ICargo) {
     this.editForm.patchValue({
       id: cargo.id,
-      nomeCargo: cargo.nomeCargo,
-      servidor: cargo.servidor
+      nomeCargo: cargo.nomeCargo
     });
   }
 
@@ -75,8 +54,7 @@ export class CargoUpdateComponent implements OnInit {
     return {
       ...new Cargo(),
       id: this.editForm.get(['id']).value,
-      nomeCargo: this.editForm.get(['nomeCargo']).value,
-      servidor: this.editForm.get(['servidor']).value
+      nomeCargo: this.editForm.get(['nomeCargo']).value
     };
   }
 
@@ -91,12 +69,5 @@ export class CargoUpdateComponent implements OnInit {
 
   protected onSaveError() {
     this.isSaving = false;
-  }
-  protected onError(errorMessage: string) {
-    this.jhiAlertService.error(errorMessage, null, null);
-  }
-
-  trackServidorById(index: number, item: IServidor) {
-    return item.id;
   }
 }

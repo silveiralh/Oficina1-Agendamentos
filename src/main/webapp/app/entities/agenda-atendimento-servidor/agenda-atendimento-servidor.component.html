@@ -19,6 +19,12 @@
             <tr>
             <th><span>ID</span></th>
             <th><span>Status</span></th>
+            <th><span>Aluno</span></th>
+            <th><span>Agenda Servidor</span></th>
+            <th><span>Agenda Servidor</span></th>
+            <th><span>Agenda Servidor</span></th>
+            <th><span>Agenda Servidor</span></th>
+            <th><span>Agenda Servidor</span></th>
             <th></th>
             </tr>
             </thead>
@@ -26,6 +32,36 @@
             <tr *ngFor="let agendaAtendimentoServidor of agendaAtendimentoServidors ;trackBy: trackId">
                 <td><a [routerLink]="['/agenda-atendimento-servidor', agendaAtendimentoServidor.id, 'view' ]">{{agendaAtendimentoServidor.id}}</a></td>
                 <td>{{agendaAtendimentoServidor.status}}</td>
+                <td>
+                    <div *ngIf="agendaAtendimentoServidor.aluno">
+                        <a [routerLink]="['/aluno', agendaAtendimentoServidor.aluno?.id, 'view' ]" >{{agendaAtendimentoServidor.aluno?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="agendaAtendimentoServidor.agendaServidor">
+                        <a [routerLink]="['/agenda-servidor', agendaAtendimentoServidor.agendaServidor?.id, 'view' ]" >{{agendaAtendimentoServidor.agendaServidor?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="agendaAtendimentoServidor.agendaServidor">
+                        <a [routerLink]="['/agenda-servidor', agendaAtendimentoServidor.agendaServidor?.id, 'view' ]" >{{agendaAtendimentoServidor.agendaServidor?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="agendaAtendimentoServidor.agendaServidor">
+                        <a [routerLink]="['/agenda-servidor', agendaAtendimentoServidor.agendaServidor?.id, 'view' ]" >{{agendaAtendimentoServidor.agendaServidor?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="agendaAtendimentoServidor.agendaServidor">
+                        <a [routerLink]="['/agenda-servidor', agendaAtendimentoServidor.agendaServidor?.id, 'view' ]" >{{agendaAtendimentoServidor.agendaServidor?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="agendaAtendimentoServidor.agendaServidor">
+                        <a [routerLink]="['/agenda-servidor', agendaAtendimentoServidor.agendaServidor?.id, 'view' ]" >{{agendaAtendimentoServidor.agendaServidor?.id}}</a>
+                    </div>
+                </td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

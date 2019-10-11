@@ -1,12 +1,11 @@
 package com.uniagenda.agenda.domain;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 import com.uniagenda.agenda.domain.enumeration.StatusAgenda;
 
@@ -34,13 +33,21 @@ public class AgendaAluno implements Serializable {
     @Column(name = "horario")
     private Horario horario;
 
-    @OneToMany(mappedBy = "agendaAluno")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<DiasAtendimento> statusDias = new HashSet<>();
+    @ManyToOne
+    @JsonIgnoreProperties("agendaAlunos")
+    private Aluno aluno;
 
-    @OneToMany(mappedBy = "agendaAluno")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Aluno> raAlunos = new HashSet<>();
+    @ManyToOne
+    @JsonIgnoreProperties("agendaAlunos")
+    private DiasAtendimento diasAtendimento;
+
+    @ManyToOne
+    @JsonIgnoreProperties("agendaAlunos")
+    private DiasAtendimento diasAtendimento;
+
+    @ManyToOne
+    @JsonIgnoreProperties("agendaAlunos")
+    private DiasAtendimento diasAtendimento;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -77,54 +84,56 @@ public class AgendaAluno implements Serializable {
         this.horario = horario;
     }
 
-    public Set<DiasAtendimento> getStatusDias() {
-        return statusDias;
+    public Aluno getAluno() {
+        return aluno;
     }
 
-    public AgendaAluno statusDias(Set<DiasAtendimento> diasAtendimentos) {
-        this.statusDias = diasAtendimentos;
+    public AgendaAluno aluno(Aluno aluno) {
+        this.aluno = aluno;
         return this;
     }
 
-    public AgendaAluno addStatusDia(DiasAtendimento diasAtendimento) {
-        this.statusDias.add(diasAtendimento);
-        diasAtendimento.setAgendaAluno(this);
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
+
+    public DiasAtendimento getDiasAtendimento() {
+        return diasAtendimento;
+    }
+
+    public AgendaAluno diasAtendimento(DiasAtendimento diasAtendimento) {
+        this.diasAtendimento = diasAtendimento;
         return this;
     }
 
-    public AgendaAluno removeStatusDia(DiasAtendimento diasAtendimento) {
-        this.statusDias.remove(diasAtendimento);
-        diasAtendimento.setAgendaAluno(null);
+    public void setDiasAtendimento(DiasAtendimento diasAtendimento) {
+        this.diasAtendimento = diasAtendimento;
+    }
+
+    public DiasAtendimento getDiasAtendimento() {
+        return diasAtendimento;
+    }
+
+    public AgendaAluno diasAtendimento(DiasAtendimento diasAtendimento) {
+        this.diasAtendimento = diasAtendimento;
         return this;
     }
 
-    public void setStatusDias(Set<DiasAtendimento> diasAtendimentos) {
-        this.statusDias = diasAtendimentos;
+    public void setDiasAtendimento(DiasAtendimento diasAtendimento) {
+        this.diasAtendimento = diasAtendimento;
     }
 
-    public Set<Aluno> getRaAlunos() {
-        return raAlunos;
+    public DiasAtendimento getDiasAtendimento() {
+        return diasAtendimento;
     }
 
-    public AgendaAluno raAlunos(Set<Aluno> alunos) {
-        this.raAlunos = alunos;
+    public AgendaAluno diasAtendimento(DiasAtendimento diasAtendimento) {
+        this.diasAtendimento = diasAtendimento;
         return this;
     }
 
-    public AgendaAluno addRaAluno(Aluno aluno) {
-        this.raAlunos.add(aluno);
-        aluno.setAgendaAluno(this);
-        return this;
-    }
-
-    public AgendaAluno removeRaAluno(Aluno aluno) {
-        this.raAlunos.remove(aluno);
-        aluno.setAgendaAluno(null);
-        return this;
-    }
-
-    public void setRaAlunos(Set<Aluno> alunos) {
-        this.raAlunos = alunos;
+    public void setDiasAtendimento(DiasAtendimento diasAtendimento) {
+        this.diasAtendimento = diasAtendimento;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

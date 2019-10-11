@@ -9,6 +9,42 @@
                 <dd>
                     <span>{{agendaReservaSala.status}}</span>
                 </dd>
+                <dt><span>Aluno</span></dt>
+                <dd>
+                    <div *ngIf="agendaReservaSala.aluno">
+                        <a [routerLink]="['/aluno', agendaReservaSala.aluno?.id, 'view']">{{agendaReservaSala.aluno?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Agenda Sala</span></dt>
+                <dd>
+                    <div *ngIf="agendaReservaSala.agendaSala">
+                        <a [routerLink]="['/agenda-sala', agendaReservaSala.agendaSala?.id, 'view']">{{agendaReservaSala.agendaSala?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Agenda Sala</span></dt>
+                <dd>
+                    <div *ngIf="agendaReservaSala.agendaSala">
+                        <a [routerLink]="['/agenda-sala', agendaReservaSala.agendaSala?.id, 'view']">{{agendaReservaSala.agendaSala?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Agenda Sala</span></dt>
+                <dd>
+                    <div *ngIf="agendaReservaSala.agendaSala">
+                        <a [routerLink]="['/agenda-sala', agendaReservaSala.agendaSala?.id, 'view']">{{agendaReservaSala.agendaSala?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Agenda Sala</span></dt>
+                <dd>
+                    <div *ngIf="agendaReservaSala.agendaSala">
+                        <a [routerLink]="['/agenda-sala', agendaReservaSala.agendaSala?.id, 'view']">{{agendaReservaSala.agendaSala?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Agenda Sala</span></dt>
+                <dd>
+                    <div *ngIf="agendaReservaSala.agendaSala">
+                        <a [routerLink]="['/agenda-sala', agendaReservaSala.agendaSala?.id, 'view']">{{agendaReservaSala.agendaSala?.id}}</a>
+                    </div>
+                </dd>
             </dl>
 
             <button type="submit"

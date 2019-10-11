@@ -19,7 +19,6 @@
             <tr>
             <th><span>ID</span></th>
             <th><span>Nome Cargo</span></th>
-            <th><span>Servidor</span></th>
             <th></th>
             </tr>
             </thead>
@@ -27,11 +26,6 @@
             <tr *ngFor="let cargo of cargos ;trackBy: trackId">
                 <td><a [routerLink]="['/cargo', cargo.id, 'view' ]">{{cargo.id}}</a></td>
                 <td>{{cargo.nomeCargo}}</td>
-                <td>
-                    <div *ngIf="cargo.servidor">
-                        <a [routerLink]="['/servidor', cargo.servidor?.id, 'view' ]" >{{cargo.servidor?.id}}</a>
-                    </div>
-                </td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

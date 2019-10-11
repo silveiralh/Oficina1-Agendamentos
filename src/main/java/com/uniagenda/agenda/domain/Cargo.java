@@ -1,11 +1,12 @@
 package com.uniagenda.agenda.domain;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A Cargo.
@@ -24,9 +25,9 @@ public class Cargo implements Serializable {
     @Column(name = "nome_cargo")
     private String nomeCargo;
 
-    @ManyToOne
-    @JsonIgnoreProperties("cargos")
-    private Servidor servidor;
+    @OneToMany(mappedBy = "cargo")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Servidor> nomeCargos = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -50,17 +51,29 @@ public class Cargo implements Serializable {
         this.nomeCargo = nomeCargo;
     }
 
-    public Servidor getServidor() {
-        return servidor;
+    public Set<Servidor> getNomeCargos() {
+        return nomeCargos;
     }
 
-    public Cargo servidor(Servidor servidor) {
-        this.servidor = servidor;
+    public Cargo nomeCargos(Set<Servidor> servidors) {
+        this.nomeCargos = servidors;
         return this;
     }
 
-    public void setServidor(Servidor servidor) {
-        this.servidor = servidor;
+    public Cargo addNomeCargo(Servidor servidor) {
+        this.nomeCargos.add(servidor);
+        servidor.setCargo(this);
+        return this;
+    }
+
+    public Cargo removeNomeCargo(Servidor servidor) {
+        this.nomeCargos.remove(servidor);
+        servidor.setCargo(null);
+        return this;
+    }
+
+    public void setNomeCargos(Set<Servidor> servidors) {
+        this.nomeCargos = servidors;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

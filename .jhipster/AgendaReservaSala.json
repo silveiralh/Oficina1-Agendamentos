@@ -9,16 +9,40 @@
     ],
     "relationships": [
         {
-            "relationshipType": "one-to-many",
+            "relationshipName": "aluno",
             "otherEntityName": "aluno",
-            "otherEntityRelationshipName": "agendaReservaSala",
-            "relationshipName": "raAluno"
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         },
         {
-            "relationshipType": "one-to-many",
+            "relationshipName": "agendaSala",
             "otherEntityName": "agendaSala",
-            "otherEntityRelationshipName": "agendaReservaSala",
-            "relationshipName": "codigoSala"
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "agendaSala",
+            "otherEntityName": "agendaSala",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "agendaSala",
+            "otherEntityName": "agendaSala",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "agendaSala",
+            "otherEntityName": "agendaSala",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "agendaSala",
+            "otherEntityName": "agendaSala",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "changelogDate": "20191011213409",

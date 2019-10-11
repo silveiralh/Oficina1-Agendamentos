@@ -13,12 +13,6 @@
                 <dd>
                     <span>{{sala.codigoSala}}</span>
                 </dd>
-                <dt><span>Agenda Sala</span></dt>
-                <dd>
-                    <div *ngIf="sala.agendaSala">
-                        <a [routerLink]="['/agenda-sala', sala.agendaSala?.id, 'view']">{{sala.agendaSala?.id}}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

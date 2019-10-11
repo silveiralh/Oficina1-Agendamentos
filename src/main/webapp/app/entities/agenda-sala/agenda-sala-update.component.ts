@@ -9,8 +9,10 @@ import { filter, map } from 'rxjs/operators';
 import { JhiAlertService } from 'ng-jhipster';
 import { IAgendaSala, AgendaSala } from 'app/shared/model/agenda-sala.model';
 import { AgendaSalaService } from './agenda-sala.service';
-import { IAgendaReservaSala } from 'app/shared/model/agenda-reserva-sala.model';
-import { AgendaReservaSalaService } from 'app/entities/agenda-reserva-sala/agenda-reserva-sala.service';
+import { ISala } from 'app/shared/model/sala.model';
+import { SalaService } from 'app/entities/sala/sala.service';
+import { IDiasAtendimento } from 'app/shared/model/dias-atendimento.model';
+import { DiasAtendimentoService } from 'app/entities/dias-atendimento/dias-atendimento.service';
 
 @Component({
   selector: 'jhi-agenda-sala-update',
@@ -19,19 +21,25 @@ import { AgendaReservaSalaService } from 'app/entities/agenda-reserva-sala/agend
 export class AgendaSalaUpdateComponent implements OnInit {
   isSaving: boolean;
 
-  agendareservasalas: IAgendaReservaSala[];
+  salas: ISala[];
+
+  diasatendimentos: IDiasAtendimento[];
 
   editForm = this.fb.group({
     id: [],
     status: [],
     horario: [],
-    agendaReservaSala: []
+    sala: [],
+    diasAtendimento: [],
+    diasAtendimento: [],
+    diasAtendimento: []
   });
 
   constructor(
     protected jhiAlertService: JhiAlertService,
     protected agendaSalaService: AgendaSalaService,
-    protected agendaReservaSalaService: AgendaReservaSalaService,
+    protected salaService: SalaService,
+    protected diasAtendimentoService: DiasAtendimentoService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -41,13 +49,20 @@ export class AgendaSalaUpdateComponent implements OnInit {
     this.activatedRoute.data.subscribe(({ agendaSala }) => {
       this.updateForm(agendaSala);
     });
-    this.agendaReservaSalaService
+    this.salaService
       .query()
       .pipe(
-        filter((mayBeOk: HttpResponse<IAgendaReservaSala[]>) => mayBeOk.ok),
-        map((response: HttpResponse<IAgendaReservaSala[]>) => response.body)
+        filter((mayBeOk: HttpResponse<ISala[]>) => mayBeOk.ok),
+        map((response: HttpResponse<ISala[]>) => response.body)
       )
-      .subscribe((res: IAgendaReservaSala[]) => (this.agendareservasalas = res), (res: HttpErrorResponse) => this.onError(res.message));
+      .subscribe((res: ISala[]) => (this.salas = res), (res: HttpErrorResponse) => this.onError(res.message));
+    this.diasAtendimentoService
+      .query()
+      .pipe(
+        filter((mayBeOk: HttpResponse<IDiasAtendimento[]>) => mayBeOk.ok),
+        map((response: HttpResponse<IDiasAtendimento[]>) => response.body)
+      )
+      .subscribe((res: IDiasAtendimento[]) => (this.diasatendimentos = res), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(agendaSala: IAgendaSala) {
@@ -55,7 +70,10 @@ export class AgendaSalaUpdateComponent implements OnInit {
       id: agendaSala.id,
       status: agendaSala.status,
       horario: agendaSala.horario,
-      agendaReservaSala: agendaSala.agendaReservaSala
+      sala: agendaSala.sala,
+      diasAtendimento: agendaSala.diasAtendimento,
+      diasAtendimento: agendaSala.diasAtendimento,
+      diasAtendimento: agendaSala.diasAtendimento
     });
   }
 
@@ -79,7 +97,10 @@ export class AgendaSalaUpdateComponent implements OnInit {
       id: this.editForm.get(['id']).value,
       status: this.editForm.get(['status']).value,
       horario: this.editForm.get(['horario']).value,
-      agendaReservaSala: this.editForm.get(['agendaReservaSala']).value
+      sala: this.editForm.get(['sala']).value,
+      diasAtendimento: this.editForm.get(['diasAtendimento']).value,
+      diasAtendimento: this.editForm.get(['diasAtendimento']).value,
+      diasAtendimento: this.editForm.get(['diasAtendimento']).value
     };
   }
 
@@ -99,7 +120,11 @@ export class AgendaSalaUpdateComponent implements OnInit {
     this.jhiAlertService.error(errorMessage, null, null);
   }
 
-  trackAgendaReservaSalaById(index: number, item: IAgendaReservaSala) {
+  trackSalaById(index: number, item: ISala) {
+    return item.id;
+  }
+
+  trackDiasAtendimentoById(index: number, item: IDiasAtendimento) {
     return item.id;
   }
 }

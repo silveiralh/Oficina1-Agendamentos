@@ -8,11 +8,29 @@
     -->
     <changeSet id="20191011213408-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="agenda_reserva_sala_id"
+        <addForeignKeyConstraint baseColumnNames="sala_id"
                                  baseTableName="agenda_sala"
-                                 constraintName="fk_agenda_sala_agenda_reserva_sala_id"
+                                 constraintName="fk_agenda_sala_sala_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="agenda_reserva_sala"/>
+                                 referencedTableName="sala"/>
+
+        <addForeignKeyConstraint baseColumnNames="dias_atendimento_id"
+                                 baseTableName="agenda_sala"
+                                 constraintName="fk_agenda_sala_dias_atendimento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dias_atendimento"/>
+
+        <addForeignKeyConstraint baseColumnNames="dias_atendimento_id"
+                                 baseTableName="agenda_sala"
+                                 constraintName="fk_agenda_sala_dias_atendimento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dias_atendimento"/>
+
+        <addForeignKeyConstraint baseColumnNames="dias_atendimento_id"
+                                 baseTableName="agenda_sala"
+                                 constraintName="fk_agenda_sala_dias_atendimento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dias_atendimento"/>
 
     </changeSet>
 </databaseChangeLog>

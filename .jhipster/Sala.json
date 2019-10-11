@@ -12,10 +12,10 @@
     ],
     "relationships": [
         {
-            "relationshipName": "agendaSala",
+            "relationshipType": "one-to-many",
             "otherEntityName": "agendaSala",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
+            "otherEntityRelationshipName": "sala",
+            "relationshipName": "codigoSala"
         }
     ],
     "changelogDate": "20191011213402",

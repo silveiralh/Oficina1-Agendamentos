@@ -32,5 +32,8 @@
     <include file="config/liquibase/changelog/20191011213406_added_entity_constraints_AgendaServidor.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191011213408_added_entity_constraints_AgendaSala.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191011213410_added_entity_constraints_DiasAtendimento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191011213404_added_entity_constraints_AgendaAtendimentoServidor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191011213407_added_entity_constraints_AgendaAluno.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191011213409_added_entity_constraints_AgendaReservaSala.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

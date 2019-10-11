@@ -13,10 +13,28 @@
                 <dd>
                     <span>{{agendaSala.horario}}</span>
                 </dd>
-                <dt><span>Agenda Reserva Sala</span></dt>
+                <dt><span>Sala</span></dt>
                 <dd>
-                    <div *ngIf="agendaSala.agendaReservaSala">
-                        <a [routerLink]="['/agenda-reserva-sala', agendaSala.agendaReservaSala?.id, 'view']">{{agendaSala.agendaReservaSala?.id}}</a>
+                    <div *ngIf="agendaSala.sala">
+                        <a [routerLink]="['/sala', agendaSala.sala?.id, 'view']">{{agendaSala.sala?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Dias Atendimento</span></dt>
+                <dd>
+                    <div *ngIf="agendaSala.diasAtendimento">
+                        <a [routerLink]="['/dias-atendimento', agendaSala.diasAtendimento?.id, 'view']">{{agendaSala.diasAtendimento?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Dias Atendimento</span></dt>
+                <dd>
+                    <div *ngIf="agendaSala.diasAtendimento">
+                        <a [routerLink]="['/dias-atendimento', agendaSala.diasAtendimento?.id, 'view']">{{agendaSala.diasAtendimento?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Dias Atendimento</span></dt>
+                <dd>
+                    <div *ngIf="agendaSala.diasAtendimento">
+                        <a [routerLink]="['/dias-atendimento', agendaSala.diasAtendimento?.id, 'view']">{{agendaSala.diasAtendimento?.id}}</a>
                     </div>
                 </dd>
             </dl>

@@ -13,6 +13,30 @@
                 <dd>
                     <span>{{agendaAluno.horario}}</span>
                 </dd>
+                <dt><span>Aluno</span></dt>
+                <dd>
+                    <div *ngIf="agendaAluno.aluno">
+                        <a [routerLink]="['/aluno', agendaAluno.aluno?.id, 'view']">{{agendaAluno.aluno?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Dias Atendimento</span></dt>
+                <dd>
+                    <div *ngIf="agendaAluno.diasAtendimento">
+                        <a [routerLink]="['/dias-atendimento', agendaAluno.diasAtendimento?.id, 'view']">{{agendaAluno.diasAtendimento?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Dias Atendimento</span></dt>
+                <dd>
+                    <div *ngIf="agendaAluno.diasAtendimento">
+                        <a [routerLink]="['/dias-atendimento', agendaAluno.diasAtendimento?.id, 'view']">{{agendaAluno.diasAtendimento?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Dias Atendimento</span></dt>
+                <dd>
+                    <div *ngIf="agendaAluno.diasAtendimento">
+                        <a [routerLink]="['/dias-atendimento', agendaAluno.diasAtendimento?.id, 'view']">{{agendaAluno.diasAtendimento?.id}}</a>
+                    </div>
+                </dd>
             </dl>
 
             <button type="submit"

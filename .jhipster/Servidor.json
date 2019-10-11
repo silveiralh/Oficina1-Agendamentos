@@ -12,16 +12,22 @@
     ],
     "relationships": [
         {
-            "relationshipType": "one-to-many",
+            "relationshipName": "cargo",
             "otherEntityName": "cargo",
-            "otherEntityRelationshipName": "servidor",
-            "relationshipName": "nomeCargo"
-        },
-        {
-            "relationshipName": "agendaServidor",
-            "otherEntityName": "agendaServidor",
             "relationshipType": "many-to-one",
             "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "diasAtendimento",
+            "otherEntityRelationshipName": "servidor",
+            "relationshipName": "codSiape"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agendaServidor",
+            "otherEntityRelationshipName": "servidor",
+            "relationshipName": "codSiape"
         }
     ],
     "changelogDate": "20191011213403",

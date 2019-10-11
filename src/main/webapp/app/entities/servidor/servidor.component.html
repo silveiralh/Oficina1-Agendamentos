@@ -20,7 +20,7 @@
             <th><span>ID</span></th>
             <th><span>Cod Siape</span></th>
             <th><span>Nome Servidor</span></th>
-            <th><span>Agenda Servidor</span></th>
+            <th><span>Cargo</span></th>
             <th></th>
             </tr>
             </thead>
@@ -30,8 +30,8 @@
                 <td>{{servidor.codSiape}}</td>
                 <td>{{servidor.nomeServidor}}</td>
                 <td>
-                    <div *ngIf="servidor.agendaServidor">
-                        <a [routerLink]="['/agenda-servidor', servidor.agendaServidor?.id, 'view' ]" >{{servidor.agendaServidor?.id}}</a>
+                    <div *ngIf="servidor.cargo">
+                        <a [routerLink]="['/cargo', servidor.cargo?.id, 'view' ]" >{{servidor.cargo?.id}}</a>
                     </div>
                 </td>
                 <td class="text-right">

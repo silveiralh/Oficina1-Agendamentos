@@ -29,13 +29,17 @@ public class Servidor implements Serializable {
     @Column(name = "nome_servidor")
     private String nomeServidor;
 
-    @OneToMany(mappedBy = "servidor")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Cargo> nomeCargos = new HashSet<>();
-
     @ManyToOne
     @JsonIgnoreProperties("servidors")
-    private AgendaServidor agendaServidor;
+    private Cargo cargo;
+
+    @OneToMany(mappedBy = "servidor")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<DiasAtendimento> codSiapes = new HashSet<>();
+
+    @OneToMany(mappedBy = "servidor")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<AgendaServidor> codSiapes = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -72,42 +76,67 @@ public class Servidor implements Serializable {
         this.nomeServidor = nomeServidor;
     }
 
-    public Set<Cargo> getNomeCargos() {
-        return nomeCargos;
+    public Cargo getCargo() {
+        return cargo;
     }
 
-    public Servidor nomeCargos(Set<Cargo> cargos) {
-        this.nomeCargos = cargos;
+    public Servidor cargo(Cargo cargo) {
+        this.cargo = cargo;
         return this;
     }
 
-    public Servidor addNomeCargo(Cargo cargo) {
-        this.nomeCargos.add(cargo);
-        cargo.setServidor(this);
+    public void setCargo(Cargo cargo) {
+        this.cargo = cargo;
+    }
+
+    public Set<DiasAtendimento> getCodSiapes() {
+        return codSiapes;
+    }
+
+    public Servidor codSiapes(Set<DiasAtendimento> diasAtendimentos) {
+        this.codSiapes = diasAtendimentos;
         return this;
     }
 
-    public Servidor removeNomeCargo(Cargo cargo) {
-        this.nomeCargos.remove(cargo);
-        cargo.setServidor(null);
+    public Servidor addCodSiape(DiasAtendimento diasAtendimento) {
+        this.codSiapes.add(diasAtendimento);
+        diasAtendimento.setServidor(this);
         return this;
     }
 
-    public void setNomeCargos(Set<Cargo> cargos) {
-        this.nomeCargos = cargos;
-    }
-
-    public AgendaServidor getAgendaServidor() {
-        return agendaServidor;
-    }
-
-    public Servidor agendaServidor(AgendaServidor agendaServidor) {
-        this.agendaServidor = agendaServidor;
+    public Servidor removeCodSiape(DiasAtendimento diasAtendimento) {
+        this.codSiapes.remove(diasAtendimento);
+        diasAtendimento.setServidor(null);
         return this;
     }
 
-    public void setAgendaServidor(AgendaServidor agendaServidor) {
-        this.agendaServidor = agendaServidor;
+    public void setCodSiapes(Set<DiasAtendimento> diasAtendimentos) {
+        this.codSiapes = diasAtendimentos;
+    }
+
+    public Set<AgendaServidor> getCodSiapes() {
+        return codSiapes;
+    }
+
+    public Servidor codSiapes(Set<AgendaServidor> agendaServidors) {
+        this.codSiapes = agendaServidors;
+        return this;
+    }
+
+    public Servidor addCodSiape(AgendaServidor agendaServidor) {
+        this.codSiapes.add(agendaServidor);
+        agendaServidor.setServidor(this);
+        return this;
+    }
+
+    public Servidor removeCodSiape(AgendaServidor agendaServidor) {
+        this.codSiapes.remove(agendaServidor);
+        agendaServidor.setServidor(null);
+        return this;
+    }
+
+    public void setCodSiapes(Set<AgendaServidor> agendaServidors) {
+        this.codSiapes = agendaServidors;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

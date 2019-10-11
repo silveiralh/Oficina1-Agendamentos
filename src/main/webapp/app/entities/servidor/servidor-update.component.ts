@@ -9,8 +9,8 @@ import { filter, map } from 'rxjs/operators';
 import { JhiAlertService } from 'ng-jhipster';
 import { IServidor, Servidor } from 'app/shared/model/servidor.model';
 import { ServidorService } from './servidor.service';
-import { IAgendaServidor } from 'app/shared/model/agenda-servidor.model';
-import { AgendaServidorService } from 'app/entities/agenda-servidor/agenda-servidor.service';
+import { ICargo } from 'app/shared/model/cargo.model';
+import { CargoService } from 'app/entities/cargo/cargo.service';
 
 @Component({
   selector: 'jhi-servidor-update',
@@ -19,19 +19,19 @@ import { AgendaServidorService } from 'app/entities/agenda-servidor/agenda-servi
 export class ServidorUpdateComponent implements OnInit {
   isSaving: boolean;
 
-  agendaservidors: IAgendaServidor[];
+  cargos: ICargo[];
 
   editForm = this.fb.group({
     id: [],
     codSiape: [],
     nomeServidor: [],
-    agendaServidor: []
+    cargo: []
   });
 
   constructor(
     protected jhiAlertService: JhiAlertService,
     protected servidorService: ServidorService,
-    protected agendaServidorService: AgendaServidorService,
+    protected cargoService: CargoService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -41,13 +41,13 @@ export class ServidorUpdateComponent implements OnInit {
     this.activatedRoute.data.subscribe(({ servidor }) => {
       this.updateForm(servidor);
     });
-    this.agendaServidorService
+    this.cargoService
       .query()
       .pipe(
-        filter((mayBeOk: HttpResponse<IAgendaServidor[]>) => mayBeOk.ok),
-        map((response: HttpResponse<IAgendaServidor[]>) => response.body)
+        filter((mayBeOk: HttpResponse<ICargo[]>) => mayBeOk.ok),
+        map((response: HttpResponse<ICargo[]>) => response.body)
       )
-      .subscribe((res: IAgendaServidor[]) => (this.agendaservidors = res), (res: HttpErrorResponse) => this.onError(res.message));
+      .subscribe((res: ICargo[]) => (this.cargos = res), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(servidor: IServidor) {
@@ -55,7 +55,7 @@ export class ServidorUpdateComponent implements OnInit {
       id: servidor.id,
       codSiape: servidor.codSiape,
       nomeServidor: servidor.nomeServidor,
-      agendaServidor: servidor.agendaServidor
+      cargo: servidor.cargo
     });
   }
 
@@ -79,7 +79,7 @@ export class ServidorUpdateComponent implements OnInit {
       id: this.editForm.get(['id']).value,
       codSiape: this.editForm.get(['codSiape']).value,
       nomeServidor: this.editForm.get(['nomeServidor']).value,
-      agendaServidor: this.editForm.get(['agendaServidor']).value
+      cargo: this.editForm.get(['cargo']).value
     };
   }
 
@@ -99,7 +99,7 @@ export class ServidorUpdateComponent implements OnInit {
     this.jhiAlertService.error(errorMessage, null, null);
   }
 
-  trackAgendaServidorById(index: number, item: IAgendaServidor) {
+  trackCargoById(index: number, item: ICargo) {
     return item.id;
   }
 }

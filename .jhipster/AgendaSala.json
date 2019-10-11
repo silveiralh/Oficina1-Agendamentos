@@ -14,14 +14,56 @@
     ],
     "relationships": [
         {
-            "relationshipType": "one-to-many",
+            "relationshipName": "sala",
             "otherEntityName": "sala",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agendaReservaSala",
+            "otherEntityRelationshipName": "agendaSala",
+            "relationshipName": "horario"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agendaReservaSala",
+            "otherEntityRelationshipName": "agendaSala",
+            "relationshipName": "mes"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agendaReservaSala",
+            "otherEntityRelationshipName": "agendaSala",
+            "relationshipName": "diaMes"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agendaReservaSala",
+            "otherEntityRelationshipName": "agendaSala",
+            "relationshipName": "status"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agendaReservaSala",
             "otherEntityRelationshipName": "agendaSala",
             "relationshipName": "codigoSala"
         },
         {
-            "relationshipName": "agendaReservaSala",
-            "otherEntityName": "agendaReservaSala",
+            "relationshipName": "diasAtendimento",
+            "otherEntityName": "diasAtendimento",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "diasAtendimento",
+            "otherEntityName": "diasAtendimento",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "diasAtendimento",
+            "otherEntityName": "diasAtendimento",
             "relationshipType": "many-to-one",
             "otherEntityField": "id"
         }

@@ -15,13 +15,6 @@
                            formControlName="nomeCargo"/>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" for="field_servidor">Servidor</label>
-                    <select class="form-control" id="field_servidor" name="servidor" formControlName="servidor">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="servidorOption.id === editForm.get('servidor').value?.id ? editForm.get('servidor').value : servidorOption" *ngFor="let servidorOption of servidors; trackBy: trackServidorById">{{servidorOption.id}}</option>
-                    </select>
-                </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">

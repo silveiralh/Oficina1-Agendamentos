@@ -9,16 +9,40 @@
     ],
     "relationships": [
         {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "agendaServidor",
-            "otherEntityRelationshipName": "agendaAtendimentoServidor",
-            "relationshipName": "codSiape"
+            "relationshipName": "aluno",
+            "otherEntityName": "aluno",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         },
         {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "aluno",
-            "otherEntityRelationshipName": "agendaAtendimentoServidor",
-            "relationshipName": "raAluno"
+            "relationshipName": "agendaServidor",
+            "otherEntityName": "agendaServidor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "agendaServidor",
+            "otherEntityName": "agendaServidor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "agendaServidor",
+            "otherEntityName": "agendaServidor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "agendaServidor",
+            "otherEntityName": "agendaServidor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "agendaServidor",
+            "otherEntityName": "agendaServidor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "changelogDate": "20191011213404",
