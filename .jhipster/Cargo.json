@@ -1,0 +1,26 @@
+{
+    "name": "Cargo",
+    "fields": [
+        {
+            "fieldName": "nomeCargo",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "servidor",
+            "otherEntityName": "servidor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191011213401",
+    "entityTableName": "cargo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

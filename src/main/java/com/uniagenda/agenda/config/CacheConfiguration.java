@@ -44,6 +44,25 @@ public class CacheConfiguration {
             createCache(cm, com.uniagenda.agenda.domain.User.class.getName() + ".authorities");
             createCache(cm, com.uniagenda.agenda.domain.PersistentToken.class.getName());
             createCache(cm, com.uniagenda.agenda.domain.User.class.getName() + ".persistentTokens");
+            createCache(cm, com.uniagenda.agenda.domain.Cargo.class.getName());
+            createCache(cm, com.uniagenda.agenda.domain.Sala.class.getName());
+            createCache(cm, com.uniagenda.agenda.domain.Servidor.class.getName());
+            createCache(cm, com.uniagenda.agenda.domain.Servidor.class.getName() + ".nomeCargos");
+            createCache(cm, com.uniagenda.agenda.domain.AgendaAtendimentoServidor.class.getName());
+            createCache(cm, com.uniagenda.agenda.domain.AgendaAtendimentoServidor.class.getName() + ".codSiapes");
+            createCache(cm, com.uniagenda.agenda.domain.AgendaAtendimentoServidor.class.getName() + ".raAlunos");
+            createCache(cm, com.uniagenda.agenda.domain.Aluno.class.getName());
+            createCache(cm, com.uniagenda.agenda.domain.AgendaServidor.class.getName());
+            createCache(cm, com.uniagenda.agenda.domain.AgendaServidor.class.getName() + ".codSiapes");
+            createCache(cm, com.uniagenda.agenda.domain.AgendaAluno.class.getName());
+            createCache(cm, com.uniagenda.agenda.domain.AgendaAluno.class.getName() + ".statusDias");
+            createCache(cm, com.uniagenda.agenda.domain.AgendaAluno.class.getName() + ".raAlunos");
+            createCache(cm, com.uniagenda.agenda.domain.AgendaSala.class.getName());
+            createCache(cm, com.uniagenda.agenda.domain.AgendaSala.class.getName() + ".codigoSalas");
+            createCache(cm, com.uniagenda.agenda.domain.AgendaReservaSala.class.getName());
+            createCache(cm, com.uniagenda.agenda.domain.AgendaReservaSala.class.getName() + ".raAlunos");
+            createCache(cm, com.uniagenda.agenda.domain.AgendaReservaSala.class.getName() + ".codigoSalas");
+            createCache(cm, com.uniagenda.agenda.domain.DiasAtendimento.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

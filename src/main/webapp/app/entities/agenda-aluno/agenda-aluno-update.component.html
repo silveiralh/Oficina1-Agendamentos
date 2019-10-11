@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-agenda-aluno-heading">Create or edit a Agenda Aluno</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="Livre">Livre</option>
+                        <option value="Ocupado">Ocupado</option>
+                        <option value="Atendido">Atendido</option>
+                        <option value="Remarcado">Remarcado</option>
+                        <option value="Faltou">Faltou</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_horario">Horario</label>
+                    <select class="form-control" name="horario" formControlName="horario" id="field_horario">
+                        <option value="H8">H8</option>
+                        <option value="H9">H9</option>
+                        <option value="H10">H10</option>
+                        <option value="H11">H11</option>
+                        <option value="H12">H12</option>
+                        <option value="H13">H13</option>
+                        <option value="H14">H14</option>
+                        <option value="H15">H15</option>
+                        <option value="H16">H16</option>
+                        <option value="H17">H17</option>
+                        <option value="H18H">H18H</option>
+                        <option value="H19">H19</option>
+                        <option value="H20">H20</option>
+                        <option value="H21">H21</option>
+                        <option value="H22">H22</option>
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

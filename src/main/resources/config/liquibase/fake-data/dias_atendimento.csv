@@ -1,0 +1,11 @@
+id;mes;dia_mes;dia_semana;status_dia
+1;Fevereiro;D10;Quarta_feira;Disponivel
+2;Marco;D31;Segunda_feira;Indisponivel
+3;Janeiro;D24;Terca_feira;Indisponivel
+4;Abril;D23;Quarta_feira;Disponivel
+5;Novembro;D29;Sexta_feira;Disponivel
+6;Marco;D7;Quinta_feira;Indisponivel
+7;Julho;D12;Segunda_feira;Indisponivel
+8;Maio;D11;Quarta_feira;Indisponivel
+9;Dezembro;D26;Quinta_feira;Disponivel
+10;Julho;D11;Quarta_feira;Indisponivel
