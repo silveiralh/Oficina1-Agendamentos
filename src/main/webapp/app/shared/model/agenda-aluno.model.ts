@@ -1,5 +1,5 @@
-import { IDiasAtendimento } from 'app/shared/model/dias-atendimento.model';
 import { IAluno } from 'app/shared/model/aluno.model';
+import { IDiasAtendimento } from 'app/shared/model/dias-atendimento.model';
 import { StatusAgenda } from 'app/shared/model/enumerations/status-agenda.model';
 import { Horario } from 'app/shared/model/enumerations/horario.model';
 
@@ -7,8 +7,10 @@ export interface IAgendaAluno {
   id?: number;
   status?: StatusAgenda;
   horario?: Horario;
-  statusDias?: IDiasAtendimento[];
-  raAlunos?: IAluno[];
+  aluno?: IAluno;
+  diasAtendimento?: IDiasAtendimento;
+  diasAtendimento?: IDiasAtendimento;
+  diasAtendimento?: IDiasAtendimento;
 }
 
 export class AgendaAluno implements IAgendaAluno {
@@ -16,7 +18,9 @@ export class AgendaAluno implements IAgendaAluno {
     public id?: number,
     public status?: StatusAgenda,
     public horario?: Horario,
-    public statusDias?: IDiasAtendimento[],
-    public raAlunos?: IAluno[]
+    public aluno?: IAluno,
+    public diasAtendimento?: IDiasAtendimento,
+    public diasAtendimento?: IDiasAtendimento,
+    public diasAtendimento?: IDiasAtendimento
   ) {}
 }

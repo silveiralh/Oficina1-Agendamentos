@@ -5,10 +5,23 @@ import { StatusAgenda } from 'app/shared/model/enumerations/status-agenda.model'
 export interface IAgendaReservaSala {
   id?: number;
   status?: StatusAgenda;
-  raAlunos?: IAluno[];
-  codigoSalas?: IAgendaSala[];
+  aluno?: IAluno;
+  agendaSala?: IAgendaSala;
+  agendaSala?: IAgendaSala;
+  agendaSala?: IAgendaSala;
+  agendaSala?: IAgendaSala;
+  agendaSala?: IAgendaSala;
 }
 
 export class AgendaReservaSala implements IAgendaReservaSala {
-  constructor(public id?: number, public status?: StatusAgenda, public raAlunos?: IAluno[], public codigoSalas?: IAgendaSala[]) {}
+  constructor(
+    public id?: number,
+    public status?: StatusAgenda,
+    public aluno?: IAluno,
+    public agendaSala?: IAgendaSala,
+    public agendaSala?: IAgendaSala,
+    public agendaSala?: IAgendaSala,
+    public agendaSala?: IAgendaSala,
+    public agendaSala?: IAgendaSala
+  ) {}
 }

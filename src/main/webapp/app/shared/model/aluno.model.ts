@@ -9,9 +9,9 @@ export interface IAluno {
   nomeAluno?: string;
   periodo?: number;
   curso?: Curso;
-  agendaAtendimentoServidor?: IAgendaAtendimentoServidor;
-  agendaAluno?: IAgendaAluno;
-  agendaReservaSala?: IAgendaReservaSala;
+  raAlunos?: IAgendaAtendimentoServidor[];
+  raAlunos?: IAgendaAluno[];
+  raAlunos?: IAgendaReservaSala[];
 }
 
 export class Aluno implements IAluno {
@@ -21,8 +21,8 @@ export class Aluno implements IAluno {
     public nomeAluno?: string,
     public periodo?: number,
     public curso?: Curso,
-    public agendaAtendimentoServidor?: IAgendaAtendimentoServidor,
-    public agendaAluno?: IAgendaAluno,
-    public agendaReservaSala?: IAgendaReservaSala
+    public raAlunos?: IAgendaAtendimentoServidor[],
+    public raAlunos?: IAgendaAluno[],
+    public raAlunos?: IAgendaReservaSala[]
   ) {}
 }

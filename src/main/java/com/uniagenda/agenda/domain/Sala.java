@@ -1,11 +1,12 @@
 package com.uniagenda.agenda.domain;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A Sala.
@@ -27,9 +28,9 @@ public class Sala implements Serializable {
     @Column(name = "codigo_sala")
     private String codigoSala;
 
-    @ManyToOne
-    @JsonIgnoreProperties("salas")
-    private AgendaSala agendaSala;
+    @OneToMany(mappedBy = "sala")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<AgendaSala> codigoSalas = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -66,17 +67,29 @@ public class Sala implements Serializable {
         this.codigoSala = codigoSala;
     }
 
-    public AgendaSala getAgendaSala() {
-        return agendaSala;
+    public Set<AgendaSala> getCodigoSalas() {
+        return codigoSalas;
     }
 
-    public Sala agendaSala(AgendaSala agendaSala) {
-        this.agendaSala = agendaSala;
+    public Sala codigoSalas(Set<AgendaSala> agendaSalas) {
+        this.codigoSalas = agendaSalas;
         return this;
     }
 
-    public void setAgendaSala(AgendaSala agendaSala) {
-        this.agendaSala = agendaSala;
+    public Sala addCodigoSala(AgendaSala agendaSala) {
+        this.codigoSalas.add(agendaSala);
+        agendaSala.setSala(this);
+        return this;
+    }
+
+    public Sala removeCodigoSala(AgendaSala agendaSala) {
+        this.codigoSalas.remove(agendaSala);
+        agendaSala.setSala(null);
+        return this;
+    }
+
+    public void setCodigoSalas(Set<AgendaSala> agendaSalas) {
+        this.codigoSalas = agendaSalas;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

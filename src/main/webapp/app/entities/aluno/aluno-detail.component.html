@@ -21,24 +21,6 @@
                 <dd>
                     <span>{{aluno.curso}}</span>
                 </dd>
-                <dt><span>Agenda Atendimento Servidor</span></dt>
-                <dd>
-                    <div *ngIf="aluno.agendaAtendimentoServidor">
-                        <a [routerLink]="['/agenda-atendimento-servidor', aluno.agendaAtendimentoServidor?.id, 'view']">{{aluno.agendaAtendimentoServidor?.id}}</a>
-                    </div>
-                </dd>
-                <dt><span>Agenda Aluno</span></dt>
-                <dd>
-                    <div *ngIf="aluno.agendaAluno">
-                        <a [routerLink]="['/agenda-aluno', aluno.agendaAluno?.id, 'view']">{{aluno.agendaAluno?.id}}</a>
-                    </div>
-                </dd>
-                <dt><span>Agenda Reserva Sala</span></dt>
-                <dd>
-                    <div *ngIf="aluno.agendaReservaSala">
-                        <a [routerLink]="['/agenda-reserva-sala', aluno.agendaReservaSala?.id, 'view']">{{aluno.agendaReservaSala?.id}}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

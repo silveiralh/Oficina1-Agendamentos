@@ -1,12 +1,11 @@
 package com.uniagenda.agenda.domain;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 import com.uniagenda.agenda.domain.enumeration.StatusAgenda;
 
@@ -28,13 +27,29 @@ public class AgendaReservaSala implements Serializable {
     @Column(name = "status")
     private StatusAgenda status;
 
-    @OneToMany(mappedBy = "agendaReservaSala")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Aluno> raAlunos = new HashSet<>();
+    @ManyToOne
+    @JsonIgnoreProperties("agendaReservaSalas")
+    private Aluno aluno;
 
-    @OneToMany(mappedBy = "agendaReservaSala")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AgendaSala> codigoSalas = new HashSet<>();
+    @ManyToOne
+    @JsonIgnoreProperties("agendaReservaSalas")
+    private AgendaSala agendaSala;
+
+    @ManyToOne
+    @JsonIgnoreProperties("agendaReservaSalas")
+    private AgendaSala agendaSala;
+
+    @ManyToOne
+    @JsonIgnoreProperties("agendaReservaSalas")
+    private AgendaSala agendaSala;
+
+    @ManyToOne
+    @JsonIgnoreProperties("agendaReservaSalas")
+    private AgendaSala agendaSala;
+
+    @ManyToOne
+    @JsonIgnoreProperties("agendaReservaSalas")
+    private AgendaSala agendaSala;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -58,54 +73,82 @@ public class AgendaReservaSala implements Serializable {
         this.status = status;
     }
 
-    public Set<Aluno> getRaAlunos() {
-        return raAlunos;
+    public Aluno getAluno() {
+        return aluno;
     }
 
-    public AgendaReservaSala raAlunos(Set<Aluno> alunos) {
-        this.raAlunos = alunos;
+    public AgendaReservaSala aluno(Aluno aluno) {
+        this.aluno = aluno;
         return this;
     }
 
-    public AgendaReservaSala addRaAluno(Aluno aluno) {
-        this.raAlunos.add(aluno);
-        aluno.setAgendaReservaSala(this);
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
+
+    public AgendaSala getAgendaSala() {
+        return agendaSala;
+    }
+
+    public AgendaReservaSala agendaSala(AgendaSala agendaSala) {
+        this.agendaSala = agendaSala;
         return this;
     }
 
-    public AgendaReservaSala removeRaAluno(Aluno aluno) {
-        this.raAlunos.remove(aluno);
-        aluno.setAgendaReservaSala(null);
+    public void setAgendaSala(AgendaSala agendaSala) {
+        this.agendaSala = agendaSala;
+    }
+
+    public AgendaSala getAgendaSala() {
+        return agendaSala;
+    }
+
+    public AgendaReservaSala agendaSala(AgendaSala agendaSala) {
+        this.agendaSala = agendaSala;
         return this;
     }
 
-    public void setRaAlunos(Set<Aluno> alunos) {
-        this.raAlunos = alunos;
+    public void setAgendaSala(AgendaSala agendaSala) {
+        this.agendaSala = agendaSala;
     }
 
-    public Set<AgendaSala> getCodigoSalas() {
-        return codigoSalas;
+    public AgendaSala getAgendaSala() {
+        return agendaSala;
     }
 
-    public AgendaReservaSala codigoSalas(Set<AgendaSala> agendaSalas) {
-        this.codigoSalas = agendaSalas;
+    public AgendaReservaSala agendaSala(AgendaSala agendaSala) {
+        this.agendaSala = agendaSala;
         return this;
     }
 
-    public AgendaReservaSala addCodigoSala(AgendaSala agendaSala) {
-        this.codigoSalas.add(agendaSala);
-        agendaSala.setAgendaReservaSala(this);
+    public void setAgendaSala(AgendaSala agendaSala) {
+        this.agendaSala = agendaSala;
+    }
+
+    public AgendaSala getAgendaSala() {
+        return agendaSala;
+    }
+
+    public AgendaReservaSala agendaSala(AgendaSala agendaSala) {
+        this.agendaSala = agendaSala;
         return this;
     }
 
-    public AgendaReservaSala removeCodigoSala(AgendaSala agendaSala) {
-        this.codigoSalas.remove(agendaSala);
-        agendaSala.setAgendaReservaSala(null);
+    public void setAgendaSala(AgendaSala agendaSala) {
+        this.agendaSala = agendaSala;
+    }
+
+    public AgendaSala getAgendaSala() {
+        return agendaSala;
+    }
+
+    public AgendaReservaSala agendaSala(AgendaSala agendaSala) {
+        this.agendaSala = agendaSala;
         return this;
     }
 
-    public void setCodigoSalas(Set<AgendaSala> agendaSalas) {
-        this.codigoSalas = agendaSalas;
+    public void setAgendaSala(AgendaSala agendaSala) {
+        this.agendaSala = agendaSala;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

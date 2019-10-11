@@ -9,8 +9,8 @@ import { filter, map } from 'rxjs/operators';
 import { JhiAlertService } from 'ng-jhipster';
 import { IDiasAtendimento, DiasAtendimento } from 'app/shared/model/dias-atendimento.model';
 import { DiasAtendimentoService } from './dias-atendimento.service';
-import { IAgendaAluno } from 'app/shared/model/agenda-aluno.model';
-import { AgendaAlunoService } from 'app/entities/agenda-aluno/agenda-aluno.service';
+import { IServidor } from 'app/shared/model/servidor.model';
+import { ServidorService } from 'app/entities/servidor/servidor.service';
 
 @Component({
   selector: 'jhi-dias-atendimento-update',
@@ -19,7 +19,7 @@ import { AgendaAlunoService } from 'app/entities/agenda-aluno/agenda-aluno.servi
 export class DiasAtendimentoUpdateComponent implements OnInit {
   isSaving: boolean;
 
-  agendaalunos: IAgendaAluno[];
+  servidors: IServidor[];
 
   editForm = this.fb.group({
     id: [],
@@ -27,13 +27,13 @@ export class DiasAtendimentoUpdateComponent implements OnInit {
     diaMes: [],
     diaSemana: [],
     statusDia: [],
-    agendaAluno: []
+    servidor: []
   });
 
   constructor(
     protected jhiAlertService: JhiAlertService,
     protected diasAtendimentoService: DiasAtendimentoService,
-    protected agendaAlunoService: AgendaAlunoService,
+    protected servidorService: ServidorService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -43,13 +43,13 @@ export class DiasAtendimentoUpdateComponent implements OnInit {
     this.activatedRoute.data.subscribe(({ diasAtendimento }) => {
       this.updateForm(diasAtendimento);
     });
-    this.agendaAlunoService
+    this.servidorService
       .query()
       .pipe(
-        filter((mayBeOk: HttpResponse<IAgendaAluno[]>) => mayBeOk.ok),
-        map((response: HttpResponse<IAgendaAluno[]>) => response.body)
+        filter((mayBeOk: HttpResponse<IServidor[]>) => mayBeOk.ok),
+        map((response: HttpResponse<IServidor[]>) => response.body)
       )
-      .subscribe((res: IAgendaAluno[]) => (this.agendaalunos = res), (res: HttpErrorResponse) => this.onError(res.message));
+      .subscribe((res: IServidor[]) => (this.servidors = res), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(diasAtendimento: IDiasAtendimento) {
@@ -59,7 +59,7 @@ export class DiasAtendimentoUpdateComponent implements OnInit {
       diaMes: diasAtendimento.diaMes,
       diaSemana: diasAtendimento.diaSemana,
       statusDia: diasAtendimento.statusDia,
-      agendaAluno: diasAtendimento.agendaAluno
+      servidor: diasAtendimento.servidor
     });
   }
 
@@ -85,7 +85,7 @@ export class DiasAtendimentoUpdateComponent implements OnInit {
       diaMes: this.editForm.get(['diaMes']).value,
       diaSemana: this.editForm.get(['diaSemana']).value,
       statusDia: this.editForm.get(['statusDia']).value,
-      agendaAluno: this.editForm.get(['agendaAluno']).value
+      servidor: this.editForm.get(['servidor']).value
     };
   }
 
@@ -105,7 +105,7 @@ export class DiasAtendimentoUpdateComponent implements OnInit {
     this.jhiAlertService.error(errorMessage, null, null);
   }
 
-  trackAgendaAlunoById(index: number, item: IAgendaAluno) {
+  trackServidorById(index: number, item: IServidor) {
     return item.id;
   }
 }

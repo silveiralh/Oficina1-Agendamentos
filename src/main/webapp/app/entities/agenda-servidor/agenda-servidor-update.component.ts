@@ -9,8 +9,10 @@ import { filter, map } from 'rxjs/operators';
 import { JhiAlertService } from 'ng-jhipster';
 import { IAgendaServidor, AgendaServidor } from 'app/shared/model/agenda-servidor.model';
 import { AgendaServidorService } from './agenda-servidor.service';
-import { IAgendaAtendimentoServidor } from 'app/shared/model/agenda-atendimento-servidor.model';
-import { AgendaAtendimentoServidorService } from 'app/entities/agenda-atendimento-servidor/agenda-atendimento-servidor.service';
+import { IServidor } from 'app/shared/model/servidor.model';
+import { ServidorService } from 'app/entities/servidor/servidor.service';
+import { IDiasAtendimento } from 'app/shared/model/dias-atendimento.model';
+import { DiasAtendimentoService } from 'app/entities/dias-atendimento/dias-atendimento.service';
 
 @Component({
   selector: 'jhi-agenda-servidor-update',
@@ -19,19 +21,25 @@ import { AgendaAtendimentoServidorService } from 'app/entities/agenda-atendiment
 export class AgendaServidorUpdateComponent implements OnInit {
   isSaving: boolean;
 
-  agendaatendimentoservidors: IAgendaAtendimentoServidor[];
+  servidors: IServidor[];
+
+  diasatendimentos: IDiasAtendimento[];
 
   editForm = this.fb.group({
     id: [],
     status: [],
     horario: [],
-    agendaAtendimentoServidor: []
+    servidor: [],
+    diasAtendimento: [],
+    diasAtendimento: [],
+    diasAtendimento: []
   });
 
   constructor(
     protected jhiAlertService: JhiAlertService,
     protected agendaServidorService: AgendaServidorService,
-    protected agendaAtendimentoServidorService: AgendaAtendimentoServidorService,
+    protected servidorService: ServidorService,
+    protected diasAtendimentoService: DiasAtendimentoService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -41,16 +49,20 @@ export class AgendaServidorUpdateComponent implements OnInit {
     this.activatedRoute.data.subscribe(({ agendaServidor }) => {
       this.updateForm(agendaServidor);
     });
-    this.agendaAtendimentoServidorService
+    this.servidorService
       .query()
       .pipe(
-        filter((mayBeOk: HttpResponse<IAgendaAtendimentoServidor[]>) => mayBeOk.ok),
-        map((response: HttpResponse<IAgendaAtendimentoServidor[]>) => response.body)
+        filter((mayBeOk: HttpResponse<IServidor[]>) => mayBeOk.ok),
+        map((response: HttpResponse<IServidor[]>) => response.body)
       )
-      .subscribe(
-        (res: IAgendaAtendimentoServidor[]) => (this.agendaatendimentoservidors = res),
-        (res: HttpErrorResponse) => this.onError(res.message)
-      );
+      .subscribe((res: IServidor[]) => (this.servidors = res), (res: HttpErrorResponse) => this.onError(res.message));
+    this.diasAtendimentoService
+      .query()
+      .pipe(
+        filter((mayBeOk: HttpResponse<IDiasAtendimento[]>) => mayBeOk.ok),
+        map((response: HttpResponse<IDiasAtendimento[]>) => response.body)
+      )
+      .subscribe((res: IDiasAtendimento[]) => (this.diasatendimentos = res), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(agendaServidor: IAgendaServidor) {
@@ -58,7 +70,10 @@ export class AgendaServidorUpdateComponent implements OnInit {
       id: agendaServidor.id,
       status: agendaServidor.status,
       horario: agendaServidor.horario,
-      agendaAtendimentoServidor: agendaServidor.agendaAtendimentoServidor
+      servidor: agendaServidor.servidor,
+      diasAtendimento: agendaServidor.diasAtendimento,
+      diasAtendimento: agendaServidor.diasAtendimento,
+      diasAtendimento: agendaServidor.diasAtendimento
     });
   }
 
@@ -82,7 +97,10 @@ export class AgendaServidorUpdateComponent implements OnInit {
       id: this.editForm.get(['id']).value,
       status: this.editForm.get(['status']).value,
       horario: this.editForm.get(['horario']).value,
-      agendaAtendimentoServidor: this.editForm.get(['agendaAtendimentoServidor']).value
+      servidor: this.editForm.get(['servidor']).value,
+      diasAtendimento: this.editForm.get(['diasAtendimento']).value,
+      diasAtendimento: this.editForm.get(['diasAtendimento']).value,
+      diasAtendimento: this.editForm.get(['diasAtendimento']).value
     };
   }
 
@@ -102,7 +120,11 @@ export class AgendaServidorUpdateComponent implements OnInit {
     this.jhiAlertService.error(errorMessage, null, null);
   }
 
-  trackAgendaAtendimentoServidorById(index: number, item: IAgendaAtendimentoServidor) {
+  trackServidorById(index: number, item: IServidor) {
+    return item.id;
+  }
+
+  trackDiasAtendimentoById(index: number, item: IDiasAtendimento) {
     return item.id;
   }
 }

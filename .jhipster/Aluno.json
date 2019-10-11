@@ -21,22 +21,22 @@
     ],
     "relationships": [
         {
-            "relationshipName": "agendaAtendimentoServidor",
+            "relationshipType": "one-to-many",
             "otherEntityName": "agendaAtendimentoServidor",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
+            "otherEntityRelationshipName": "aluno",
+            "relationshipName": "raAluno"
         },
         {
-            "relationshipName": "agendaAluno",
+            "relationshipType": "one-to-many",
             "otherEntityName": "agendaAluno",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
+            "otherEntityRelationshipName": "aluno",
+            "relationshipName": "raAluno"
         },
         {
-            "relationshipName": "agendaReservaSala",
+            "relationshipType": "one-to-many",
             "otherEntityName": "agendaReservaSala",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
+            "otherEntityRelationshipName": "aluno",
+            "relationshipName": "raAluno"
         }
     ],
     "changelogDate": "20191011213405",

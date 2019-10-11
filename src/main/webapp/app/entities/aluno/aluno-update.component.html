@@ -37,27 +37,6 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" for="field_agendaAtendimentoServidor">Agenda Atendimento Servidor</label>
-                    <select class="form-control" id="field_agendaAtendimentoServidor" name="agendaAtendimentoServidor" formControlName="agendaAtendimentoServidor">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="agendaAtendimentoServidorOption.id === editForm.get('agendaAtendimentoServidor').value?.id ? editForm.get('agendaAtendimentoServidor').value : agendaAtendimentoServidorOption" *ngFor="let agendaAtendimentoServidorOption of agendaatendimentoservidors; trackBy: trackAgendaAtendimentoServidorById">{{agendaAtendimentoServidorOption.id}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" for="field_agendaAluno">Agenda Aluno</label>
-                    <select class="form-control" id="field_agendaAluno" name="agendaAluno" formControlName="agendaAluno">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="agendaAlunoOption.id === editForm.get('agendaAluno').value?.id ? editForm.get('agendaAluno').value : agendaAlunoOption" *ngFor="let agendaAlunoOption of agendaalunos; trackBy: trackAgendaAlunoById">{{agendaAlunoOption.id}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" for="field_agendaReservaSala">Agenda Reserva Sala</label>
-                    <select class="form-control" id="field_agendaReservaSala" name="agendaReservaSala" formControlName="agendaReservaSala">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="agendaReservaSalaOption.id === editForm.get('agendaReservaSala').value?.id ? editForm.get('agendaReservaSala').value : agendaReservaSalaOption" *ngFor="let agendaReservaSalaOption of agendareservasalas; trackBy: trackAgendaReservaSalaById">{{agendaReservaSalaOption.id}}</option>
-                    </select>
-                </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">

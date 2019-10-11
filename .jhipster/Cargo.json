@@ -8,10 +8,10 @@
     ],
     "relationships": [
         {
-            "relationshipName": "servidor",
+            "relationshipType": "one-to-many",
             "otherEntityName": "servidor",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
+            "otherEntityRelationshipName": "cargo",
+            "relationshipName": "nomeCargo"
         }
     ],
     "changelogDate": "20191011213401",

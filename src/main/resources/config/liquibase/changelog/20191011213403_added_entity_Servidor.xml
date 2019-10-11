@@ -22,7 +22,7 @@
             <column name="nome_servidor" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="agenda_servidor_id" type="bigint">
+            <column name="cargo_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->

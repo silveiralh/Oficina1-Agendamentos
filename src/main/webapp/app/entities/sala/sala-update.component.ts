@@ -5,12 +5,8 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
-import { JhiAlertService } from 'ng-jhipster';
 import { ISala, Sala } from 'app/shared/model/sala.model';
 import { SalaService } from './sala.service';
-import { IAgendaSala } from 'app/shared/model/agenda-sala.model';
-import { AgendaSalaService } from 'app/entities/agenda-sala/agenda-sala.service';
 
 @Component({
   selector: 'jhi-sala-update',
@@ -19,43 +15,26 @@ import { AgendaSalaService } from 'app/entities/agenda-sala/agenda-sala.service'
 export class SalaUpdateComponent implements OnInit {
   isSaving: boolean;
 
-  agendasalas: IAgendaSala[];
-
   editForm = this.fb.group({
     id: [],
     nomeSala: [],
-    codigoSala: [],
-    agendaSala: []
+    codigoSala: []
   });
 
-  constructor(
-    protected jhiAlertService: JhiAlertService,
-    protected salaService: SalaService,
-    protected agendaSalaService: AgendaSalaService,
-    protected activatedRoute: ActivatedRoute,
-    private fb: FormBuilder
-  ) {}
+  constructor(protected salaService: SalaService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
 
   ngOnInit() {
     this.isSaving = false;
     this.activatedRoute.data.subscribe(({ sala }) => {
       this.updateForm(sala);
     });
-    this.agendaSalaService
-      .query()
-      .pipe(
-        filter((mayBeOk: HttpResponse<IAgendaSala[]>) => mayBeOk.ok),
-        map((response: HttpResponse<IAgendaSala[]>) => response.body)
-      )
-      .subscribe((res: IAgendaSala[]) => (this.agendasalas = res), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(sala: ISala) {
     this.editForm.patchValue({
       id: sala.id,
       nomeSala: sala.nomeSala,
-      codigoSala: sala.codigoSala,
-      agendaSala: sala.agendaSala
+      codigoSala: sala.codigoSala
     });
   }
 
@@ -78,8 +57,7 @@ export class SalaUpdateComponent implements OnInit {
       ...new Sala(),
       id: this.editForm.get(['id']).value,
       nomeSala: this.editForm.get(['nomeSala']).value,
-      codigoSala: this.editForm.get(['codigoSala']).value,
-      agendaSala: this.editForm.get(['agendaSala']).value
+      codigoSala: this.editForm.get(['codigoSala']).value
     };
   }
 
@@ -94,12 +72,5 @@ export class SalaUpdateComponent implements OnInit {
 
   protected onSaveError() {
     this.isSaving = false;
-  }
-  protected onError(errorMessage: string) {
-    this.jhiAlertService.error(errorMessage, null, null);
-  }
-
-  trackAgendaSalaById(index: number, item: IAgendaSala) {
-    return item.id;
   }
 }

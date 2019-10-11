@@ -63,6 +63,21 @@ public class CacheConfiguration {
             createCache(cm, com.uniagenda.agenda.domain.AgendaReservaSala.class.getName() + ".raAlunos");
             createCache(cm, com.uniagenda.agenda.domain.AgendaReservaSala.class.getName() + ".codigoSalas");
             createCache(cm, com.uniagenda.agenda.domain.DiasAtendimento.class.getName());
+            createCache(cm, com.uniagenda.agenda.domain.Cargo.class.getName() + ".nomeCargos");
+            createCache(cm, com.uniagenda.agenda.domain.Sala.class.getName() + ".codigoSalas");
+            createCache(cm, com.uniagenda.agenda.domain.Servidor.class.getName() + ".codSiapes");
+            createCache(cm, com.uniagenda.agenda.domain.Aluno.class.getName() + ".raAlunos");
+            createCache(cm, com.uniagenda.agenda.domain.AgendaServidor.class.getName() + ".horarios");
+            createCache(cm, com.uniagenda.agenda.domain.AgendaServidor.class.getName() + ".mes");
+            createCache(cm, com.uniagenda.agenda.domain.AgendaServidor.class.getName() + ".diaMes");
+            createCache(cm, com.uniagenda.agenda.domain.AgendaServidor.class.getName() + ".statuses");
+            createCache(cm, com.uniagenda.agenda.domain.AgendaSala.class.getName() + ".horarios");
+            createCache(cm, com.uniagenda.agenda.domain.AgendaSala.class.getName() + ".mes");
+            createCache(cm, com.uniagenda.agenda.domain.AgendaSala.class.getName() + ".diaMes");
+            createCache(cm, com.uniagenda.agenda.domain.AgendaSala.class.getName() + ".statuses");
+            createCache(cm, com.uniagenda.agenda.domain.DiasAtendimento.class.getName() + ".mes");
+            createCache(cm, com.uniagenda.agenda.domain.DiasAtendimento.class.getName() + ".diaMes");
+            createCache(cm, com.uniagenda.agenda.domain.DiasAtendimento.class.getName() + ".statusDias");
             // jhipster-needle-ehcache-add-entry
         };
     }

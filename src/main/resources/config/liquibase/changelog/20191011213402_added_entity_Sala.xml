@@ -22,9 +22,6 @@
             <column name="codigo_sala" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="agenda_sala_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
     </changeSet>

@@ -14,16 +14,28 @@
     ],
     "relationships": [
         {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "diasAtendimento",
-            "otherEntityRelationshipName": "agendaAluno",
-            "relationshipName": "statusDia"
+            "relationshipName": "aluno",
+            "otherEntityName": "aluno",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         },
         {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "aluno",
-            "otherEntityRelationshipName": "agendaAluno",
-            "relationshipName": "raAluno"
+            "relationshipName": "diasAtendimento",
+            "otherEntityName": "diasAtendimento",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "diasAtendimento",
+            "otherEntityName": "diasAtendimento",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "diasAtendimento",
+            "otherEntityName": "diasAtendimento",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "changelogDate": "20191011213407",

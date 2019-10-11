@@ -13,10 +13,10 @@
                 <dd>
                     <span>{{servidor.nomeServidor}}</span>
                 </dd>
-                <dt><span>Agenda Servidor</span></dt>
+                <dt><span>Cargo</span></dt>
                 <dd>
-                    <div *ngIf="servidor.agendaServidor">
-                        <a [routerLink]="['/agenda-servidor', servidor.agendaServidor?.id, 'view']">{{servidor.agendaServidor?.id}}</a>
+                    <div *ngIf="servidor.cargo">
+                        <a [routerLink]="['/cargo', servidor.cargo?.id, 'view']">{{servidor.cargo?.id}}</a>
                     </div>
                 </dd>
             </dl>

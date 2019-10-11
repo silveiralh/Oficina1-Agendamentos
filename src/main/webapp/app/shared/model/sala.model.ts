@@ -4,9 +4,9 @@ export interface ISala {
   id?: number;
   nomeSala?: string;
   codigoSala?: string;
-  agendaSala?: IAgendaSala;
+  codigoSalas?: IAgendaSala[];
 }
 
 export class Sala implements ISala {
-  constructor(public id?: number, public nomeSala?: string, public codigoSala?: string, public agendaSala?: IAgendaSala) {}
+  constructor(public id?: number, public nomeSala?: string, public codigoSala?: string, public codigoSalas?: IAgendaSala[]) {}
 }

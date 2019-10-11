@@ -9,6 +9,42 @@
                 <dd>
                     <span>{{agendaAtendimentoServidor.status}}</span>
                 </dd>
+                <dt><span>Aluno</span></dt>
+                <dd>
+                    <div *ngIf="agendaAtendimentoServidor.aluno">
+                        <a [routerLink]="['/aluno', agendaAtendimentoServidor.aluno?.id, 'view']">{{agendaAtendimentoServidor.aluno?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Agenda Servidor</span></dt>
+                <dd>
+                    <div *ngIf="agendaAtendimentoServidor.agendaServidor">
+                        <a [routerLink]="['/agenda-servidor', agendaAtendimentoServidor.agendaServidor?.id, 'view']">{{agendaAtendimentoServidor.agendaServidor?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Agenda Servidor</span></dt>
+                <dd>
+                    <div *ngIf="agendaAtendimentoServidor.agendaServidor">
+                        <a [routerLink]="['/agenda-servidor', agendaAtendimentoServidor.agendaServidor?.id, 'view']">{{agendaAtendimentoServidor.agendaServidor?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Agenda Servidor</span></dt>
+                <dd>
+                    <div *ngIf="agendaAtendimentoServidor.agendaServidor">
+                        <a [routerLink]="['/agenda-servidor', agendaAtendimentoServidor.agendaServidor?.id, 'view']">{{agendaAtendimentoServidor.agendaServidor?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Agenda Servidor</span></dt>
+                <dd>
+                    <div *ngIf="agendaAtendimentoServidor.agendaServidor">
+                        <a [routerLink]="['/agenda-servidor', agendaAtendimentoServidor.agendaServidor?.id, 'view']">{{agendaAtendimentoServidor.agendaServidor?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Agenda Servidor</span></dt>
+                <dd>
+                    <div *ngIf="agendaAtendimentoServidor.agendaServidor">
+                        <a [routerLink]="['/agenda-servidor', agendaAtendimentoServidor.agendaServidor?.id, 'view']">{{agendaAtendimentoServidor.agendaServidor?.id}}</a>
+                    </div>
+                </dd>
             </dl>
 
             <button type="submit"

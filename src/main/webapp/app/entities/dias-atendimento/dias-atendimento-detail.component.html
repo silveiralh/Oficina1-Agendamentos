@@ -21,10 +21,10 @@
                 <dd>
                     <span>{{diasAtendimento.statusDia}}</span>
                 </dd>
-                <dt><span>Agenda Aluno</span></dt>
+                <dt><span>Servidor</span></dt>
                 <dd>
-                    <div *ngIf="diasAtendimento.agendaAluno">
-                        <a [routerLink]="['/agenda-aluno', diasAtendimento.agendaAluno?.id, 'view']">{{diasAtendimento.agendaAluno?.id}}</a>
+                    <div *ngIf="diasAtendimento.servidor">
+                        <a [routerLink]="['/servidor', diasAtendimento.servidor?.id, 'view']">{{diasAtendimento.servidor?.id}}</a>
                     </div>
                 </dd>
             </dl>
