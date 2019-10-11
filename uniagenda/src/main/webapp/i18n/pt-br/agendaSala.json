@@ -1,0 +1,33 @@
+{
+  "uniAgendaApp": {
+    "agendaSala": {
+      "home": {
+        "title": "Agenda Salas",
+        "createLabel": "Criar novo Agenda Sala",
+        "createOrEditLabel": "Criar ou editar Agenda Sala",
+        "search": "Pesquisar por Agenda Sala",
+        "notFound": "Nenhum Agenda Sala encontrado"
+      },
+      "created": "Um novo Agenda Sala foi criado com o identificador {{ param }}",
+      "updated": "Um Agenda Sala foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Agenda Sala foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Agenda Sala {{ id }}?"
+      },
+      "detail": {
+        "title": "Agenda Sala"
+      },
+      "status": "Status",
+      "horario": "Horario",
+      "mes": "Mes",
+      "diaMes": "Dia Mes",
+      "statusDia": "Status Dia",
+      "codigoSala": "Codigo Sala",
+      "agendaReservaSala": "Agenda Reserva Sala",
+      "agendaReservaSala": "Agenda Reserva Sala",
+      "agendaReservaSala": "Agenda Reserva Sala",
+      "agendaReservaSala": "Agenda Reserva Sala",
+      "agendaReservaSala": "Agenda Reserva Sala"
+    }
+  }
+}

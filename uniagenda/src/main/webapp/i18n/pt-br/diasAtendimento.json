@@ -1,0 +1,36 @@
+{
+  "uniAgendaApp": {
+    "diasAtendimento": {
+      "home": {
+        "title": "Dias Atendimentos",
+        "createLabel": "Criar novo Dias Atendimento",
+        "createOrEditLabel": "Criar ou editar Dias Atendimento",
+        "search": "Pesquisar por Dias Atendimento",
+        "notFound": "Nenhum Dias Atendimento encontrado"
+      },
+      "created": "Um novo Dias Atendimento foi criado com o identificador {{ param }}",
+      "updated": "Um Dias Atendimento foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Dias Atendimento foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Dias Atendimento {{ id }}?"
+      },
+      "detail": {
+        "title": "Dias Atendimento"
+      },
+      "mes": "Mes",
+      "diaMes": "Dia Mes",
+      "diaSemana": "Dia Semana",
+      "statusDia": "Status Dia",
+      "agendaServidor": "Agenda Servidor",
+      "agendaServidor": "Agenda Servidor",
+      "agendaServidor": "Agenda Servidor",
+      "agendaAluno": "Agenda Aluno",
+      "agendaAluno": "Agenda Aluno",
+      "agendaAluno": "Agenda Aluno",
+      "agendaSala": "Agenda Sala",
+      "agendaSala": "Agenda Sala",
+      "agendaSala": "Agenda Sala",
+      "codSiape": "Cod Siape"
+    }
+  }
+}

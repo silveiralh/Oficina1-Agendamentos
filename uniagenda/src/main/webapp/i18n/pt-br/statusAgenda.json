@@ -1,0 +1,12 @@
+{
+  "uniAgendaApp": {
+    "StatusAgenda": {
+      "null": "",
+      "Livre": "Livre",
+      "Ocupado": "Ocupado",
+      "Atendido": "Atendido",
+      "Remarcado": "Remarcado",
+      "Faltou": "Faltou"
+    }
+  }
+}
