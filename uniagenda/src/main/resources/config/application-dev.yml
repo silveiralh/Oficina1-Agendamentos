@@ -80,7 +80,7 @@ spring:
     cache: false
 
 server:
-  port: 8080
+  port: 8089
 
 # ===================================================================
 # JHipster specific properties
@@ -106,7 +106,7 @@ jhipster:
       # security key (this key should be unique for your application, and kept secret)
       key: 82ca06520fb417a419881249e85993f59df95bf8f8c37ac326bd2ae76bfbe45ec6f414cbbf7232dd569d175591033979ec71
   mail: # specific JHipster mail property, for standard properties see MailProperties
-    base-url: http://127.0.0.1:8080
+    base-url: http://127.0.0.1:8089
   metrics:
     logs: # Reports metrics in the logs
       enabled: false
