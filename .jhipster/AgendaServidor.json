@@ -1,0 +1,38 @@
+{
+    "name": "AgendaServidor",
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "StatusAgenda",
+            "fieldValues": "Livre,Ocupado,Atendido,Remarcado,Faltou"
+        },
+        {
+            "fieldName": "horario",
+            "fieldType": "Horario",
+            "fieldValues": "H8,H9,H10,H11,H12,H13,H14,H15,H16,H17,H18H,H19,H20,H21,H22"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "agendaAtendimentoServidor",
+            "otherEntityName": "agendaAtendimentoServidor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "servidor",
+            "otherEntityRelationshipName": "agendaServidor",
+            "relationshipName": "codSiape"
+        }
+    ],
+    "changelogDate": "20191011213406",
+    "entityTableName": "agenda_servidor",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

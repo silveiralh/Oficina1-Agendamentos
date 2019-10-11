@@ -1,0 +1,33 @@
+{
+    "name": "AgendaReservaSala",
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "StatusAgenda",
+            "fieldValues": "Livre,Ocupado,Atendido,Remarcado,Faltou"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "aluno",
+            "otherEntityRelationshipName": "agendaReservaSala",
+            "relationshipName": "raAluno"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agendaSala",
+            "otherEntityRelationshipName": "agendaReservaSala",
+            "relationshipName": "codigoSala"
+        }
+    ],
+    "changelogDate": "20191011213409",
+    "entityTableName": "agenda_reserva_sala",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
