@@ -3,8 +3,9 @@ import { TestBed } from '@angular/core/testing';
 import { SERVER_API_URL } from 'app/app.constants';
 import { AccountService } from 'app/core/auth/account.service';
 import { JhiTrackerService } from 'app/core/tracker/tracker.service';
-import { JhiDateUtils } from 'ng-jhipster';
+import { JhiDateUtils, JhiLanguageService } from 'ng-jhipster';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { MockLanguageService } from '../../../helpers/mock-language.service';
 import { MockTrackerService } from '../../../helpers/mock-tracker.service';
 
 describe('Service Tests', () => {
@@ -17,6 +18,10 @@ describe('Service Tests', () => {
         imports: [HttpClientTestingModule, NgxWebstorageModule.forRoot()],
         providers: [
           JhiDateUtils,
+          {
+            provide: JhiLanguageService,
+            useClass: MockLanguageService
+          },
           {
             provide: JhiTrackerService,
             useClass: MockTrackerService

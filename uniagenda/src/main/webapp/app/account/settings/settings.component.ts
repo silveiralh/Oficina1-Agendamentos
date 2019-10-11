@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { JhiLanguageService } from 'ng-jhipster';
 
 import { AccountService } from 'app/core/auth/account.service';
+import { JhiLanguageHelper } from 'app/core/language/language.helper';
 
 @Component({
   selector: 'jhi-settings',
@@ -22,11 +24,19 @@ export class SettingsComponent implements OnInit {
     imageUrl: []
   });
 
-  constructor(private accountService: AccountService, private fb: FormBuilder) {}
+  constructor(
+    private accountService: AccountService,
+    private fb: FormBuilder,
+    private languageService: JhiLanguageService,
+    private languageHelper: JhiLanguageHelper
+  ) {}
 
   ngOnInit() {
     this.accountService.identity().then(account => {
       this.updateForm(account);
+    });
+    this.languageHelper.getAll().then(languages => {
+      this.languages = languages;
     });
   }
 
@@ -38,6 +48,11 @@ export class SettingsComponent implements OnInit {
         this.success = 'OK';
         this.accountService.identity(true).then(account => {
           this.updateForm(account);
+        });
+        this.languageService.getCurrent().then(current => {
+          if (settingsAccount.langKey !== current) {
+            this.languageService.changeLanguage(settingsAccount.langKey);
+          }
         });
       },
       () => {

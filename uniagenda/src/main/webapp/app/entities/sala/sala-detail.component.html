@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sala">
+            <h2><span jhiTranslate="uniAgendaApp.sala.detail.title">Sala</span> {{sala.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="uniAgendaApp.sala.nomeSala">Nome Sala</span></dt>
+                <dd>
+                    <span>{{sala.nomeSala}}</span>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.sala.codigoSala">Codigo Sala</span></dt>
+                <dd>
+                    <span>{{sala.codigoSala}}</span>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.sala.agendaSala">Agenda Sala</span></dt>
+                <dd>
+                    <div *ngIf="sala.agendaSala">
+                        <a [routerLink]="['/agenda-sala', sala.agendaSala?.id, 'view']">{{sala.agendaSala?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sala', sala.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

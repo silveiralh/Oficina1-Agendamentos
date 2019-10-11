@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="aluno">
+            <h2><span jhiTranslate="uniAgendaApp.aluno.detail.title">Aluno</span> {{aluno.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="uniAgendaApp.aluno.raAluno">Ra Aluno</span></dt>
+                <dd>
+                    <span>{{aluno.raAluno}}</span>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.aluno.nomeAluno">Nome Aluno</span></dt>
+                <dd>
+                    <span>{{aluno.nomeAluno}}</span>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.aluno.periodo">Periodo</span></dt>
+                <dd>
+                    <span>{{aluno.periodo}}</span>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.aluno.curso">Curso</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'uniAgendaApp.Curso.' + aluno.curso}}">{{aluno.curso}}</span>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.aluno.agendaAtendimentoServidor">Agenda Atendimento Servidor</span></dt>
+                <dd>
+                    <div *ngIf="aluno.agendaAtendimentoServidor">
+                        <a [routerLink]="['/agenda-atendimento-servidor', aluno.agendaAtendimentoServidor?.id, 'view']">{{aluno.agendaAtendimentoServidor?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.aluno.agendaAluno">Agenda Aluno</span></dt>
+                <dd>
+                    <div *ngIf="aluno.agendaAluno">
+                        <a [routerLink]="['/agenda-aluno', aluno.agendaAluno?.id, 'view']">{{aluno.agendaAluno?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="uniAgendaApp.aluno.agendaReservaSala">Agenda Reserva Sala</span></dt>
+                <dd>
+                    <div *ngIf="aluno.agendaReservaSala">
+                        <a [routerLink]="['/agenda-reserva-sala', aluno.agendaReservaSala?.id, 'view']">{{aluno.agendaReservaSala?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/aluno', aluno.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

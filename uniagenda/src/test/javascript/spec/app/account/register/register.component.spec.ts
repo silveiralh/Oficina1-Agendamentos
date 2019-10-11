@@ -2,7 +2,9 @@ import { ComponentFixture, TestBed, async, inject, tick, fakeAsync } from '@angu
 import { FormBuilder } from '@angular/forms';
 import { of, throwError } from 'rxjs';
 
-import { UniagendaTestModule } from '../../../test.module';
+import { JhiLanguageService } from 'ng-jhipster';
+import { MockLanguageService } from '../../../helpers/mock-language.service';
+import { UniAgendaTestModule } from '../../../test.module';
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from 'app/shared/constants/error.constants';
 import { Register } from 'app/account/register/register.service';
 import { RegisterComponent } from 'app/account/register/register.component';
@@ -14,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [UniagendaTestModule],
+        imports: [UniAgendaTestModule],
         declarations: [RegisterComponent],
         providers: [FormBuilder]
       })
@@ -40,8 +42,8 @@ describe('Component Tests', () => {
     });
 
     it('should update success to OK after creating an account', inject(
-      [Register],
-      fakeAsync((service: Register) => {
+      [Register, JhiLanguageService],
+      fakeAsync((service: Register, mockTranslate: MockLanguageService) => {
         spyOn(service, 'save').and.returnValue(of({}));
         comp.registerForm.patchValue({
           password: 'password',
@@ -55,9 +57,10 @@ describe('Component Tests', () => {
           email: '',
           password: 'password',
           login: '',
-          langKey: 'en'
+          langKey: 'pt-br'
         });
         expect(comp.success).toEqual(true);
+        expect(mockTranslate.getCurrentSpy).toHaveBeenCalled();
         expect(comp.errorUserExists).toBeNull();
         expect(comp.errorEmailExists).toBeNull();
         expect(comp.error).toBeNull();

@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-agenda-aluno-heading" jhiTranslate="uniAgendaApp.agendaAluno.home.createOrEditLabel">Create or edit a Agenda Aluno</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uniAgendaApp.agendaAluno.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="Livre">{{'uniAgendaApp.StatusAgenda.Livre' | translate}}</option>
+                        <option value="Ocupado">{{'uniAgendaApp.StatusAgenda.Ocupado' | translate}}</option>
+                        <option value="Atendido">{{'uniAgendaApp.StatusAgenda.Atendido' | translate}}</option>
+                        <option value="Remarcado">{{'uniAgendaApp.StatusAgenda.Remarcado' | translate}}</option>
+                        <option value="Faltou">{{'uniAgendaApp.StatusAgenda.Faltou' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uniAgendaApp.agendaAluno.horario" for="field_horario">Horario</label>
+                    <select class="form-control" name="horario" formControlName="horario" id="field_horario">
+                        <option value="H8">{{'uniAgendaApp.Horario.H8' | translate}}</option>
+                        <option value="H9">{{'uniAgendaApp.Horario.H9' | translate}}</option>
+                        <option value="H10">{{'uniAgendaApp.Horario.H10' | translate}}</option>
+                        <option value="H11">{{'uniAgendaApp.Horario.H11' | translate}}</option>
+                        <option value="H12">{{'uniAgendaApp.Horario.H12' | translate}}</option>
+                        <option value="H13">{{'uniAgendaApp.Horario.H13' | translate}}</option>
+                        <option value="H14">{{'uniAgendaApp.Horario.H14' | translate}}</option>
+                        <option value="H15">{{'uniAgendaApp.Horario.H15' | translate}}</option>
+                        <option value="H16">{{'uniAgendaApp.Horario.H16' | translate}}</option>
+                        <option value="H17">{{'uniAgendaApp.Horario.H17' | translate}}</option>
+                        <option value="H18H">{{'uniAgendaApp.Horario.H18H' | translate}}</option>
+                        <option value="H19">{{'uniAgendaApp.Horario.H19' | translate}}</option>
+                        <option value="H20">{{'uniAgendaApp.Horario.H20' | translate}}</option>
+                        <option value="H21">{{'uniAgendaApp.Horario.H21' | translate}}</option>
+                        <option value="H22">{{'uniAgendaApp.Horario.H22' | translate}}</option>
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

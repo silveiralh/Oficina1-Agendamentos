@@ -6,29 +6,30 @@ import './vendor';
 import { AuthExpiredInterceptor } from './blocks/interceptor/auth-expired.interceptor';
 import { ErrorHandlerInterceptor } from './blocks/interceptor/errorhandler.interceptor';
 import { NotificationInterceptor } from './blocks/interceptor/notification.interceptor';
-import { UniagendaSharedModule } from 'app/shared/shared.module';
-import { UniagendaCoreModule } from 'app/core/core.module';
-import { UniagendaAppRoutingModule } from './app-routing.module';
-import { UniagendaHomeModule } from './home/home.module';
-import { UniagendaEntityModule } from './entities/entity.module';
+import { UniAgendaSharedModule } from 'app/shared/shared.module';
+import { UniAgendaCoreModule } from 'app/core/core.module';
+import { UniAgendaAppRoutingModule } from './app-routing.module';
+import { UniAgendaHomeModule } from './home/home.module';
+import { UniAgendaEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
+import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    UniagendaSharedModule,
-    UniagendaCoreModule,
-    UniagendaHomeModule,
+    UniAgendaSharedModule,
+    UniAgendaCoreModule,
+    UniAgendaHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
-    UniagendaEntityModule,
-    UniagendaAppRoutingModule
+    UniAgendaEntityModule,
+    UniAgendaAppRoutingModule
   ],
-  declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
+  declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
@@ -48,4 +49,4 @@ import { ErrorComponent } from './layouts/error/error.component';
   ],
   bootstrap: [JhiMainComponent]
 })
-export class UniagendaAppModule {}
+export class UniAgendaAppModule {}

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { FormBuilder } from '@angular/forms';
 import { throwError } from 'rxjs';
 
-import { UniagendaTestModule } from '../../../test.module';
+import { UniAgendaTestModule } from '../../../test.module';
 import { AccountService } from 'app/core/auth/account.service';
 import { SettingsComponent } from 'app/account/settings/settings.component';
 import { JhiTrackerService } from 'app/core/tracker/tracker.service';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [UniagendaTestModule],
+        imports: [UniAgendaTestModule],
         declarations: [SettingsComponent],
         providers: [
           FormBuilder,
@@ -44,7 +44,7 @@ describe('Component Tests', () => {
 
         activated: true,
         email: 'john.doe@mail.com',
-        langKey: 'en',
+        langKey: 'pt-br',
         login: 'john'
       };
       mockAuth.setIdentityResponse(accountValues);

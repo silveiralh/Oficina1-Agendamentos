@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of, throwError } from 'rxjs';
 
-import { UniagendaTestModule } from '../../../test.module';
+import { UniAgendaTestModule } from '../../../test.module';
 import { PasswordComponent } from 'app/account/password/password.component';
 import { PasswordService } from 'app/account/password/password.service';
 import { JhiTrackerService } from 'app/core/tracker/tracker.service';
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [UniagendaTestModule],
+        imports: [UniAgendaTestModule],
         declarations: [PasswordComponent],
         providers: [
           FormBuilder,

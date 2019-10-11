@@ -3,7 +3,7 @@ services:
   uniagenda-mysql:
     image: mysql:8.0.17
     # volumes:
-    #     - ~/volumes/jhipster/uniagenda/mysql/:/var/lib/mysql/
+    #     - ~/volumes/jhipster/UniAgenda/mysql/:/var/lib/mysql/
     environment:
       - MYSQL_USER=root
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes

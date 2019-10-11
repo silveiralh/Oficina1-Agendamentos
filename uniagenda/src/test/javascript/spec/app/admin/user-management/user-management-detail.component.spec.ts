@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
-import { UniagendaTestModule } from '../../../test.module';
+import { UniAgendaTestModule } from '../../../test.module';
 import { UserMgmtDetailComponent } from 'app/admin/user-management/user-management-detail.component';
 import { User } from 'app/core/user/user.model';
 
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [UniagendaTestModule],
+        imports: [UniAgendaTestModule],
         declarations: [UserMgmtDetailComponent],
         providers: [
           {

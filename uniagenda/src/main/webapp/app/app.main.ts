@@ -1,6 +1,6 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { ProdConfig } from './blocks/config/prod.config';
-import { UniagendaAppModule } from './app.module';
+import { UniAgendaAppModule } from './app.module';
 
 ProdConfig();
 
@@ -9,7 +9,7 @@ if (module['hot']) {
 }
 
 platformBrowserDynamic()
-  .bootstrapModule(UniagendaAppModule, { preserveWhitespaces: true })
+  .bootstrapModule(UniAgendaAppModule, { preserveWhitespaces: true })
   // eslint-disable-next-line no-console
   .then(success => console.log('Application started'))
   .catch(err => console.error(err));

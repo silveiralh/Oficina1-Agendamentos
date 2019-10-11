@@ -1,14 +1,22 @@
 import { NgModule } from '@angular/core';
-import { UniagendaSharedLibsModule } from './shared-libs.module';
+import { UniAgendaSharedLibsModule } from './shared-libs.module';
+import { FindLanguageFromKeyPipe } from './language/find-language-from-key.pipe';
 import { JhiAlertComponent } from './alert/alert.component';
 import { JhiAlertErrorComponent } from './alert/alert-error.component';
 import { JhiLoginModalComponent } from './login/login.component';
 import { HasAnyAuthorityDirective } from './auth/has-any-authority.directive';
 
 @NgModule({
-  imports: [UniagendaSharedLibsModule],
-  declarations: [JhiAlertComponent, JhiAlertErrorComponent, JhiLoginModalComponent, HasAnyAuthorityDirective],
+  imports: [UniAgendaSharedLibsModule],
+  declarations: [FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent, JhiLoginModalComponent, HasAnyAuthorityDirective],
   entryComponents: [JhiLoginModalComponent],
-  exports: [UniagendaSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent, JhiLoginModalComponent, HasAnyAuthorityDirective]
+  exports: [
+    UniAgendaSharedLibsModule,
+    FindLanguageFromKeyPipe,
+    JhiAlertComponent,
+    JhiAlertErrorComponent,
+    JhiLoginModalComponent,
+    HasAnyAuthorityDirective
+  ]
 })
-export class UniagendaSharedModule {}
+export class UniAgendaSharedModule {}

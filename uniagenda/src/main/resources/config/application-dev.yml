@@ -17,7 +17,12 @@ logging:
   level:
     ROOT: DEBUG
     io.github.jhipster: DEBUG
-    com.uniagenda.agenda: DEBUG
+    com.utfpr.uniagenda: DEBUG
+
+management:
+  health:
+    elasticsearch:
+      enabled: false
 
 spring:
   profiles:
@@ -38,7 +43,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:h2:file:./target/h2db/db/uniagenda;DB_CLOSE_DELAY=-1
-    username: uniagenda
+    username: UniAgenda
     password:
     hikari:
       poolName: Hikari
@@ -56,6 +61,11 @@ spring:
       hibernate.cache.use_second_level_cache: true
       hibernate.cache.use_query_cache: false
       hibernate.generate_statistics: false
+  data:
+    elasticsearch:
+      properties:
+        path:
+          home: target/elasticsearch
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
@@ -94,7 +104,7 @@ jhipster:
   security:
     remember-me:
       # security key (this key should be unique for your application, and kept secret)
-      key: 113634acd30cc08c8c4cc7d7d81e295d2da8f61a3294b5294b65eddbf0e6e29c11fb9ad45fcb98b041e08e2329ecaa013862
+      key: 82ca06520fb417a419881249e85993f59df95bf8f8c37ac326bd2ae76bfbe45ec6f414cbbf7232dd569d175591033979ec71
   mail: # specific JHipster mail property, for standard properties see MailProperties
     base-url: http://127.0.0.1:8080
   metrics:

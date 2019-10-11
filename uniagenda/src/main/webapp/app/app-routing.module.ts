@@ -12,11 +12,11 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
       [
         {
           path: 'admin',
-          loadChildren: () => import('./admin/admin.module').then(m => m.UniagendaAdminModule)
+          loadChildren: () => import('./admin/admin.module').then(m => m.UniAgendaAdminModule)
         },
         {
           path: 'account',
-          loadChildren: () => import('./account/account.module').then(m => m.UniagendaAccountModule)
+          loadChildren: () => import('./account/account.module').then(m => m.UniAgendaAccountModule)
         },
         ...LAYOUT_ROUTES
       ],
@@ -25,4 +25,4 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
   ],
   exports: [RouterModule]
 })
-export class UniagendaAppRoutingModule {}
+export class UniAgendaAppRoutingModule {}
