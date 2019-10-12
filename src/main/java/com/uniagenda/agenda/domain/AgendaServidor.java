@@ -45,27 +45,7 @@ public class AgendaServidor implements Serializable {
 
     @OneToMany(mappedBy = "agendaServidor")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AgendaAtendimentoServidor> horarios = new HashSet<>();
-
-    @OneToMany(mappedBy = "agendaServidor")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AgendaAtendimentoServidor> mes = new HashSet<>();
-
-    @OneToMany(mappedBy = "agendaServidor")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AgendaAtendimentoServidor> diaMes = new HashSet<>();
-
-    @OneToMany(mappedBy = "agendaServidor")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<AgendaAtendimentoServidor> statuses = new HashSet<>();
-
-    @ManyToOne
-    @JsonIgnoreProperties("agendaServidors")
-    private DiasAtendimento diasAtendimento;
-
-    @ManyToOne
-    @JsonIgnoreProperties("agendaServidors")
-    private DiasAtendimento diasAtendimento;
 
     @ManyToOne
     @JsonIgnoreProperties("agendaServidors")
@@ -144,81 +124,6 @@ public class AgendaServidor implements Serializable {
         this.codSiapes = agendaAtendimentoServidors;
     }
 
-    public Set<AgendaAtendimentoServidor> getHorarios() {
-        return horarios;
-    }
-
-    public AgendaServidor horarios(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
-        this.horarios = agendaAtendimentoServidors;
-        return this;
-    }
-
-    public AgendaServidor addHorario(AgendaAtendimentoServidor agendaAtendimentoServidor) {
-        this.horarios.add(agendaAtendimentoServidor);
-        agendaAtendimentoServidor.setAgendaServidor(this);
-        return this;
-    }
-
-    public AgendaServidor removeHorario(AgendaAtendimentoServidor agendaAtendimentoServidor) {
-        this.horarios.remove(agendaAtendimentoServidor);
-        agendaAtendimentoServidor.setAgendaServidor(null);
-        return this;
-    }
-
-    public void setHorarios(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
-        this.horarios = agendaAtendimentoServidors;
-    }
-
-    public Set<AgendaAtendimentoServidor> getMes() {
-        return mes;
-    }
-
-    public AgendaServidor mes(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
-        this.mes = agendaAtendimentoServidors;
-        return this;
-    }
-
-    public AgendaServidor addMes(AgendaAtendimentoServidor agendaAtendimentoServidor) {
-        this.mes.add(agendaAtendimentoServidor);
-        agendaAtendimentoServidor.setAgendaServidor(this);
-        return this;
-    }
-
-    public AgendaServidor removeMes(AgendaAtendimentoServidor agendaAtendimentoServidor) {
-        this.mes.remove(agendaAtendimentoServidor);
-        agendaAtendimentoServidor.setAgendaServidor(null);
-        return this;
-    }
-
-    public void setMes(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
-        this.mes = agendaAtendimentoServidors;
-    }
-
-    public Set<AgendaAtendimentoServidor> getDiaMes() {
-        return diaMes;
-    }
-
-    public AgendaServidor diaMes(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
-        this.diaMes = agendaAtendimentoServidors;
-        return this;
-    }
-
-    public AgendaServidor addDiaMes(AgendaAtendimentoServidor agendaAtendimentoServidor) {
-        this.diaMes.add(agendaAtendimentoServidor);
-        agendaAtendimentoServidor.setAgendaServidor(this);
-        return this;
-    }
-
-    public AgendaServidor removeDiaMes(AgendaAtendimentoServidor agendaAtendimentoServidor) {
-        this.diaMes.remove(agendaAtendimentoServidor);
-        agendaAtendimentoServidor.setAgendaServidor(null);
-        return this;
-    }
-
-    public void setDiaMes(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
-        this.diaMes = agendaAtendimentoServidors;
-    }
-
     public Set<AgendaAtendimentoServidor> getStatuses() {
         return statuses;
     }
@@ -242,32 +147,6 @@ public class AgendaServidor implements Serializable {
 
     public void setStatuses(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
         this.statuses = agendaAtendimentoServidors;
-    }
-
-    public DiasAtendimento getDiasAtendimento() {
-        return diasAtendimento;
-    }
-
-    public AgendaServidor diasAtendimento(DiasAtendimento diasAtendimento) {
-        this.diasAtendimento = diasAtendimento;
-        return this;
-    }
-
-    public void setDiasAtendimento(DiasAtendimento diasAtendimento) {
-        this.diasAtendimento = diasAtendimento;
-    }
-
-    public DiasAtendimento getDiasAtendimento() {
-        return diasAtendimento;
-    }
-
-    public AgendaServidor diasAtendimento(DiasAtendimento diasAtendimento) {
-        this.diasAtendimento = diasAtendimento;
-        return this;
-    }
-
-    public void setDiasAtendimento(DiasAtendimento diasAtendimento) {
-        this.diasAtendimento = diasAtendimento;
     }
 
     public DiasAtendimento getDiasAtendimento() {

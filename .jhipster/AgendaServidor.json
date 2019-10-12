@@ -29,37 +29,7 @@
             "relationshipType": "one-to-many",
             "otherEntityName": "agendaAtendimentoServidor",
             "otherEntityRelationshipName": "agendaServidor",
-            "relationshipName": "horario"
-        },
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "agendaAtendimentoServidor",
-            "otherEntityRelationshipName": "agendaServidor",
-            "relationshipName": "mes"
-        },
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "agendaAtendimentoServidor",
-            "otherEntityRelationshipName": "agendaServidor",
-            "relationshipName": "diaMes"
-        },
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "agendaAtendimentoServidor",
-            "otherEntityRelationshipName": "agendaServidor",
             "relationshipName": "status"
-        },
-        {
-            "relationshipName": "diasAtendimento",
-            "otherEntityName": "diasAtendimento",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        },
-        {
-            "relationshipName": "diasAtendimento",
-            "otherEntityName": "diasAtendimento",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
         },
         {
             "relationshipName": "diasAtendimento",

@@ -8,9 +8,6 @@ export interface IAgendaAtendimentoServidor {
   aluno?: IAluno;
   agendaServidor?: IAgendaServidor;
   agendaServidor?: IAgendaServidor;
-  agendaServidor?: IAgendaServidor;
-  agendaServidor?: IAgendaServidor;
-  agendaServidor?: IAgendaServidor;
 }
 
 export class AgendaAtendimentoServidor implements IAgendaAtendimentoServidor {
@@ -18,9 +15,6 @@ export class AgendaAtendimentoServidor implements IAgendaAtendimentoServidor {
     public id?: number,
     public status?: StatusAgenda,
     public aluno?: IAluno,
-    public agendaServidor?: IAgendaServidor,
-    public agendaServidor?: IAgendaServidor,
-    public agendaServidor?: IAgendaServidor,
     public agendaServidor?: IAgendaServidor,
     public agendaServidor?: IAgendaServidor
   ) {}

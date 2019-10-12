@@ -32,7 +32,6 @@ export class AgendaReservaSalaUpdateComponent implements OnInit {
     agendaSala: [],
     agendaSala: [],
     agendaSala: [],
-    agendaSala: [],
     agendaSala: []
   });
 
@@ -74,7 +73,6 @@ export class AgendaReservaSalaUpdateComponent implements OnInit {
       agendaSala: agendaReservaSala.agendaSala,
       agendaSala: agendaReservaSala.agendaSala,
       agendaSala: agendaReservaSala.agendaSala,
-      agendaSala: agendaReservaSala.agendaSala,
       agendaSala: agendaReservaSala.agendaSala
     });
   }
@@ -99,7 +97,6 @@ export class AgendaReservaSalaUpdateComponent implements OnInit {
       id: this.editForm.get(['id']).value,
       status: this.editForm.get(['status']).value,
       aluno: this.editForm.get(['aluno']).value,
-      agendaSala: this.editForm.get(['agendaSala']).value,
       agendaSala: this.editForm.get(['agendaSala']).value,
       agendaSala: this.editForm.get(['agendaSala']).value,
       agendaSala: this.editForm.get(['agendaSala']).value,

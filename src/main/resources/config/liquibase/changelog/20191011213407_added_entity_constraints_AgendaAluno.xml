@@ -20,17 +20,5 @@
                                  referencedColumnNames="id"
                                  referencedTableName="dias_atendimento"/>
 
-        <addForeignKeyConstraint baseColumnNames="dias_atendimento_id"
-                                 baseTableName="agenda_aluno"
-                                 constraintName="fk_agenda_aluno_dias_atendimento_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="dias_atendimento"/>
-
-        <addForeignKeyConstraint baseColumnNames="dias_atendimento_id"
-                                 baseTableName="agenda_aluno"
-                                 constraintName="fk_agenda_aluno_dias_atendimento_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="dias_atendimento"/>
-
     </changeSet>
 </databaseChangeLog>

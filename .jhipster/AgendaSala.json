@@ -29,12 +29,6 @@
             "relationshipType": "one-to-many",
             "otherEntityName": "agendaReservaSala",
             "otherEntityRelationshipName": "agendaSala",
-            "relationshipName": "mes"
-        },
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "agendaReservaSala",
-            "otherEntityRelationshipName": "agendaSala",
             "relationshipName": "diaMes"
         },
         {
@@ -48,18 +42,6 @@
             "otherEntityName": "agendaReservaSala",
             "otherEntityRelationshipName": "agendaSala",
             "relationshipName": "codigoSala"
-        },
-        {
-            "relationshipName": "diasAtendimento",
-            "otherEntityName": "diasAtendimento",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        },
-        {
-            "relationshipName": "diasAtendimento",
-            "otherEntityName": "diasAtendimento",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
         },
         {
             "relationshipName": "diasAtendimento",

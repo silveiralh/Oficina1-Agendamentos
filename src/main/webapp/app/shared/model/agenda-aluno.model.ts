@@ -9,8 +9,6 @@ export interface IAgendaAluno {
   horario?: Horario;
   aluno?: IAluno;
   diasAtendimento?: IDiasAtendimento;
-  diasAtendimento?: IDiasAtendimento;
-  diasAtendimento?: IDiasAtendimento;
 }
 
 export class AgendaAluno implements IAgendaAluno {
@@ -19,8 +17,6 @@ export class AgendaAluno implements IAgendaAluno {
     public status?: StatusAgenda,
     public horario?: Horario,
     public aluno?: IAluno,
-    public diasAtendimento?: IDiasAtendimento,
-    public diasAtendimento?: IDiasAtendimento,
     public diasAtendimento?: IDiasAtendimento
   ) {}
 }

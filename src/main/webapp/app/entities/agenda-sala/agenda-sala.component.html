@@ -22,8 +22,6 @@
             <th><span>Horario</span></th>
             <th><span>Sala</span></th>
             <th><span>Dias Atendimento</span></th>
-            <th><span>Dias Atendimento</span></th>
-            <th><span>Dias Atendimento</span></th>
             <th></th>
             </tr>
             </thead>
@@ -35,16 +33,6 @@
                 <td>
                     <div *ngIf="agendaSala.sala">
                         <a [routerLink]="['/sala', agendaSala.sala?.id, 'view' ]" >{{agendaSala.sala?.id}}</a>
-                    </div>
-                </td>
-                <td>
-                    <div *ngIf="agendaSala.diasAtendimento">
-                        <a [routerLink]="['/dias-atendimento', agendaSala.diasAtendimento?.id, 'view' ]" >{{agendaSala.diasAtendimento?.id}}</a>
-                    </div>
-                </td>
-                <td>
-                    <div *ngIf="agendaSala.diasAtendimento">
-                        <a [routerLink]="['/dias-atendimento', agendaSala.diasAtendimento?.id, 'view' ]" >{{agendaSala.diasAtendimento?.id}}</a>
                     </div>
                 </td>
                 <td>

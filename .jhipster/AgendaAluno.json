@@ -24,18 +24,6 @@
             "otherEntityName": "diasAtendimento",
             "relationshipType": "many-to-one",
             "otherEntityField": "id"
-        },
-        {
-            "relationshipName": "diasAtendimento",
-            "otherEntityName": "diasAtendimento",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        },
-        {
-            "relationshipName": "diasAtendimento",
-            "otherEntityName": "diasAtendimento",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
         }
     ],
     "changelogDate": "20191011213407",

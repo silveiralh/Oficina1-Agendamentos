@@ -38,11 +38,5 @@
                                  referencedColumnNames="id"
                                  referencedTableName="agenda_sala"/>
 
-        <addForeignKeyConstraint baseColumnNames="agenda_sala_id"
-                                 baseTableName="agenda_reserva_sala"
-                                 constraintName="fk_agenda_reserva_sala_agenda_sala_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="agenda_sala"/>
-
     </changeSet>
 </databaseChangeLog>

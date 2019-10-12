@@ -26,23 +26,5 @@
                                  referencedColumnNames="id"
                                  referencedTableName="agenda_servidor"/>
 
-        <addForeignKeyConstraint baseColumnNames="agenda_servidor_id"
-                                 baseTableName="agenda_atendimento_servidor"
-                                 constraintName="fk_agenda_atendimento_servidor_agenda_servidor_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="agenda_servidor"/>
-
-        <addForeignKeyConstraint baseColumnNames="agenda_servidor_id"
-                                 baseTableName="agenda_atendimento_servidor"
-                                 constraintName="fk_agenda_atendimento_servidor_agenda_servidor_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="agenda_servidor"/>
-
-        <addForeignKeyConstraint baseColumnNames="agenda_servidor_id"
-                                 baseTableName="agenda_atendimento_servidor"
-                                 constraintName="fk_agenda_atendimento_servidor_agenda_servidor_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="agenda_servidor"/>
-
     </changeSet>
 </databaseChangeLog>

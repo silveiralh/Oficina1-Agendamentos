@@ -10,12 +10,9 @@ export interface IAgendaSala {
   horario?: Horario;
   sala?: ISala;
   horarios?: IAgendaReservaSala[];
-  mes?: IAgendaReservaSala[];
   diaMes?: IAgendaReservaSala[];
   statuses?: IAgendaReservaSala[];
   codigoSalas?: IAgendaReservaSala[];
-  diasAtendimento?: IDiasAtendimento;
-  diasAtendimento?: IDiasAtendimento;
   diasAtendimento?: IDiasAtendimento;
 }
 
@@ -26,12 +23,9 @@ export class AgendaSala implements IAgendaSala {
     public horario?: Horario,
     public sala?: ISala,
     public horarios?: IAgendaReservaSala[],
-    public mes?: IAgendaReservaSala[],
     public diaMes?: IAgendaReservaSala[],
     public statuses?: IAgendaReservaSala[],
     public codigoSalas?: IAgendaReservaSala[],
-    public diasAtendimento?: IDiasAtendimento,
-    public diasAtendimento?: IDiasAtendimento,
     public diasAtendimento?: IDiasAtendimento
   ) {}
 }

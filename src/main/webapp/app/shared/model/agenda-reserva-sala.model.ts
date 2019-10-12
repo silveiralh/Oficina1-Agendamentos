@@ -10,7 +10,6 @@ export interface IAgendaReservaSala {
   agendaSala?: IAgendaSala;
   agendaSala?: IAgendaSala;
   agendaSala?: IAgendaSala;
-  agendaSala?: IAgendaSala;
 }
 
 export class AgendaReservaSala implements IAgendaReservaSala {
@@ -18,7 +17,6 @@ export class AgendaReservaSala implements IAgendaReservaSala {
     public id?: number,
     public status?: StatusAgenda,
     public aluno?: IAluno,
-    public agendaSala?: IAgendaSala,
     public agendaSala?: IAgendaSala,
     public agendaSala?: IAgendaSala,
     public agendaSala?: IAgendaSala,

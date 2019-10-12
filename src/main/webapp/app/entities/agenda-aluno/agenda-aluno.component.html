@@ -22,8 +22,6 @@
             <th><span>Horario</span></th>
             <th><span>Aluno</span></th>
             <th><span>Dias Atendimento</span></th>
-            <th><span>Dias Atendimento</span></th>
-            <th><span>Dias Atendimento</span></th>
             <th></th>
             </tr>
             </thead>
@@ -35,16 +33,6 @@
                 <td>
                     <div *ngIf="agendaAluno.aluno">
                         <a [routerLink]="['/aluno', agendaAluno.aluno?.id, 'view' ]" >{{agendaAluno.aluno?.id}}</a>
-                    </div>
-                </td>
-                <td>
-                    <div *ngIf="agendaAluno.diasAtendimento">
-                        <a [routerLink]="['/dias-atendimento', agendaAluno.diasAtendimento?.id, 'view' ]" >{{agendaAluno.diasAtendimento?.id}}</a>
-                    </div>
-                </td>
-                <td>
-                    <div *ngIf="agendaAluno.diasAtendimento">
-                        <a [routerLink]="['/dias-atendimento', agendaAluno.diasAtendimento?.id, 'view' ]" >{{agendaAluno.diasAtendimento?.id}}</a>
                     </div>
                 </td>
                 <td>
