@@ -25,24 +25,6 @@
             "otherEntityName": "agendaServidor",
             "relationshipType": "many-to-one",
             "otherEntityField": "id"
-        },
-        {
-            "relationshipName": "agendaServidor",
-            "otherEntityName": "agendaServidor",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        },
-        {
-            "relationshipName": "agendaServidor",
-            "otherEntityName": "agendaServidor",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        },
-        {
-            "relationshipName": "agendaServidor",
-            "otherEntityName": "agendaServidor",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
         }
     ],
     "changelogDate": "20191011213404",

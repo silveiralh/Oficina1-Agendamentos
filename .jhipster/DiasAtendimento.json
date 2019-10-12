@@ -37,51 +37,15 @@
         },
         {
             "relationshipType": "one-to-many",
-            "otherEntityName": "agendaServidor",
-            "otherEntityRelationshipName": "diasAtendimento",
-            "relationshipName": "diaMes"
-        },
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "agendaServidor",
-            "otherEntityRelationshipName": "diasAtendimento",
-            "relationshipName": "statusDia"
-        },
-        {
-            "relationshipType": "one-to-many",
             "otherEntityName": "agendaAluno",
             "otherEntityRelationshipName": "diasAtendimento",
             "relationshipName": "mes"
         },
         {
             "relationshipType": "one-to-many",
-            "otherEntityName": "agendaAluno",
-            "otherEntityRelationshipName": "diasAtendimento",
-            "relationshipName": "diaMes"
-        },
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "agendaAluno",
-            "otherEntityRelationshipName": "diasAtendimento",
-            "relationshipName": "statusDia"
-        },
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "agendaSala",
-            "otherEntityRelationshipName": "diasAtendimento",
-            "relationshipName": "mes"
-        },
-        {
-            "relationshipType": "one-to-many",
             "otherEntityName": "agendaSala",
             "otherEntityRelationshipName": "diasAtendimento",
             "relationshipName": "diaMes"
-        },
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "agendaSala",
-            "otherEntityRelationshipName": "diasAtendimento",
-            "relationshipName": "statusDia"
         }
     ],
     "changelogDate": "20191011213410",

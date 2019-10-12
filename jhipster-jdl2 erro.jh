@@ -87,20 +87,24 @@ relationship OneToMany {
     Servidor{codSiape} to DiasAtendimento,
     Servidor{codSiape} to AgendaServidor,
     DiasAtendimento{mes} to AgendaServidor,
-    
+    DiasAtendimento{diaMes} to AgendaServidor,
+    DiasAtendimento{statusDia} to AgendaServidor,
     AgendaServidor{codSiape} to AgendaAtendimentoServidor,
- 
+    AgendaServidor{horario} to AgendaAtendimentoServidor,
+    AgendaServidor{mes} to AgendaAtendimentoServidor,
+    AgendaServidor{diaMes} to AgendaAtendimentoServidor,
     AgendaServidor{status} to AgendaAtendimentoServidor,
     Aluno{raAluno} to AgendaAtendimentoServidor,
     DiasAtendimento{mes} to AgendaAluno,
-    
+    DiasAtendimento{diaMes} to AgendaAluno ,
+    DiasAtendimento{statusDia} to AgendaAluno ,
     Aluno{raAluno} to AgendaAluno,
-	
+	DiasAtendimento{mes} to AgendaSala,
     DiasAtendimento{diaMes} to AgendaSala,
-   
+    DiasAtendimento{statusDia} to AgendaSala,
 	Sala{codigoSala} to AgendaSala,
     AgendaSala{horario} to AgendaReservaSala,
- 
+   AgendaSala{mes} to AgendaReservaSala,
     AgendaSala{diaMes} to AgendaReservaSala,
     AgendaSala{status} to AgendaReservaSala,
     Aluno{raAluno} to AgendaReservaSala,

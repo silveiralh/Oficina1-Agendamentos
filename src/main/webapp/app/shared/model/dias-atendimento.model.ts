@@ -15,14 +15,8 @@ export interface IDiasAtendimento {
   statusDia?: StatusDia;
   servidor?: IServidor;
   mes?: IAgendaServidor[];
-  diaMes?: IAgendaServidor[];
-  statusDias?: IAgendaServidor[];
   mes?: IAgendaAluno[];
-  diaMes?: IAgendaAluno[];
-  statusDias?: IAgendaAluno[];
-  mes?: IAgendaSala[];
   diaMes?: IAgendaSala[];
-  statusDias?: IAgendaSala[];
 }
 
 export class DiasAtendimento implements IDiasAtendimento {
@@ -34,13 +28,7 @@ export class DiasAtendimento implements IDiasAtendimento {
     public statusDia?: StatusDia,
     public servidor?: IServidor,
     public mes?: IAgendaServidor[],
-    public diaMes?: IAgendaServidor[],
-    public statusDias?: IAgendaServidor[],
     public mes?: IAgendaAluno[],
-    public diaMes?: IAgendaAluno[],
-    public statusDias?: IAgendaAluno[],
-    public mes?: IAgendaSala[],
-    public diaMes?: IAgendaSala[],
-    public statusDias?: IAgendaSala[]
+    public diaMes?: IAgendaSala[]
   ) {}
 }

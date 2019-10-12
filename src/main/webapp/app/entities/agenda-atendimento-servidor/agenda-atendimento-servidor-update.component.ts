@@ -30,9 +30,6 @@ export class AgendaAtendimentoServidorUpdateComponent implements OnInit {
     status: [],
     aluno: [],
     agendaServidor: [],
-    agendaServidor: [],
-    agendaServidor: [],
-    agendaServidor: [],
     agendaServidor: []
   });
 
@@ -72,9 +69,6 @@ export class AgendaAtendimentoServidorUpdateComponent implements OnInit {
       status: agendaAtendimentoServidor.status,
       aluno: agendaAtendimentoServidor.aluno,
       agendaServidor: agendaAtendimentoServidor.agendaServidor,
-      agendaServidor: agendaAtendimentoServidor.agendaServidor,
-      agendaServidor: agendaAtendimentoServidor.agendaServidor,
-      agendaServidor: agendaAtendimentoServidor.agendaServidor,
       agendaServidor: agendaAtendimentoServidor.agendaServidor
     });
   }
@@ -99,9 +93,6 @@ export class AgendaAtendimentoServidorUpdateComponent implements OnInit {
       id: this.editForm.get(['id']).value,
       status: this.editForm.get(['status']).value,
       aluno: this.editForm.get(['aluno']).value,
-      agendaServidor: this.editForm.get(['agendaServidor']).value,
-      agendaServidor: this.editForm.get(['agendaServidor']).value,
-      agendaServidor: this.editForm.get(['agendaServidor']).value,
       agendaServidor: this.editForm.get(['agendaServidor']).value,
       agendaServidor: this.editForm.get(['agendaServidor']).value
     };

@@ -47,10 +47,6 @@ public class AgendaReservaSala implements Serializable {
     @JsonIgnoreProperties("agendaReservaSalas")
     private AgendaSala agendaSala;
 
-    @ManyToOne
-    @JsonIgnoreProperties("agendaReservaSalas")
-    private AgendaSala agendaSala;
-
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -84,19 +80,6 @@ public class AgendaReservaSala implements Serializable {
 
     public void setAluno(Aluno aluno) {
         this.aluno = aluno;
-    }
-
-    public AgendaSala getAgendaSala() {
-        return agendaSala;
-    }
-
-    public AgendaReservaSala agendaSala(AgendaSala agendaSala) {
-        this.agendaSala = agendaSala;
-        return this;
-    }
-
-    public void setAgendaSala(AgendaSala agendaSala) {
-        this.agendaSala = agendaSala;
     }
 
     public AgendaSala getAgendaSala() {

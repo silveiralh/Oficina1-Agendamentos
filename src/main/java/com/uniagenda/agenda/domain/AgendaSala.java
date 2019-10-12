@@ -45,10 +45,6 @@ public class AgendaSala implements Serializable {
 
     @OneToMany(mappedBy = "agendaSala")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AgendaReservaSala> mes = new HashSet<>();
-
-    @OneToMany(mappedBy = "agendaSala")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<AgendaReservaSala> diaMes = new HashSet<>();
 
     @OneToMany(mappedBy = "agendaSala")
@@ -58,14 +54,6 @@ public class AgendaSala implements Serializable {
     @OneToMany(mappedBy = "agendaSala")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<AgendaReservaSala> codigoSalas = new HashSet<>();
-
-    @ManyToOne
-    @JsonIgnoreProperties("agendaSalas")
-    private DiasAtendimento diasAtendimento;
-
-    @ManyToOne
-    @JsonIgnoreProperties("agendaSalas")
-    private DiasAtendimento diasAtendimento;
 
     @ManyToOne
     @JsonIgnoreProperties("agendaSalas")
@@ -144,31 +132,6 @@ public class AgendaSala implements Serializable {
         this.horarios = agendaReservaSalas;
     }
 
-    public Set<AgendaReservaSala> getMes() {
-        return mes;
-    }
-
-    public AgendaSala mes(Set<AgendaReservaSala> agendaReservaSalas) {
-        this.mes = agendaReservaSalas;
-        return this;
-    }
-
-    public AgendaSala addMes(AgendaReservaSala agendaReservaSala) {
-        this.mes.add(agendaReservaSala);
-        agendaReservaSala.setAgendaSala(this);
-        return this;
-    }
-
-    public AgendaSala removeMes(AgendaReservaSala agendaReservaSala) {
-        this.mes.remove(agendaReservaSala);
-        agendaReservaSala.setAgendaSala(null);
-        return this;
-    }
-
-    public void setMes(Set<AgendaReservaSala> agendaReservaSalas) {
-        this.mes = agendaReservaSalas;
-    }
-
     public Set<AgendaReservaSala> getDiaMes() {
         return diaMes;
     }
@@ -242,32 +205,6 @@ public class AgendaSala implements Serializable {
 
     public void setCodigoSalas(Set<AgendaReservaSala> agendaReservaSalas) {
         this.codigoSalas = agendaReservaSalas;
-    }
-
-    public DiasAtendimento getDiasAtendimento() {
-        return diasAtendimento;
-    }
-
-    public AgendaSala diasAtendimento(DiasAtendimento diasAtendimento) {
-        this.diasAtendimento = diasAtendimento;
-        return this;
-    }
-
-    public void setDiasAtendimento(DiasAtendimento diasAtendimento) {
-        this.diasAtendimento = diasAtendimento;
-    }
-
-    public DiasAtendimento getDiasAtendimento() {
-        return diasAtendimento;
-    }
-
-    public AgendaSala diasAtendimento(DiasAtendimento diasAtendimento) {
-        this.diasAtendimento = diasAtendimento;
-        return this;
-    }
-
-    public void setDiasAtendimento(DiasAtendimento diasAtendimento) {
-        this.diasAtendimento = diasAtendimento;
     }
 
     public DiasAtendimento getDiasAtendimento() {

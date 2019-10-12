@@ -10,12 +10,7 @@ export interface IAgendaServidor {
   horario?: Horario;
   servidor?: IServidor;
   codSiapes?: IAgendaAtendimentoServidor[];
-  horarios?: IAgendaAtendimentoServidor[];
-  mes?: IAgendaAtendimentoServidor[];
-  diaMes?: IAgendaAtendimentoServidor[];
   statuses?: IAgendaAtendimentoServidor[];
-  diasAtendimento?: IDiasAtendimento;
-  diasAtendimento?: IDiasAtendimento;
   diasAtendimento?: IDiasAtendimento;
 }
 
@@ -26,12 +21,7 @@ export class AgendaServidor implements IAgendaServidor {
     public horario?: Horario,
     public servidor?: IServidor,
     public codSiapes?: IAgendaAtendimentoServidor[],
-    public horarios?: IAgendaAtendimentoServidor[],
-    public mes?: IAgendaAtendimentoServidor[],
-    public diaMes?: IAgendaAtendimentoServidor[],
     public statuses?: IAgendaAtendimentoServidor[],
-    public diasAtendimento?: IDiasAtendimento,
-    public diasAtendimento?: IDiasAtendimento,
     public diasAtendimento?: IDiasAtendimento
   ) {}
 }
