@@ -83,28 +83,21 @@ enum StatusDia{
 
 
 relationship OneToMany {
-	Cargo{nomeCargo} to Servidor,
-    Servidor{codSiape} to DiasAtendimento,
-    Servidor{codSiape} to AgendaServidor,
-    DiasAtendimento{mes} to AgendaServidor,
-    
-    AgendaServidor{codSiape} to AgendaAtendimentoServidor,
+	Servidor{nomeCargo} to Cargo,
  
-    AgendaServidor{status} to AgendaAtendimentoServidor,
-    Aluno{raAluno} to AgendaAtendimentoServidor,
-    DiasAtendimento{mes} to AgendaAluno,
-    
-    Aluno{raAluno} to AgendaAluno,
+    AgendaServidor{codSiape} to Servidor,
+
+    AgendaAtendimentoServidor{codSiape} to AgendaServidor,
+
+    AgendaAtendimentoServidor{raAluno} to Aluno,
+  
+    AgendaAluno{statusDia} to DiasAtendimento,
+    AgendaAluno{raAluno} to Aluno,
 	
-    DiasAtendimento{diaMes} to AgendaSala,
-   
-	Sala{codigoSala} to AgendaSala,
-    AgendaSala{horario} to AgendaReservaSala,
- 
-    AgendaSala{diaMes} to AgendaReservaSala,
-    AgendaSala{status} to AgendaReservaSala,
-    Aluno{raAluno} to AgendaReservaSala,
-    AgendaSala{codigoSala} to AgendaReservaSala
+	AgendaSala{codigoSala} to Sala,
+
+    AgendaReservaSala{raAluno} to Aluno,
+    AgendaReservaSala{codigoSala} to AgendaSala
 }
 
 
