@@ -1,6 +1,6 @@
 package com.uniagenda.agenda.web.rest;
 
-import com.uniagenda.agenda.UniagendaApp;
+import com.uniagenda.agenda.AgendaApp;
 import io.github.jhipster.config.JHipsterProperties;
 import com.uniagenda.agenda.config.audit.AuditEventConverter;
 import com.uniagenda.agenda.domain.PersistentAuditEvent;
@@ -31,7 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link AuditResource} REST controller.
  */
-@SpringBootTest(classes = UniagendaApp.class)
+@SpringBootTest(classes = AgendaApp.class)
 @Transactional
 public class AuditResourceIT {
 

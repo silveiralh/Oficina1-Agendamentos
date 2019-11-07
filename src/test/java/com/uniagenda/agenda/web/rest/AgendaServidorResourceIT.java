@@ -1,6 +1,6 @@
 package com.uniagenda.agenda.web.rest;
 
-import com.uniagenda.agenda.UniagendaApp;
+import com.uniagenda.agenda.AgendaApp;
 import com.uniagenda.agenda.domain.AgendaServidor;
 import com.uniagenda.agenda.repository.AgendaServidorRepository;
 import com.uniagenda.agenda.web.rest.errors.ExceptionTranslator;
@@ -28,18 +28,14 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.uniagenda.agenda.domain.enumeration.StatusAgenda;
-import com.uniagenda.agenda.domain.enumeration.Horario;
 /**
  * Integration tests for the {@link AgendaServidorResource} REST controller.
  */
-@SpringBootTest(classes = UniagendaApp.class)
+@SpringBootTest(classes = AgendaApp.class)
 public class AgendaServidorResourceIT {
 
     private static final StatusAgenda DEFAULT_STATUS = StatusAgenda.Livre;
     private static final StatusAgenda UPDATED_STATUS = StatusAgenda.Ocupado;
-
-    private static final Horario DEFAULT_HORARIO = Horario.H8;
-    private static final Horario UPDATED_HORARIO = Horario.H9;
 
     @Autowired
     private AgendaServidorRepository agendaServidorRepository;
@@ -83,8 +79,7 @@ public class AgendaServidorResourceIT {
      */
     public static AgendaServidor createEntity(EntityManager em) {
         AgendaServidor agendaServidor = new AgendaServidor()
-            .status(DEFAULT_STATUS)
-            .horario(DEFAULT_HORARIO);
+            .status(DEFAULT_STATUS);
         return agendaServidor;
     }
     /**
@@ -95,8 +90,7 @@ public class AgendaServidorResourceIT {
      */
     public static AgendaServidor createUpdatedEntity(EntityManager em) {
         AgendaServidor agendaServidor = new AgendaServidor()
-            .status(UPDATED_STATUS)
-            .horario(UPDATED_HORARIO);
+            .status(UPDATED_STATUS);
         return agendaServidor;
     }
 
@@ -121,7 +115,6 @@ public class AgendaServidorResourceIT {
         assertThat(agendaServidorList).hasSize(databaseSizeBeforeCreate + 1);
         AgendaServidor testAgendaServidor = agendaServidorList.get(agendaServidorList.size() - 1);
         assertThat(testAgendaServidor.getStatus()).isEqualTo(DEFAULT_STATUS);
-        assertThat(testAgendaServidor.getHorario()).isEqualTo(DEFAULT_HORARIO);
     }
 
     @Test
@@ -155,8 +148,7 @@ public class AgendaServidorResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(agendaServidor.getId().intValue())))
-            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
-            .andExpect(jsonPath("$.[*].horario").value(hasItem(DEFAULT_HORARIO.toString())));
+            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())));
     }
     
     @Test
@@ -170,8 +162,7 @@ public class AgendaServidorResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(agendaServidor.getId().intValue()))
-            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
-            .andExpect(jsonPath("$.horario").value(DEFAULT_HORARIO.toString()));
+            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()));
     }
 
     @Test
@@ -195,8 +186,7 @@ public class AgendaServidorResourceIT {
         // Disconnect from session so that the updates on updatedAgendaServidor are not directly saved in db
         em.detach(updatedAgendaServidor);
         updatedAgendaServidor
-            .status(UPDATED_STATUS)
-            .horario(UPDATED_HORARIO);
+            .status(UPDATED_STATUS);
 
         restAgendaServidorMockMvc.perform(put("/api/agenda-servidors")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -208,7 +198,6 @@ public class AgendaServidorResourceIT {
         assertThat(agendaServidorList).hasSize(databaseSizeBeforeUpdate);
         AgendaServidor testAgendaServidor = agendaServidorList.get(agendaServidorList.size() - 1);
         assertThat(testAgendaServidor.getStatus()).isEqualTo(UPDATED_STATUS);
-        assertThat(testAgendaServidor.getHorario()).isEqualTo(UPDATED_HORARIO);
     }
 
     @Test

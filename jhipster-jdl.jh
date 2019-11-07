@@ -5,59 +5,67 @@ entity Sala{
 	nomeSala String,
     codigoSala String
 }
-
-entity Servidor {
-	codSiape Double,
-    nomeServidor String
-}
-
-entity  AgendaAtendimentoServidor{
-	status StatusAgenda
-}
 entity Aluno {
 	raAluno Double,
     nomeAluno String,
     periodo Double,
     curso Curso
 }
-
-enum Horario{
-    H8,H9,H10,H11,H12,H13,H14,H15,H16,H17,H18H,H19,H20,H21,H22
+entity Servidor {
+	codSiape Double,
+    nomeServidor String
 }
-
 entity  AgendaServidor{
-	status StatusAgenda,
-    horario Horario
+	
+    status StatusAgenda,
+    
 }
-
-
+entity  AgendaAtendimentoServidor{
+	status StatusAgenda
+}
 
 entity  AgendaAluno{
-	status StatusAgenda,
-    horario Horario
+	status StatusAgenda 
 }
 
 entity  AgendaSala{
 	status StatusAgenda,
-    horario Horario
+   
 }
 
 entity  AgendaReservaSala{
 	status StatusAgenda
+   
+}
+entity DiasReservaSala{
+	status StatusDia,
+    horario Horario,
+    diaMes DiaMes,
+    diaSemana DiaSemana,
+    mes Mes
 }
 
-entity DiasAtendimento{
+entity DiasAtendimentoServidor{
 	mes Mes,
     diaMes DiaMes,
     diaSemana DiaSemana,
     statusDia StatusDia    
 }
 
-enum StatusAgenda{
-	Livre, Ocupado, Atendido, Remarcado, Faltou
+entity DiasAulaAluno{
+	semestre Semestre,
+	horario Horario,
+    diaMes DiaMes,
+    diaSemana DiaSemana  
 }
 
+enum Semestre{
+	Semestre
+}
 
+enum StatusAgenda{
+	Livre, Ocupado, Atendido, Remarcado, Faltou, Agendado
+}
 
 enum Mes{
 	Janeiro, Fevereiro, Marco, Abril, Maio, Junho, Julho, 
@@ -79,25 +87,24 @@ enum DiaMes{
 enum StatusDia{
 	Disponivel, Indisponivel
 }
-
+enum Horario{
+    H8,H9,H10,H11,H12,H13,H14,H15,H16,H17,H18H,H19,H20,H21,H22
+}
 
 
 relationship OneToMany {
-	Servidor{nomeCargo} to Cargo,
- 
-    AgendaServidor{codSiape} to Servidor,
-
-    AgendaAtendimentoServidor{codSiape} to AgendaServidor,
-
-    AgendaAtendimentoServidor{raAluno} to Aluno,
-  
-    AgendaAluno{statusDia} to DiasAtendimento,
-    AgendaAluno{raAluno} to Aluno,
-	
-	AgendaSala{codigoSala} to Sala,
-
-    AgendaReservaSala{raAluno} to Aluno,
-    AgendaReservaSala{codigoSala} to AgendaSala
+	Cargo{nomeCargo} to Servidor,
+   Servidor{codSiape} to DiasAtendimentoServidor, 
+    DiasAtendimentoServidor{status} to AgendaServidor,
+    DiasAulaAluno{sem} to AgendaAluno,
+    AgendaServidor{status} to AgendaAtendimentoServidor,
+    Aluno{raAluno} to AgendaAluno,
+	Sala{codigoSala} to AgendaSala,
+    AgendaSala{status} to AgendaReservaSala,
+    Aluno{raAluno} to AgendaReservaSala,
+    AgendaAluno{status} to AgendaAtendimentoServidor,
+ 	DiasReservaSala{status} to AgendaReservaSala
+    
 }
 
 

@@ -1,6 +1,6 @@
 package com.uniagenda.agenda.web.rest;
 
-import com.uniagenda.agenda.UniagendaApp;
+import com.uniagenda.agenda.AgendaApp;
 import com.uniagenda.agenda.domain.AgendaAtendimentoServidor;
 import com.uniagenda.agenda.repository.AgendaAtendimentoServidorRepository;
 import com.uniagenda.agenda.web.rest.errors.ExceptionTranslator;
@@ -31,7 +31,7 @@ import com.uniagenda.agenda.domain.enumeration.StatusAgenda;
 /**
  * Integration tests for the {@link AgendaAtendimentoServidorResource} REST controller.
  */
-@SpringBootTest(classes = UniagendaApp.class)
+@SpringBootTest(classes = AgendaApp.class)
 public class AgendaAtendimentoServidorResourceIT {
 
     private static final StatusAgenda DEFAULT_STATUS = StatusAgenda.Livre;

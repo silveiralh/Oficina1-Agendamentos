@@ -1,6 +1,6 @@
 package com.uniagenda.agenda.service;
 
-import com.uniagenda.agenda.UniagendaApp;
+import com.uniagenda.agenda.AgendaApp;
 import com.uniagenda.agenda.config.Constants;
 import com.uniagenda.agenda.domain.PersistentToken;
 import com.uniagenda.agenda.domain.User;
@@ -34,7 +34,7 @@ import static org.mockito.Mockito.when;
 /**
  * Integration tests for {@link UserService}.
  */
-@SpringBootTest(classes = UniagendaApp.class)
+@SpringBootTest(classes = AgendaApp.class)
 @Transactional
 public class UserServiceIT {
 

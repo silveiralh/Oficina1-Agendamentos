@@ -39,15 +39,11 @@ public class Aluno implements Serializable {
 
     @OneToMany(mappedBy = "aluno")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AgendaAtendimentoServidor> raAlunos = new HashSet<>();
-
-    @OneToMany(mappedBy = "aluno")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<AgendaAluno> raAlunos = new HashSet<>();
 
     @OneToMany(mappedBy = "aluno")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AgendaReservaSala> raAlunos = new HashSet<>();
+    private Set<AgendaReservaSala> raAlunos1 = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -110,31 +106,6 @@ public class Aluno implements Serializable {
         this.curso = curso;
     }
 
-    public Set<AgendaAtendimentoServidor> getRaAlunos() {
-        return raAlunos;
-    }
-
-    public Aluno raAlunos(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
-        this.raAlunos = agendaAtendimentoServidors;
-        return this;
-    }
-
-    public Aluno addRaAluno(AgendaAtendimentoServidor agendaAtendimentoServidor) {
-        this.raAlunos.add(agendaAtendimentoServidor);
-        agendaAtendimentoServidor.setAluno(this);
-        return this;
-    }
-
-    public Aluno removeRaAluno(AgendaAtendimentoServidor agendaAtendimentoServidor) {
-        this.raAlunos.remove(agendaAtendimentoServidor);
-        agendaAtendimentoServidor.setAluno(null);
-        return this;
-    }
-
-    public void setRaAlunos(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
-        this.raAlunos = agendaAtendimentoServidors;
-    }
-
     public Set<AgendaAluno> getRaAlunos() {
         return raAlunos;
     }
@@ -160,29 +131,29 @@ public class Aluno implements Serializable {
         this.raAlunos = agendaAlunos;
     }
 
-    public Set<AgendaReservaSala> getRaAlunos() {
-        return raAlunos;
+    public Set<AgendaReservaSala> getRaAlunos1() {
+        return raAlunos1;
     }
 
-    public Aluno raAlunos(Set<AgendaReservaSala> agendaReservaSalas) {
-        this.raAlunos = agendaReservaSalas;
+    public Aluno raAlunos1(Set<AgendaReservaSala> agendaReservaSalas) {
+        this.raAlunos1 = agendaReservaSalas;
         return this;
     }
 
     public Aluno addRaAluno(AgendaReservaSala agendaReservaSala) {
-        this.raAlunos.add(agendaReservaSala);
+        this.raAlunos1.add(agendaReservaSala);
         agendaReservaSala.setAluno(this);
         return this;
     }
 
     public Aluno removeRaAluno(AgendaReservaSala agendaReservaSala) {
-        this.raAlunos.remove(agendaReservaSala);
+        this.raAlunos1.remove(agendaReservaSala);
         agendaReservaSala.setAluno(null);
         return this;
     }
 
-    public void setRaAlunos(Set<AgendaReservaSala> agendaReservaSalas) {
-        this.raAlunos = agendaReservaSalas;
+    public void setRaAlunos1(Set<AgendaReservaSala> agendaReservaSalas) {
+        this.raAlunos1 = agendaReservaSalas;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

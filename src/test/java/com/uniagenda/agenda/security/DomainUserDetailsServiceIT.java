@@ -1,6 +1,6 @@
 package com.uniagenda.agenda.security;
 
-import com.uniagenda.agenda.UniagendaApp;
+import com.uniagenda.agenda.AgendaApp;
 import com.uniagenda.agenda.domain.User;
 import com.uniagenda.agenda.repository.UserRepository;
 
@@ -22,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 /**
  * Integrations tests for {@link DomainUserDetailsService}.
  */
-@SpringBootTest(classes = UniagendaApp.class)
+@SpringBootTest(classes = AgendaApp.class)
 @Transactional
 public class DomainUserDetailsServiceIT {
 

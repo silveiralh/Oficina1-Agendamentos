@@ -18,13 +18,14 @@
             "relationshipName": "codigoSala"
         }
     ],
-    "changelogDate": "20191011213402",
+    "changelogDate": "20191107005958",
     "entityTableName": "sala",
     "dto": "no",
     "pagination": "no",
     "service": "no",
     "jpaMetamodelFiltering": false,
     "fluentMethods": true,
+    "readOnly": false,
     "clientRootFolder": "",
     "applications": "*"
 }

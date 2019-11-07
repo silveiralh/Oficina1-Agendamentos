@@ -4,7 +4,7 @@
         {
             "fieldName": "status",
             "fieldType": "StatusAgenda",
-            "fieldValues": "Livre,Ocupado,Atendido,Remarcado,Faltou"
+            "fieldValues": "Livre,Ocupado,Atendido,Remarcado,Faltou,Agendado"
         }
     ],
     "relationships": [
@@ -21,31 +21,20 @@
             "otherEntityField": "id"
         },
         {
-            "relationshipName": "agendaSala",
-            "otherEntityName": "agendaSala",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        },
-        {
-            "relationshipName": "agendaSala",
-            "otherEntityName": "agendaSala",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        },
-        {
-            "relationshipName": "agendaSala",
-            "otherEntityName": "agendaSala",
+            "relationshipName": "diasReservaSala",
+            "otherEntityName": "diasReservaSala",
             "relationshipType": "many-to-one",
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20191011213409",
+    "changelogDate": "20191107010005",
     "entityTableName": "agenda_reserva_sala",
     "dto": "no",
     "pagination": "no",
     "service": "no",
     "jpaMetamodelFiltering": false,
     "fluentMethods": true,
+    "readOnly": false,
     "clientRootFolder": "",
     "applications": "*"
 }

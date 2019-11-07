@@ -1,6 +1,6 @@
 package com.uniagenda.agenda.web.rest;
 
-import com.uniagenda.agenda.UniagendaApp;
+import com.uniagenda.agenda.AgendaApp;
 import com.uniagenda.agenda.config.Constants;
 import com.uniagenda.agenda.domain.Authority;
 import com.uniagenda.agenda.domain.PersistentToken;
@@ -47,7 +47,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link AccountResource} REST controller.
  */
-@SpringBootTest(classes = UniagendaApp.class)
+@SpringBootTest(classes = AgendaApp.class)
 public class AccountResourceIT {
 
     @Autowired

@@ -14,26 +14,25 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213401_added_entity_Cargo.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213402_added_entity_Sala.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213403_added_entity_Servidor.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213404_added_entity_AgendaAtendimentoServidor.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213405_added_entity_Aluno.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213406_added_entity_AgendaServidor.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213407_added_entity_AgendaAluno.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213408_added_entity_AgendaSala.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213409_added_entity_AgendaReservaSala.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213410_added_entity_DiasAtendimento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107005957_added_entity_Cargo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107005958_added_entity_Sala.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107005959_added_entity_Aluno.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010000_added_entity_Servidor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010001_added_entity_AgendaServidor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010002_added_entity_AgendaAtendimentoServidor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010003_added_entity_AgendaAluno.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010004_added_entity_AgendaSala.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010005_added_entity_AgendaReservaSala.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010006_added_entity_DiasReservaSala.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010007_added_entity_DiasAtendimentoServidor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010008_added_entity_DiasAulaAluno.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
-    <include file="config/liquibase/changelog/20191011213401_added_entity_constraints_Cargo.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213402_added_entity_constraints_Sala.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213403_added_entity_constraints_Servidor.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213405_added_entity_constraints_Aluno.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213406_added_entity_constraints_AgendaServidor.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213408_added_entity_constraints_AgendaSala.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213410_added_entity_constraints_DiasAtendimento.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213404_added_entity_constraints_AgendaAtendimentoServidor.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213407_added_entity_constraints_AgendaAluno.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191011213409_added_entity_constraints_AgendaReservaSala.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010000_added_entity_constraints_Servidor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010001_added_entity_constraints_AgendaServidor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010002_added_entity_constraints_AgendaAtendimentoServidor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010003_added_entity_constraints_AgendaAluno.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010004_added_entity_constraints_AgendaSala.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010005_added_entity_constraints_AgendaReservaSala.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191107010007_added_entity_constraints_DiasAtendimentoServidor.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

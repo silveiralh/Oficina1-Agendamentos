@@ -1,6 +1,6 @@
 package com.uniagenda.agenda.web.rest;
 
-import com.uniagenda.agenda.UniagendaApp;
+import com.uniagenda.agenda.AgendaApp;
 import com.uniagenda.agenda.domain.Aluno;
 import com.uniagenda.agenda.repository.AlunoRepository;
 import com.uniagenda.agenda.web.rest.errors.ExceptionTranslator;
@@ -31,19 +31,17 @@ import com.uniagenda.agenda.domain.enumeration.Curso;
 /**
  * Integration tests for the {@link AlunoResource} REST controller.
  */
-@SpringBootTest(classes = UniagendaApp.class)
+@SpringBootTest(classes = AgendaApp.class)
 public class AlunoResourceIT {
 
     private static final Double DEFAULT_RA_ALUNO = 1D;
     private static final Double UPDATED_RA_ALUNO = 2D;
-    private static final Double SMALLER_RA_ALUNO = 1D - 1D;
 
     private static final String DEFAULT_NOME_ALUNO = "AAAAAAAAAA";
     private static final String UPDATED_NOME_ALUNO = "BBBBBBBBBB";
 
     private static final Double DEFAULT_PERIODO = 1D;
     private static final Double UPDATED_PERIODO = 2D;
-    private static final Double SMALLER_PERIODO = 1D - 1D;
 
     private static final Curso DEFAULT_CURSO = Curso.Engenharia_Eletrica;
     private static final Curso UPDATED_CURSO = Curso.Engenharia_Computacao;
@@ -169,7 +167,7 @@ public class AlunoResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(aluno.getId().intValue())))
             .andExpect(jsonPath("$.[*].raAluno").value(hasItem(DEFAULT_RA_ALUNO.doubleValue())))
-            .andExpect(jsonPath("$.[*].nomeAluno").value(hasItem(DEFAULT_NOME_ALUNO.toString())))
+            .andExpect(jsonPath("$.[*].nomeAluno").value(hasItem(DEFAULT_NOME_ALUNO)))
             .andExpect(jsonPath("$.[*].periodo").value(hasItem(DEFAULT_PERIODO.doubleValue())))
             .andExpect(jsonPath("$.[*].curso").value(hasItem(DEFAULT_CURSO.toString())));
     }
@@ -186,7 +184,7 @@ public class AlunoResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(aluno.getId().intValue()))
             .andExpect(jsonPath("$.raAluno").value(DEFAULT_RA_ALUNO.doubleValue()))
-            .andExpect(jsonPath("$.nomeAluno").value(DEFAULT_NOME_ALUNO.toString()))
+            .andExpect(jsonPath("$.nomeAluno").value(DEFAULT_NOME_ALUNO))
             .andExpect(jsonPath("$.periodo").value(DEFAULT_PERIODO.doubleValue()))
             .andExpect(jsonPath("$.curso").value(DEFAULT_CURSO.toString()));
     }

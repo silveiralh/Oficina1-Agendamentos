@@ -11,8 +11,6 @@ import java.util.Set;
 
 import com.uniagenda.agenda.domain.enumeration.StatusAgenda;
 
-import com.uniagenda.agenda.domain.enumeration.Horario;
-
 /**
  * A AgendaServidor.
  */
@@ -31,25 +29,13 @@ public class AgendaServidor implements Serializable {
     @Column(name = "status")
     private StatusAgenda status;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "horario")
-    private Horario horario;
-
-    @ManyToOne
-    @JsonIgnoreProperties("agendaServidors")
-    private Servidor servidor;
-
-    @OneToMany(mappedBy = "agendaServidor")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AgendaAtendimentoServidor> codSiapes = new HashSet<>();
-
     @OneToMany(mappedBy = "agendaServidor")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<AgendaAtendimentoServidor> statuses = new HashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties("agendaServidors")
-    private DiasAtendimento diasAtendimento;
+    private DiasAtendimentoServidor diasAtendimentoServidor;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -71,57 +57,6 @@ public class AgendaServidor implements Serializable {
 
     public void setStatus(StatusAgenda status) {
         this.status = status;
-    }
-
-    public Horario getHorario() {
-        return horario;
-    }
-
-    public AgendaServidor horario(Horario horario) {
-        this.horario = horario;
-        return this;
-    }
-
-    public void setHorario(Horario horario) {
-        this.horario = horario;
-    }
-
-    public Servidor getServidor() {
-        return servidor;
-    }
-
-    public AgendaServidor servidor(Servidor servidor) {
-        this.servidor = servidor;
-        return this;
-    }
-
-    public void setServidor(Servidor servidor) {
-        this.servidor = servidor;
-    }
-
-    public Set<AgendaAtendimentoServidor> getCodSiapes() {
-        return codSiapes;
-    }
-
-    public AgendaServidor codSiapes(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
-        this.codSiapes = agendaAtendimentoServidors;
-        return this;
-    }
-
-    public AgendaServidor addCodSiape(AgendaAtendimentoServidor agendaAtendimentoServidor) {
-        this.codSiapes.add(agendaAtendimentoServidor);
-        agendaAtendimentoServidor.setAgendaServidor(this);
-        return this;
-    }
-
-    public AgendaServidor removeCodSiape(AgendaAtendimentoServidor agendaAtendimentoServidor) {
-        this.codSiapes.remove(agendaAtendimentoServidor);
-        agendaAtendimentoServidor.setAgendaServidor(null);
-        return this;
-    }
-
-    public void setCodSiapes(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
-        this.codSiapes = agendaAtendimentoServidors;
     }
 
     public Set<AgendaAtendimentoServidor> getStatuses() {
@@ -149,17 +84,17 @@ public class AgendaServidor implements Serializable {
         this.statuses = agendaAtendimentoServidors;
     }
 
-    public DiasAtendimento getDiasAtendimento() {
-        return diasAtendimento;
+    public DiasAtendimentoServidor getDiasAtendimentoServidor() {
+        return diasAtendimentoServidor;
     }
 
-    public AgendaServidor diasAtendimento(DiasAtendimento diasAtendimento) {
-        this.diasAtendimento = diasAtendimento;
+    public AgendaServidor diasAtendimentoServidor(DiasAtendimentoServidor diasAtendimentoServidor) {
+        this.diasAtendimentoServidor = diasAtendimentoServidor;
         return this;
     }
 
-    public void setDiasAtendimento(DiasAtendimento diasAtendimento) {
-        this.diasAtendimento = diasAtendimento;
+    public void setDiasAtendimentoServidor(DiasAtendimentoServidor diasAtendimentoServidor) {
+        this.diasAtendimentoServidor = diasAtendimentoServidor;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
@@ -184,7 +119,6 @@ public class AgendaServidor implements Serializable {
         return "AgendaServidor{" +
             "id=" + getId() +
             ", status='" + getStatus() + "'" +
-            ", horario='" + getHorario() + "'" +
             "}";
     }
 }

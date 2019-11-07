@@ -1,6 +1,6 @@
 package com.uniagenda.agenda.repository;
 
-import com.uniagenda.agenda.UniagendaApp;
+import com.uniagenda.agenda.AgendaApp;
 import com.uniagenda.agenda.config.Constants;
 import com.uniagenda.agenda.config.audit.AuditEventConverter;
 import com.uniagenda.agenda.domain.PersistentAuditEvent;
@@ -27,7 +27,7 @@ import static com.uniagenda.agenda.repository.CustomAuditEventRepository.EVENT_D
 /**
  * Integration tests for {@link CustomAuditEventRepository}.
  */
-@SpringBootTest(classes = UniagendaApp.class)
+@SpringBootTest(classes = AgendaApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIT {
 

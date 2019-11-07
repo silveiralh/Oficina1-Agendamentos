@@ -4,36 +4,31 @@
         {
             "fieldName": "status",
             "fieldType": "StatusAgenda",
-            "fieldValues": "Livre,Ocupado,Atendido,Remarcado,Faltou"
+            "fieldValues": "Livre,Ocupado,Atendido,Remarcado,Faltou,Agendado"
         }
     ],
     "relationships": [
         {
-            "relationshipName": "aluno",
-            "otherEntityName": "aluno",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        },
-        {
             "relationshipName": "agendaServidor",
             "otherEntityName": "agendaServidor",
             "relationshipType": "many-to-one",
             "otherEntityField": "id"
         },
         {
-            "relationshipName": "agendaServidor",
-            "otherEntityName": "agendaServidor",
+            "relationshipName": "agendaAluno",
+            "otherEntityName": "agendaAluno",
             "relationshipType": "many-to-one",
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20191011213404",
+    "changelogDate": "20191107010002",
     "entityTableName": "agenda_atendimento_servidor",
     "dto": "no",
     "pagination": "no",
     "service": "no",
     "jpaMetamodelFiltering": false,
     "fluentMethods": true,
+    "readOnly": false,
     "clientRootFolder": "",
     "applications": "*"
 }
