@@ -4,27 +4,10 @@
         {
             "fieldName": "status",
             "fieldType": "StatusAgenda",
-            "fieldValues": "Livre,Ocupado,Atendido,Remarcado,Faltou"
-        },
-        {
-            "fieldName": "horario",
-            "fieldType": "Horario",
-            "fieldValues": "H8,H9,H10,H11,H12,H13,H14,H15,H16,H17,H18H,H19,H20,H21,H22"
+            "fieldValues": "Livre,Ocupado,Atendido,Remarcado,Faltou,Agendado"
         }
     ],
     "relationships": [
-        {
-            "relationshipName": "servidor",
-            "otherEntityName": "servidor",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        },
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "agendaAtendimentoServidor",
-            "otherEntityRelationshipName": "agendaServidor",
-            "relationshipName": "codSiape"
-        },
         {
             "relationshipType": "one-to-many",
             "otherEntityName": "agendaAtendimentoServidor",
@@ -32,19 +15,20 @@
             "relationshipName": "status"
         },
         {
-            "relationshipName": "diasAtendimento",
-            "otherEntityName": "diasAtendimento",
+            "relationshipName": "diasAtendimentoServidor",
+            "otherEntityName": "diasAtendimentoServidor",
             "relationshipType": "many-to-one",
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20191011213406",
+    "changelogDate": "20191107010001",
     "entityTableName": "agenda_servidor",
     "dto": "no",
     "pagination": "no",
     "service": "no",
     "jpaMetamodelFiltering": false,
     "fluentMethods": true,
+    "readOnly": false,
     "clientRootFolder": "",
     "applications": "*"
 }

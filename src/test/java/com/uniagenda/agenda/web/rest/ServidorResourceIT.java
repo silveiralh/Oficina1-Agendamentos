@@ -1,6 +1,6 @@
 package com.uniagenda.agenda.web.rest;
 
-import com.uniagenda.agenda.UniagendaApp;
+import com.uniagenda.agenda.AgendaApp;
 import com.uniagenda.agenda.domain.Servidor;
 import com.uniagenda.agenda.repository.ServidorRepository;
 import com.uniagenda.agenda.web.rest.errors.ExceptionTranslator;
@@ -30,12 +30,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link ServidorResource} REST controller.
  */
-@SpringBootTest(classes = UniagendaApp.class)
+@SpringBootTest(classes = AgendaApp.class)
 public class ServidorResourceIT {
 
     private static final Double DEFAULT_COD_SIAPE = 1D;
     private static final Double UPDATED_COD_SIAPE = 2D;
-    private static final Double SMALLER_COD_SIAPE = 1D - 1D;
 
     private static final String DEFAULT_NOME_SERVIDOR = "AAAAAAAAAA";
     private static final String UPDATED_NOME_SERVIDOR = "BBBBBBBBBB";
@@ -155,7 +154,7 @@ public class ServidorResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(servidor.getId().intValue())))
             .andExpect(jsonPath("$.[*].codSiape").value(hasItem(DEFAULT_COD_SIAPE.doubleValue())))
-            .andExpect(jsonPath("$.[*].nomeServidor").value(hasItem(DEFAULT_NOME_SERVIDOR.toString())));
+            .andExpect(jsonPath("$.[*].nomeServidor").value(hasItem(DEFAULT_NOME_SERVIDOR)));
     }
     
     @Test
@@ -170,7 +169,7 @@ public class ServidorResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(servidor.getId().intValue()))
             .andExpect(jsonPath("$.codSiape").value(DEFAULT_COD_SIAPE.doubleValue()))
-            .andExpect(jsonPath("$.nomeServidor").value(DEFAULT_NOME_SERVIDOR.toString()));
+            .andExpect(jsonPath("$.nomeServidor").value(DEFAULT_NOME_SERVIDOR));
     }
 
     @Test

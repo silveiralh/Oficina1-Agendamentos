@@ -1,6 +1,6 @@
 package com.uniagenda.agenda.web.rest;
 
-import com.uniagenda.agenda.UniagendaApp;
+import com.uniagenda.agenda.AgendaApp;
 import com.uniagenda.agenda.domain.AgendaSala;
 import com.uniagenda.agenda.repository.AgendaSalaRepository;
 import com.uniagenda.agenda.web.rest.errors.ExceptionTranslator;
@@ -28,18 +28,14 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.uniagenda.agenda.domain.enumeration.StatusAgenda;
-import com.uniagenda.agenda.domain.enumeration.Horario;
 /**
  * Integration tests for the {@link AgendaSalaResource} REST controller.
  */
-@SpringBootTest(classes = UniagendaApp.class)
+@SpringBootTest(classes = AgendaApp.class)
 public class AgendaSalaResourceIT {
 
     private static final StatusAgenda DEFAULT_STATUS = StatusAgenda.Livre;
     private static final StatusAgenda UPDATED_STATUS = StatusAgenda.Ocupado;
-
-    private static final Horario DEFAULT_HORARIO = Horario.H8;
-    private static final Horario UPDATED_HORARIO = Horario.H9;
 
     @Autowired
     private AgendaSalaRepository agendaSalaRepository;
@@ -83,8 +79,7 @@ public class AgendaSalaResourceIT {
      */
     public static AgendaSala createEntity(EntityManager em) {
         AgendaSala agendaSala = new AgendaSala()
-            .status(DEFAULT_STATUS)
-            .horario(DEFAULT_HORARIO);
+            .status(DEFAULT_STATUS);
         return agendaSala;
     }
     /**
@@ -95,8 +90,7 @@ public class AgendaSalaResourceIT {
      */
     public static AgendaSala createUpdatedEntity(EntityManager em) {
         AgendaSala agendaSala = new AgendaSala()
-            .status(UPDATED_STATUS)
-            .horario(UPDATED_HORARIO);
+            .status(UPDATED_STATUS);
         return agendaSala;
     }
 
@@ -121,7 +115,6 @@ public class AgendaSalaResourceIT {
         assertThat(agendaSalaList).hasSize(databaseSizeBeforeCreate + 1);
         AgendaSala testAgendaSala = agendaSalaList.get(agendaSalaList.size() - 1);
         assertThat(testAgendaSala.getStatus()).isEqualTo(DEFAULT_STATUS);
-        assertThat(testAgendaSala.getHorario()).isEqualTo(DEFAULT_HORARIO);
     }
 
     @Test
@@ -155,8 +148,7 @@ public class AgendaSalaResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(agendaSala.getId().intValue())))
-            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
-            .andExpect(jsonPath("$.[*].horario").value(hasItem(DEFAULT_HORARIO.toString())));
+            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())));
     }
     
     @Test
@@ -170,8 +162,7 @@ public class AgendaSalaResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(agendaSala.getId().intValue()))
-            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
-            .andExpect(jsonPath("$.horario").value(DEFAULT_HORARIO.toString()));
+            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()));
     }
 
     @Test
@@ -195,8 +186,7 @@ public class AgendaSalaResourceIT {
         // Disconnect from session so that the updates on updatedAgendaSala are not directly saved in db
         em.detach(updatedAgendaSala);
         updatedAgendaSala
-            .status(UPDATED_STATUS)
-            .horario(UPDATED_HORARIO);
+            .status(UPDATED_STATUS);
 
         restAgendaSalaMockMvc.perform(put("/api/agenda-salas")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -208,7 +198,6 @@ public class AgendaSalaResourceIT {
         assertThat(agendaSalaList).hasSize(databaseSizeBeforeUpdate);
         AgendaSala testAgendaSala = agendaSalaList.get(agendaSalaList.size() - 1);
         assertThat(testAgendaSala.getStatus()).isEqualTo(UPDATED_STATUS);
-        assertThat(testAgendaSala.getHorario()).isEqualTo(UPDATED_HORARIO);
     }
 
     @Test

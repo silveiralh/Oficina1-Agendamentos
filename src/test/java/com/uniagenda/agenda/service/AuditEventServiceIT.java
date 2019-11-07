@@ -2,7 +2,7 @@ package com.uniagenda.agenda.service;
 
 import com.uniagenda.agenda.domain.PersistentAuditEvent;
 import com.uniagenda.agenda.repository.PersistenceAuditEventRepository;
-import com.uniagenda.agenda.UniagendaApp;
+import com.uniagenda.agenda.AgendaApp;
 import io.github.jhipster.config.JHipsterProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for {@link AuditEventService}.
  */
-@SpringBootTest(classes = UniagendaApp.class)
+@SpringBootTest(classes = AgendaApp.class)
 @Transactional
 public class AuditEventServiceIT {
     @Autowired

@@ -1,6 +1,6 @@
 package com.uniagenda.agenda.web.rest;
 
-import com.uniagenda.agenda.UniagendaApp;
+import com.uniagenda.agenda.AgendaApp;
 import com.uniagenda.agenda.domain.AgendaAluno;
 import com.uniagenda.agenda.repository.AgendaAlunoRepository;
 import com.uniagenda.agenda.web.rest.errors.ExceptionTranslator;
@@ -28,18 +28,14 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.uniagenda.agenda.domain.enumeration.StatusAgenda;
-import com.uniagenda.agenda.domain.enumeration.Horario;
 /**
  * Integration tests for the {@link AgendaAlunoResource} REST controller.
  */
-@SpringBootTest(classes = UniagendaApp.class)
+@SpringBootTest(classes = AgendaApp.class)
 public class AgendaAlunoResourceIT {
 
     private static final StatusAgenda DEFAULT_STATUS = StatusAgenda.Livre;
     private static final StatusAgenda UPDATED_STATUS = StatusAgenda.Ocupado;
-
-    private static final Horario DEFAULT_HORARIO = Horario.H8;
-    private static final Horario UPDATED_HORARIO = Horario.H9;
 
     @Autowired
     private AgendaAlunoRepository agendaAlunoRepository;
@@ -83,8 +79,7 @@ public class AgendaAlunoResourceIT {
      */
     public static AgendaAluno createEntity(EntityManager em) {
         AgendaAluno agendaAluno = new AgendaAluno()
-            .status(DEFAULT_STATUS)
-            .horario(DEFAULT_HORARIO);
+            .status(DEFAULT_STATUS);
         return agendaAluno;
     }
     /**
@@ -95,8 +90,7 @@ public class AgendaAlunoResourceIT {
      */
     public static AgendaAluno createUpdatedEntity(EntityManager em) {
         AgendaAluno agendaAluno = new AgendaAluno()
-            .status(UPDATED_STATUS)
-            .horario(UPDATED_HORARIO);
+            .status(UPDATED_STATUS);
         return agendaAluno;
     }
 
@@ -121,7 +115,6 @@ public class AgendaAlunoResourceIT {
         assertThat(agendaAlunoList).hasSize(databaseSizeBeforeCreate + 1);
         AgendaAluno testAgendaAluno = agendaAlunoList.get(agendaAlunoList.size() - 1);
         assertThat(testAgendaAluno.getStatus()).isEqualTo(DEFAULT_STATUS);
-        assertThat(testAgendaAluno.getHorario()).isEqualTo(DEFAULT_HORARIO);
     }
 
     @Test
@@ -155,8 +148,7 @@ public class AgendaAlunoResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(agendaAluno.getId().intValue())))
-            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
-            .andExpect(jsonPath("$.[*].horario").value(hasItem(DEFAULT_HORARIO.toString())));
+            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())));
     }
     
     @Test
@@ -170,8 +162,7 @@ public class AgendaAlunoResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(agendaAluno.getId().intValue()))
-            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
-            .andExpect(jsonPath("$.horario").value(DEFAULT_HORARIO.toString()));
+            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()));
     }
 
     @Test
@@ -195,8 +186,7 @@ public class AgendaAlunoResourceIT {
         // Disconnect from session so that the updates on updatedAgendaAluno are not directly saved in db
         em.detach(updatedAgendaAluno);
         updatedAgendaAluno
-            .status(UPDATED_STATUS)
-            .horario(UPDATED_HORARIO);
+            .status(UPDATED_STATUS);
 
         restAgendaAlunoMockMvc.perform(put("/api/agenda-alunos")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -208,7 +198,6 @@ public class AgendaAlunoResourceIT {
         assertThat(agendaAlunoList).hasSize(databaseSizeBeforeUpdate);
         AgendaAluno testAgendaAluno = agendaAlunoList.get(agendaAlunoList.size() - 1);
         assertThat(testAgendaAluno.getStatus()).isEqualTo(UPDATED_STATUS);
-        assertThat(testAgendaAluno.getHorario()).isEqualTo(UPDATED_HORARIO);
     }
 
     @Test

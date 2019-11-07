@@ -15,10 +15,10 @@
 
 spring:
   application:
-    name: uniagenda
+    name: agenda
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:uniagenda;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MULTI_THREADED=FALSE
+    url: jdbc:h2:mem:agenda;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MULTI_THREADED=FALSE
     name:
     username:
     password:
@@ -55,13 +55,13 @@ spring:
       enabled: false
   task:
     execution:
-      thread-name-prefix: uniagenda-task-
+      thread-name-prefix: agenda-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: uniagenda-scheduling-
+      thread-name-prefix: agenda-scheduling-
       pool:
         size: 1
   thymeleaf:
@@ -79,7 +79,7 @@ server:
 
 jhipster:
   clientApp:
-    name: 'uniagendaApp'
+    name: 'agendaApp'
   logging:
     # To test json console appender
     use-json-format: true # By default, logs are in Json format
@@ -94,7 +94,7 @@ jhipster:
   security:
     remember-me:
       # security key (this key should be unique for your application, and kept secret)
-      key: 113634acd30cc08c8c4cc7d7d81e295d2da8f61a3294b5294b65eddbf0e6e29c11fb9ad45fcb98b041e08e2329ecaa013862
+      key: 1c469f78237c179883247d4c72433d800aa9ed02864f03ccf4f063bae2b1da99c518c58068adebbe01016e1ffb95f72ab8ff
   metrics:
     logs: # Reports metrics in the logs
       enabled: true

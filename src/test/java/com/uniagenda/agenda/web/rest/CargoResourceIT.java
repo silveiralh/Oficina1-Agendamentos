@@ -1,6 +1,6 @@
 package com.uniagenda.agenda.web.rest;
 
-import com.uniagenda.agenda.UniagendaApp;
+import com.uniagenda.agenda.AgendaApp;
 import com.uniagenda.agenda.domain.Cargo;
 import com.uniagenda.agenda.repository.CargoRepository;
 import com.uniagenda.agenda.web.rest.errors.ExceptionTranslator;
@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link CargoResource} REST controller.
  */
-@SpringBootTest(classes = UniagendaApp.class)
+@SpringBootTest(classes = AgendaApp.class)
 public class CargoResourceIT {
 
     private static final String DEFAULT_NOME_CARGO = "AAAAAAAAAA";
@@ -147,7 +147,7 @@ public class CargoResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(cargo.getId().intValue())))
-            .andExpect(jsonPath("$.[*].nomeCargo").value(hasItem(DEFAULT_NOME_CARGO.toString())));
+            .andExpect(jsonPath("$.[*].nomeCargo").value(hasItem(DEFAULT_NOME_CARGO)));
     }
     
     @Test
@@ -161,7 +161,7 @@ public class CargoResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(cargo.getId().intValue()))
-            .andExpect(jsonPath("$.nomeCargo").value(DEFAULT_NOME_CARGO.toString()));
+            .andExpect(jsonPath("$.nomeCargo").value(DEFAULT_NOME_CARGO));
     }
 
     @Test

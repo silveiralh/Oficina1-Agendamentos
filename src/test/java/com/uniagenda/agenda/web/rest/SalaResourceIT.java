@@ -1,6 +1,6 @@
 package com.uniagenda.agenda.web.rest;
 
-import com.uniagenda.agenda.UniagendaApp;
+import com.uniagenda.agenda.AgendaApp;
 import com.uniagenda.agenda.domain.Sala;
 import com.uniagenda.agenda.repository.SalaRepository;
 import com.uniagenda.agenda.web.rest.errors.ExceptionTranslator;
@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link SalaResource} REST controller.
  */
-@SpringBootTest(classes = UniagendaApp.class)
+@SpringBootTest(classes = AgendaApp.class)
 public class SalaResourceIT {
 
     private static final String DEFAULT_NOME_SALA = "AAAAAAAAAA";
@@ -153,8 +153,8 @@ public class SalaResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(sala.getId().intValue())))
-            .andExpect(jsonPath("$.[*].nomeSala").value(hasItem(DEFAULT_NOME_SALA.toString())))
-            .andExpect(jsonPath("$.[*].codigoSala").value(hasItem(DEFAULT_CODIGO_SALA.toString())));
+            .andExpect(jsonPath("$.[*].nomeSala").value(hasItem(DEFAULT_NOME_SALA)))
+            .andExpect(jsonPath("$.[*].codigoSala").value(hasItem(DEFAULT_CODIGO_SALA)));
     }
     
     @Test
@@ -168,8 +168,8 @@ public class SalaResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(sala.getId().intValue()))
-            .andExpect(jsonPath("$.nomeSala").value(DEFAULT_NOME_SALA.toString()))
-            .andExpect(jsonPath("$.codigoSala").value(DEFAULT_CODIGO_SALA.toString()));
+            .andExpect(jsonPath("$.nomeSala").value(DEFAULT_NOME_SALA))
+            .andExpect(jsonPath("$.codigoSala").value(DEFAULT_CODIGO_SALA));
     }
 
     @Test

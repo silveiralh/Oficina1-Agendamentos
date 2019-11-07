@@ -6,10 +6,10 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.uniagenda.agenda.domain.enumeration.StatusAgenda;
-
-import com.uniagenda.agenda.domain.enumeration.Horario;
 
 /**
  * A AgendaAluno.
@@ -29,17 +29,17 @@ public class AgendaAluno implements Serializable {
     @Column(name = "status")
     private StatusAgenda status;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "horario")
-    private Horario horario;
-
     @ManyToOne
     @JsonIgnoreProperties("agendaAlunos")
     private Aluno aluno;
 
+    @OneToMany(mappedBy = "agendaAluno")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<AgendaAtendimentoServidor> statuses = new HashSet<>();
+
     @ManyToOne
     @JsonIgnoreProperties("agendaAlunos")
-    private DiasAtendimento diasAtendimento;
+    private DiasAulaAluno diasAulaAluno;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -63,19 +63,6 @@ public class AgendaAluno implements Serializable {
         this.status = status;
     }
 
-    public Horario getHorario() {
-        return horario;
-    }
-
-    public AgendaAluno horario(Horario horario) {
-        this.horario = horario;
-        return this;
-    }
-
-    public void setHorario(Horario horario) {
-        this.horario = horario;
-    }
-
     public Aluno getAluno() {
         return aluno;
     }
@@ -89,17 +76,42 @@ public class AgendaAluno implements Serializable {
         this.aluno = aluno;
     }
 
-    public DiasAtendimento getDiasAtendimento() {
-        return diasAtendimento;
+    public Set<AgendaAtendimentoServidor> getStatuses() {
+        return statuses;
     }
 
-    public AgendaAluno diasAtendimento(DiasAtendimento diasAtendimento) {
-        this.diasAtendimento = diasAtendimento;
+    public AgendaAluno statuses(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
+        this.statuses = agendaAtendimentoServidors;
         return this;
     }
 
-    public void setDiasAtendimento(DiasAtendimento diasAtendimento) {
-        this.diasAtendimento = diasAtendimento;
+    public AgendaAluno addStatus(AgendaAtendimentoServidor agendaAtendimentoServidor) {
+        this.statuses.add(agendaAtendimentoServidor);
+        agendaAtendimentoServidor.setAgendaAluno(this);
+        return this;
+    }
+
+    public AgendaAluno removeStatus(AgendaAtendimentoServidor agendaAtendimentoServidor) {
+        this.statuses.remove(agendaAtendimentoServidor);
+        agendaAtendimentoServidor.setAgendaAluno(null);
+        return this;
+    }
+
+    public void setStatuses(Set<AgendaAtendimentoServidor> agendaAtendimentoServidors) {
+        this.statuses = agendaAtendimentoServidors;
+    }
+
+    public DiasAulaAluno getDiasAulaAluno() {
+        return diasAulaAluno;
+    }
+
+    public AgendaAluno diasAulaAluno(DiasAulaAluno diasAulaAluno) {
+        this.diasAulaAluno = diasAulaAluno;
+        return this;
+    }
+
+    public void setDiasAulaAluno(DiasAulaAluno diasAulaAluno) {
+        this.diasAulaAluno = diasAulaAluno;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
@@ -124,7 +136,6 @@ public class AgendaAluno implements Serializable {
         return "AgendaAluno{" +
             "id=" + getId() +
             ", status='" + getStatus() + "'" +
-            ", horario='" + getHorario() + "'" +
             "}";
     }
 }

@@ -22,12 +22,6 @@
     "relationships": [
         {
             "relationshipType": "one-to-many",
-            "otherEntityName": "agendaAtendimentoServidor",
-            "otherEntityRelationshipName": "aluno",
-            "relationshipName": "raAluno"
-        },
-        {
-            "relationshipType": "one-to-many",
             "otherEntityName": "agendaAluno",
             "otherEntityRelationshipName": "aluno",
             "relationshipName": "raAluno"
@@ -39,13 +33,14 @@
             "relationshipName": "raAluno"
         }
     ],
-    "changelogDate": "20191011213405",
+    "changelogDate": "20191107005959",
     "entityTableName": "aluno",
     "dto": "no",
     "pagination": "no",
     "service": "no",
     "jpaMetamodelFiltering": false,
     "fluentMethods": true,
+    "readOnly": false,
     "clientRootFolder": "",
     "applications": "*"
 }

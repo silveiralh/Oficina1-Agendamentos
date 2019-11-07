@@ -14,13 +14,14 @@
             "relationshipName": "nomeCargo"
         }
     ],
-    "changelogDate": "20191011213401",
+    "changelogDate": "20191107005957",
     "entityTableName": "cargo",
     "dto": "no",
     "pagination": "no",
     "service": "no",
     "jpaMetamodelFiltering": false,
     "fluentMethods": true,
+    "readOnly": false,
     "clientRootFolder": "",
     "applications": "*"
 }

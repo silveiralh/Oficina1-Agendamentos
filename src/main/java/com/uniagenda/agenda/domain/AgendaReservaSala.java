@@ -37,15 +37,7 @@ public class AgendaReservaSala implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("agendaReservaSalas")
-    private AgendaSala agendaSala;
-
-    @ManyToOne
-    @JsonIgnoreProperties("agendaReservaSalas")
-    private AgendaSala agendaSala;
-
-    @ManyToOne
-    @JsonIgnoreProperties("agendaReservaSalas")
-    private AgendaSala agendaSala;
+    private DiasReservaSala diasReservaSala;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -95,43 +87,17 @@ public class AgendaReservaSala implements Serializable {
         this.agendaSala = agendaSala;
     }
 
-    public AgendaSala getAgendaSala() {
-        return agendaSala;
+    public DiasReservaSala getDiasReservaSala() {
+        return diasReservaSala;
     }
 
-    public AgendaReservaSala agendaSala(AgendaSala agendaSala) {
-        this.agendaSala = agendaSala;
+    public AgendaReservaSala diasReservaSala(DiasReservaSala diasReservaSala) {
+        this.diasReservaSala = diasReservaSala;
         return this;
     }
 
-    public void setAgendaSala(AgendaSala agendaSala) {
-        this.agendaSala = agendaSala;
-    }
-
-    public AgendaSala getAgendaSala() {
-        return agendaSala;
-    }
-
-    public AgendaReservaSala agendaSala(AgendaSala agendaSala) {
-        this.agendaSala = agendaSala;
-        return this;
-    }
-
-    public void setAgendaSala(AgendaSala agendaSala) {
-        this.agendaSala = agendaSala;
-    }
-
-    public AgendaSala getAgendaSala() {
-        return agendaSala;
-    }
-
-    public AgendaReservaSala agendaSala(AgendaSala agendaSala) {
-        this.agendaSala = agendaSala;
-        return this;
-    }
-
-    public void setAgendaSala(AgendaSala agendaSala) {
-        this.agendaSala = agendaSala;
+    public void setDiasReservaSala(DiasReservaSala diasReservaSala) {
+        this.diasReservaSala = diasReservaSala;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

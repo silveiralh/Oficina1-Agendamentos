@@ -29,15 +29,11 @@ public class AgendaAtendimentoServidor implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("agendaAtendimentoServidors")
-    private Aluno aluno;
-
-    @ManyToOne
-    @JsonIgnoreProperties("agendaAtendimentoServidors")
     private AgendaServidor agendaServidor;
 
     @ManyToOne
     @JsonIgnoreProperties("agendaAtendimentoServidors")
-    private AgendaServidor agendaServidor;
+    private AgendaAluno agendaAluno;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -61,19 +57,6 @@ public class AgendaAtendimentoServidor implements Serializable {
         this.status = status;
     }
 
-    public Aluno getAluno() {
-        return aluno;
-    }
-
-    public AgendaAtendimentoServidor aluno(Aluno aluno) {
-        this.aluno = aluno;
-        return this;
-    }
-
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
-    }
-
     public AgendaServidor getAgendaServidor() {
         return agendaServidor;
     }
@@ -87,17 +70,17 @@ public class AgendaAtendimentoServidor implements Serializable {
         this.agendaServidor = agendaServidor;
     }
 
-    public AgendaServidor getAgendaServidor() {
-        return agendaServidor;
+    public AgendaAluno getAgendaAluno() {
+        return agendaAluno;
     }
 
-    public AgendaAtendimentoServidor agendaServidor(AgendaServidor agendaServidor) {
-        this.agendaServidor = agendaServidor;
+    public AgendaAtendimentoServidor agendaAluno(AgendaAluno agendaAluno) {
+        this.agendaAluno = agendaAluno;
         return this;
     }
 
-    public void setAgendaServidor(AgendaServidor agendaServidor) {
-        this.agendaServidor = agendaServidor;
+    public void setAgendaAluno(AgendaAluno agendaAluno) {
+        this.agendaAluno = agendaAluno;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
