@@ -20,7 +20,7 @@ entity  AgendaServidor{
     horario Horario,
     diaMes DiaMes,
     diaSemana DiaSemana,
-    statusDia StatusDia
+    statusDia StatusDia,
     
     
 }
