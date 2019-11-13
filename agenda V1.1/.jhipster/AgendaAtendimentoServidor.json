@@ -1,0 +1,33 @@
+{
+    "name": "AgendaAtendimentoServidor",
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "StatusAgenda",
+            "fieldValues": "Livre,Ocupado,Atendido,Remarcado,Faltou,Agendado"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "aluno",
+            "otherEntityName": "aluno",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "agendaServidor",
+            "otherEntityName": "agendaServidor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191112233310",
+    "entityTableName": "agenda_atendimento_servidor",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

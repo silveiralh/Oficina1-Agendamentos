@@ -1,0 +1,30 @@
+{
+    "name": "Sala",
+    "fields": [
+        {
+            "fieldName": "nomeSala",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codigoSala",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agendaSala",
+            "otherEntityRelationshipName": "sala",
+            "relationshipName": "codigoSala"
+        }
+    ],
+    "changelogDate": "20191112233306",
+    "entityTableName": "sala",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
