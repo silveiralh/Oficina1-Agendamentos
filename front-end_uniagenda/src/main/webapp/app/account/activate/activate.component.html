@@ -1,0 +1,17 @@
+<div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>Ativação</h1>
+
+            <div class="alert alert-success" *ngIf="success">
+                <span><strong>Esta conta ja esta sendo usada</strong> Por favor </span>
+                <a class="alert-link" (click)="login()">Entrar</a>.
+            </div>
+
+            <div class="alert alert-danger" *ngIf="error">
+                <strong>Está conta não existe</strong> Resgistre-se para entrar.
+            </div>
+
+        </div>
+    </div>
+</div>

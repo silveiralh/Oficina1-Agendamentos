@@ -1,0 +1,25 @@
+{
+  "generator-jhipster": {
+    "jhipsterVersion": "6.5.1",
+    "applicationType": "monolith",
+    "baseName": "uniagenda",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "sql",
+    "prodDatabaseType": "sql",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": [],
+    "skipServer": true
+  }
+}

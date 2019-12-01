@@ -1,0 +1,16 @@
+
+
+<div class="container">
+    <div class="text-center"">
+        <h1 class="text">Bem-Vindo a Uniagenda!</h1>
+        <p>Faça o login e vamos começar</p>
+        <span class="bonequinho img-fluid rounded"></span>
+
+        <div [ngSwitch]="isAuthenticated()">
+            <div class="alert alert-success" *ngSwitchCase="true">
+                <span id="home-logged-message" *ngIf="account"
+                   > Você foi logado "{{account.login}}". </span>
+            </div>
+        </div>
+    </div>
+</div>
