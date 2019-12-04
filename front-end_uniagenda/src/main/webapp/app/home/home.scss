@@ -3,14 +3,17 @@ Main page styles
 ========================================================================== */
 .text {
   padding: 50px;
-  font-family: Courier, 'Lucida Console', monospace;
+  font-family: Helvetica, sans-serif, Courier, monospace;
+}
+h2 {
+  font-family: Helvetica, sans-serif, Courier, monospace;
 }
 
-.bonequinho {
+.home {
   display: inline-block;
   width: 100%;
   height: 397px;
-  background: url('../../content/images/bonequinho.png') no-repeat center top;
+  background: url('../../content/images/home.png') no-repeat center top;
   background-size: contain;
 }
 
