@@ -1,21 +1,20 @@
 # Oficina1-Agendamentos
 
 agenda
-This application was generated using JHipster 6.3.1, you can find documentation and help at https://www.jhipster.tech/documentation-archive/v6.3.1.
 
-Development
-Before you can build this project, you must install and configure the following dependencies on your machine:
 
-Node.js: We use Node to run a development web server and build the project. Depending on your system, you can install Node either from source or as a pre-packaged bundle.
-After installing Node, you should be able to run the following command to install development tools. You will only need to run this command when dependencies change in package.json.
+Antes de poder construir este projeto, você deve instalar e configurar as seguintes dependências em sua máquina:
 
-npm install
-We use npm scripts and Webpack as our build system.
+Node.js: usamos o Node para executar um servidor da Web de desenvolvimento e criar o projeto. Dependendo do seu sistema, você pode instalar o Node da origem ou como um pacote configurável pré-empacotado.
+Após instalar o Node, você poderá executar o seguinte comando para instalar as ferramentas de desenvolvimento. Você só precisará executar este comando quando as dependências mudarem no package.json.
 
-Run the following commands in two separate terminals to create a blissful development experience where your browser auto-refreshes when files change on your hard drive.
+instalação npm
+Usamos scripts npm e Webpack como nosso sistema de compilação.
+
+Execute os seguintes comandos em dois terminais separados para criar uma experiência de desenvolvimento agradável, na qual o navegador é atualizado automaticamente quando os arquivos são alterados no disco rígido.
 
 ./mvnw
 npm start
-Npm is also used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by specifying a newer version in package.json. You can also run npm update and npm install to manage dependencies. Add the help flag on any command to see how you can use it. For example, npm help update.
+O Npm também é usado para gerenciar dependências de CSS e JavaScript usadas neste aplicativo. Você pode atualizar dependências especificando uma versão mais recente no package.json. Você também pode executar o npm update e o npm install para gerenciar dependências. Adicione o sinalizador de ajuda em qualquer comando para ver como você pode usá-lo. Por exemplo, o npm ajuda a atualizar.
 
-The npm run command will list all of the scripts available to run for this project.
+O comando npm run listará todos os scripts disponíveis para execução neste projeto
